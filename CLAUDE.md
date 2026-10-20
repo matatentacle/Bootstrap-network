@@ -20,7 +20,8 @@ set `JB_WRITE=1` to get around it. Full rules: `notes/gateway-working-rules.md`.
 | `bin/` | `jb` (jump box wrapper), `sanitize.py`, `check-secrets.sh` | yes |
 | `jumpbox-setup/` | Mirror of `~/jumpbox-setup` on the box: the expect scripts, setup, reports | yes, minus `.env` |
 | `configs/` | Sanitised device captures + NOTES.md per device + Bootstrap's workbook and the crossref | yes |
-| `notes/` | Working notes and memory files from the jump box sessions (start with `notes/MEMORY.md`) | yes |
+| `notes/` | Shared knowledge pool for both Claudes: one file per fact, index in `notes/MEMORY.md`, request log in `notes/handoff.md` | yes |
+| `reports/` | Deliverables from either Claude: letters, research, plans, shopping lists; plain text, dated | yes |
 | `private/` | Raw captures with their git history (`configs-raw/`), ad-hoc outputs (`captures/`), `jb.env` | **never** |
 | `jumpbox-setup/.env` | Gateway credentials. Belongs on the box only; a local copy is ignored | **never** |
 
@@ -28,6 +29,16 @@ Secrets never go in the repo. The FortiGate config's `ENC` blobs are decryptable
 encryption is off), the ATP500 config carries a reversible PSK, the switches carry admin-password
 lines. `bin/sanitize.py import` replaces each with `<REDACTED:fingerprint>`; the pre-commit hook
 (`.githooks/pre-commit`) refuses anything that still looks like a secret.
+
+## Two Claudes, one pool of knowledge
+
+Claude Desktop is linked to this same folder and follows `CLAUDE-DESKTOP.md`: research, tenant
+and client management, Drive/Miro/Gmail lookups, writing. Claude Code does everything that
+touches the box, the gateways, the captures and git. Both read `notes/` and both write durable
+facts back there (one file per fact, indexed in `notes/MEMORY.md`), so neither harness's own
+memory is the record. Requests between the two go in `notes/handoff.md`; deliverables go in
+`reports/`. Claude Code: check `git status` at the start of a session, Desktop's edits are
+uncommitted until you commit them.
 
 ## How to do things
 
