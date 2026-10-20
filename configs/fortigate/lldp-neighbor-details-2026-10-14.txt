@@ -1,0 +1,4 @@
+diagnose lldprx neighbor details
+Unknown action 0
+
+FW-120G-01 $ 

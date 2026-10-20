@@ -1,0 +1,13 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId             PortId         PortDesc                    SystemName  
+  ---------  -----------------  -----------------  ---------------  ----------------------------  
+          1  0c:7b:c8:ba:31:f3                  0  internet port 0  Compost Creative - appliance  
+          3  d4:1a:d1:48:44:41                  1              lan                   NWA1123ACv3  
+          5  f4:4d:5c:fe:13:4a                  1              lan                         CW304  
+         10  ec:3e:b3:4f:78:ee                  1              lan                     CW307WIFI  
+         13  d4:1a:d1:49:26:02                  1              lan                     CW302WIFI  
+         17  d4:1a:d1:48:44:38                  1              lan                      CW301WIF  
+         22  b4:fb:e4:c6:76:0c  b4:fb:e4:c6:76:0c             eth0                      Studio11  
+         25  bc:cf:4f:bb:e6:85                 27           Port27                        GS1920  

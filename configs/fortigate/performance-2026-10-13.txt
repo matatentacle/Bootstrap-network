@@ -1,0 +1,26 @@
+get system performance status
+CPU states: 4% user 0% system 0% nice 96% idle 0% iowait 0% irq 0% softirq
+CPU0 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU1 states: 15% user 0% system 0% nice 85% idle 0% iowait 0% irq 0% softirq
+CPU2 states: 2% user 0% system 0% nice 98% idle 0% iowait 0% irq 0% softirq
+CPU3 states: 1% user 0% system 0% nice 99% idle 0% iowait 0% irq 0% softirq
+CPU4 states: 3% user 3% system 0% nice 94% idle 0% iowait 0% irq 0% softirq
+CPU5 states: 3% user 3% system 0% nice 94% idle 0% iowait 0% irq 0% softirq
+CPU6 states: 0% user 0% system 0% nice 100% idle 0% iowait 0% irq 0% softirq
+CPU7 states: 8% user 0% system 0% nice 92% idle 0% iowait 0% irq 0% softirq
+Memory: 7666096k total, 2084564k used (27.2%), 4989500k free (65.1%), 592032k freeable (7.7%)
+Average network usage: 806 / 348 kbps in 1 minute, 3435 / 1725 kbps in 10 minutes, 5920 / 4608 kbps in 30 minutes
+Maximal network usage: 1881 / 901 kbps in 1 minute, 158745 / 52972 kbps in 10 minutes, 295441 / 295071 kbps in 30 minutes
+Average sessions: 2287 sessions in 1 minute, 1827 sessions in 10 minutes, 2122 sessions in 30 minutes
+Maximal sessions: 2591 sessions in 1 minute, 2594 sessions in 10 minutes, 2839 sessions in 30 minutes
+Average session setup rate: 4 sessions per second in last 1 minute, 10 sessions per second in last 10 minutes, 10 sessions per second in last 30 minutes
+Maximal session setup rate: 21 sessions per second in last 1 minute, 89 sessions per second in last 10 minutes, 127 sessions per second in last 30 minutes
+Average NPU sessions: 1338 sessions in last 1 minute, 1074 sessions in last 10 minutes, 1249 sessions in last 30 minutes
+          Maximal NPU sessions: 1419 sessions in last 1 minute, 1419 sessions in last 10 minutes, 1571 sessions in last 30 minutes
+Average nTurbo sessions: 1333 sessions in last 1 minute, 1070 sessions in last 10 minutes, 1245 sessions in last 30 minutes
+Maximal nTurbo sessions: 1414 sessions in last 1 minute, 1414 sessions in last 10 minutes, 1567 sessions in last 30 minutes
+Virus caught: 0 total in 1 minute
+IPS attacks blocked: 0 total in 1 minute
+Uptime: 21 days,  3 hours,  10 minutes
+
+FW-120G-01 $ 

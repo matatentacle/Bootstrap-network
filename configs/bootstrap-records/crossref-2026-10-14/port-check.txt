@@ -1,0 +1,100 @@
+Config sheet switch/port claims vs switch running-configs (14 Oct 2026)
+OK               Bootstrap Reception                Reception              SW01       ports=3              vlan=10         p3=untag10+tag1 
+OK               Bootstrap Office - PHG3-5          PHG3-5                 SW02       ports=4              vlan=10         p4=untag10+tag1,40,64 
+OK               Bootstrap Office - PH3.9           PH3.9                  SW13       ports=18/20          vlan=10         p18=untag10+tag1 p20=untag10+tag1 
+OK               Bootstrap CoLab space              FHG1                   SW07       ports=12             vlan=155        p12=untag155+tag1 
+OK               Bootstrap Newton Dunbar            PH3.2                  SW12       ports=1              vlan=10         p1=untag10+tag1 
+MISMATCH         Bootstrap Quiet Room/ LAWA         PH2.12                 SW04       ports=13             vlan=10         p13=untag69 
+OK               40FT Brewery Taproom               Taproom                SW15       ports=2/3            vlan=17         p2=untag17+tag1 p3=untag17+tag1 
+PARTIAL          Tentacle (Jordan Copeland)         PH1.9A                 SW03       ports=2/3            vlan=14         p2=untag14+tag1 p3=untag1 
+MISMATCH         Curam                              FH2.11/12 (initial set SW06       ports=1              vlan=11         p1=untag154 
+PARTIAL          Curam                              PH2.3                  SW04       ports=11/12/14       vlan=152        p11=untag1 p12=untag152 p14=untag1 
+OK               Compost Creative                   CW308 / 309            SW08       ports=1              vlan=21         p1=untag21+tag1 
+OK               Arnie Productions LTD              CW209                  SW05       ports=1              vlan=18         p1=untag18 
+NO-VLAN-CLAIMED  YRS TRULY                          2.3                    SW04       ports=3              vlan=?          p3=untag69 
+OK               Fair Finance                       FH1.1                  SW07       ports=2/3/4/5/6/7/8/9 vlan=16         p2=untag16+tag1 p3=untag16+tag1 p4=untag16+tag1 p5=untag16+tag1 p6=untag16+tag1 p7=untag16+tag1 p8=untag16+tag1 p9=untag16+tag1 
+OK               JULIA BRENARD LTD                  UNIT 4                 SW03       ports=4              vlan=20         p4=untag20 
+NO-SWITCH        Pango Productions Ltd              PH3.16                            ports=?              vlan=?           [blank]
+OK               LICKERISH LTD                      PH2.2                  SW04       ports=5              vlan=24         p5=untag24 
+PORT-UNKNOWN     Sarah Dawes Limited                PH3.18                 SW01       ports=?              vlan=28          [blank]
+OK               Newcomer Wines Ltd                 FH2.13                 SW06       ports=2              vlan=35         p2=untag35+tag1 
+NO-SWITCH        Paper House Project                PH 1.7                 1.0        ports=?              vlan=29          [blank]
+NO-SWITCH        Studio Dera Limited                Studio 310             1.0        ports=?              vlan=?           [blank]
+OK               Sistah Space                       6-8 3rd floor > moved  SW03       ports=5/15           vlan=34         p5=untag34 p15=untag34 
+OK               Sistah Space                       PHG1 (shop)            SW01       ports=4              vlan=34         p4=untag34+tag1 
+NO-SWITCH        Atelier Baulier / Neighbourhood st CW301                  1.0        ports=?              vlan=36          [blank]
+OK               Wazzo Ltd.                         CW203                  SW05       ports=5              vlan=37         p5=untag37 
+OK               PINZUTU FILMS                      CW210                  SW05       ports=14             vlan=38         p14=untag38+tag1 
+OK               PINZUTU FILMS                      CW201                  SW05       ports=9              vlan=38         p9=untag38+tag1 
+NO-SWITCH        Office S&M                         PH2.1                             ports=?              vlan=?           [blank]
+OK               Acme by 40ft                       PH1.3 > moved to basem SW15       ports=1/6            vlan=46         p1=untag46+tag1 p6=untag46+tag1 [date-mangled "2025-06-01 00:00:00" (was probably 1/6)]
+OK               Studio Archetype Ltd.              CW204                  SW05       ports=13             vlan=49         p13=untag49+tag1 
+OK               Adam Aftanas Studio Ltd            CW305                  SW08       ports=7              vlan=50         p7=untag50+tag1 
+OK               VBQ Limited                        C304                   SW08       ports=5              vlan=44         p5=untag44+tag1 
+OK               Full circle Psy/ Mark Kinnally     PH1.2                  SW03       ports=10             vlan=51         p10=untag51 
+NO-SWITCH        Snafu Pictures                     FH1.3                             ports=?              vlan=?           [blank]
+NO-SWITCH        Snafu Pictures                     PH2.11                            ports=?              vlan=?           [blank]
+OK               Field Vision Bars                  FH3                    SW09       ports=4/6            vlan=48         p4=untag48+tag1 p6=untag48+tag1 
+NO-SWITCH        Field Vision Bars                  Rooftop                           ports=?              vlan=48          [blank]
+OK               openDemocracy                      PH2.7, 2.8, 2.9, 2.10  SW12       ports=9              vlan=56         p9=untag56+tag1,19 
+NO-SWITCH        Stark Casting                      PH3.5                             ports=?              vlan=?           [blank]
+OK               Nordicity Limited                  PH1.1                  SW03       ports=1              vlan=52         p1=untag52 
+NO-VLAN-CLAIMED  CW208                              CW208                  SW05       ports=6              vlan=?          p6=untag10+tag1 
+NO-VLAN-CLAIMED  Full Time Hobby                    CW207                  SW05       ports=15             vlan=?          p15=untag1+trunk 
+MISMATCH         Full Time Hobby                    FHG2 (Bootstrap old of SW02       ports=2              vlan=59         p2=untag1+tag10,27,40,64,65,71 
+NO-SWITCH        Now Youth/ Ancuta Sarca (vacated)  CW311                             ports=?              vlan=?           [blank]
+OK               Mediorite                          PH1.7                  SW03       ports=7              vlan=58         p7=untag58+tag1,161 
+PORT-UNKNOWN     Forward Slash                      PH2.9/10               SW04       ports=?              vlan=?           [blank]
+MISMATCH         Balaam Murphy                      CW208                  SW05       ports=6              vlan=60         p6=untag10+tag1 
+OK               Balaam Murphy                      CW301                  SW08       ports=17             vlan=55         p17=untag55+tag1 
+MISMATCH         Joanna Rzepczynska                 CW307                  SW08       ports=10             vlan=63         p10=untag41+tag1 
+OK               Andy McDonnell                     PHB9                   SW15       ports=4              vlan=66         p4=untag66+tag1 
+MISMATCH         RapidEyeMovers Ltd                 PH2.3                  SW04       ports=11/12/14       vlan=68         p11=untag1 p12=untag152 p14=untag1 
+NO-SWITCH        Silverfish Productions Limited     PH1.2                             ports=?              vlan=67          [blank]
+MISMATCH         Silverfish Productions Limited     FHG2 (Bootstrap old of SW02       ports=2              vlan=67         p2=untag1+tag10,27,40,64,65,71 
+OK               Silverfish Productions Limited     PH2.1                  SW04       ports=16             vlan=67         p16=untag67+tag1 
+NO-SWITCH        Projects Office                    303.0                             ports=?              vlan=?           [blank]
+MISMATCH         Leaders Unlocked                   Unit 201               SW05       ports=9/10           vlan=70         p9=untag38+tag1 p10=untag1 [date-mangled "2025-10-09 00:00:00" (was probably 9/10)]
+PARTIAL          The Dusty Knuckle                  The Dusty Knuckle Cafe SW02       ports=4/5            vlan=64         p4=untag10+tag1,40,64 p5=untag64+tag1 [date-mangled "2026-05-04 00:00:00" (was probably 4/5)]
+OK               Cafe OTO                           cafe                   SW02       ports=7              vlan=71         p7=untag71+tag1 
+PARTIAL          Latin American Women's Aid         Suite 11, suite 9, sui SW04       ports=1/7            vlan=69         p1=untag1 p7=untag69 [date-mangled "2025-07-01 00:00:00" (was probably 1/7)]
+OK               Ashford & Sons Ltd                 14.0                   SW13       ports=8              vlan=72         p8=untag72+tag1,38 
+MISMATCH         MAKE                               CW 302                 SW08       ports=11             vlan=73         p11=untag54+tag1 
+OK               Wisemart Solicitors                Unit 8-9, Unit 6       SW03       ports=11             vlan=74         p11=untag74 
+NO-VLAN-CLAIMED  Inside Job Productions             202.0                  SW05       ports=12             vlan=?          p12=untag70+tag1,38 
+OK               Thames Reach                       303, 310 & 311         SW08       ports=3/4/11/12/15/16/18/19/20/21/22/23/24 vlan=54/39/12   p3=untag54+tag1 p4=untag12+tag1 p11=untag54+tag1 p12=untag54+tag1 p15=untag39+tag1 p16=untag39+tag1 p18=untag12+tag1 p19=untag12+tag1 p20=untag12+tag1 p21=untag12+tag1 p22=untag12+tag1 p23=untag12+tag1 p24=untag54+tag1 [free text]
+OK               Bootstrap Office CW205 (prv Felici CW208                  SW05       ports=3/4/6          vlan=10         p3=untag10+tag1 p4=untag10+tag1 p6=untag10+tag1 
+MISMATCH         Felicity Kay                       CW301                  SW08       ports=17             vlan=15         p17=untag55+tag1 
+MISMATCH         CAKE Architecture                  PH3.12 > MOVED TO PH3. SW12       ports=9              vlan=19         p9=untag56+tag1,19 
+MISMATCH         CAKE Architecture                  PH3.12 > MOVED TO PH3. SW13       ports=4              vlan=153        p4=untag156+tag1 
+OK               CAKE Architecture                  PH3.6-8                SW12       ports=3/4            vlan=153        p3=untag153 p4=untag153 
+OK               Live Through This / OUTpatients    CW302                  SW08       ports=13             vlan=26         p13=untag26+tag1 
+MISMATCH         Snafu Pictures                     PH2.5 PH2.4            SW04       ports=3/4            vlan=45         p3=untag69 p4=untag1 
+OK               10pm Studio ltd                    PH3.16                 SW13       ports=7              vlan=32         p7=untag32+tag1,38 
+OK               The Dusty Knuckle                  FH1.3                  SW09       ports=1              vlan=64         p1=untag64+tag1 
+OK               DGN Studio LTD                     PH1.15                 SW03       ports=17             vlan=27         p17=untag27 
+OK               Bridge the gap ending digital pove PH3.5 > PH2.4-5        SW12       ports=13             vlan=53         p13=untag53+tag1 
+OK               Civil Society Consulting CIC       PH1.17                 SW03       ports=12             vlan=73         p12=untag73 
+MISMATCH         Arbor Windows Limited              206.0                  SW05       ports=14             vlan=60         p14=untag38+tag1 
+MISMATCH         African Community School           PHG2                   SW01       ports=16             vlan=40         p16=untag42+tag1 
+MISMATCH         African Community School           PHG2                   SW02       ports=4              vlan=40         p4=untag10+tag1,40,64 
+OK               Teim Accountants                   PH1.13                 SW03       ports=14             vlan=62         p14=untag62 
+MISMATCH         Volunteer Centre Hackney           CW207                  SW05       ports=8              vlan=1          p8=untag150 
+OK               Raze Collective/ Eat Club          CW307M                 SW08       ports=10             vlan=41         p10=untag41+tag1 
+OK               Urban Good CIC                     FH2.13                 SW06       ports=6              vlan=28         p6=untag28+tag1 
+OK               Oscar Deen Eyewear                 Oscar Deen Eyewear Roo SW04       ports=6              vlan=36         p6=untag36 
+OK               Abisoye Odugbesan                  CW202                  SW05       ports=12             vlan=70         p12=untag70+tag1,38 
+OK               Create London                      CW207                  SW05       ports=8              vlan=150        p8=untag150 
+OK               Reline London Ltd                  FH2.1 & 2.14           SW06       ports=3              vlan=151        p3=untag151 
+OK               kryshna.popat@gmail.com            3.10 B                 SW12       ports=1              vlan=10         p1=untag10+tag1 
+OK               angelaconnealy@btopenworld.com     Print House 3.10A      SW12       ports=1              vlan=10         p1=untag10+tag1 
+OK               henry@henryplayfoot.com            1.14                   SW03       ports=16             vlan=157        p16=untag157 
+OK               Harp-e                             PH3.17-18              SW13       ports=4              vlan=156        p4=untag156+tag1 
+OK               01-Profiles Ltd (Cal & Michaela -  FH2.11-12              SW06       ports=1              vlan=154        p1=untag154 
+OK               St Paul’s Waldorf School           PH2.13                 SW04       ports=8/10           vlan=159        p8=untag159 p10=untag159 [date-mangled "2026-10-08 00:00:00" (was probably 8/10)]
+OK               Fair Finance                       FH1.1                  SW06       ports=10/12          vlan=158        p10=untag158+tag1 p12=untag158+tag1 [date-mangled "2026-12-10 00:00:00" (was probably 10/12)]
+OK               Simon Campbell                     PH1.5                  SW03       ports=6              vlan=160        p6=untag160 
+OK               Ryan Oxley                         CW304                  SW08       ports=5              vlan=44         p5=untag44+tag1 
+OK               Bona Food                          PHG2                   SW01       ports=16             vlan=42         p16=untag42+tag1 
+MISMATCH         The Dusty Knuckle                  PHG5                   SW02       ports=4              vlan=64         p4=untag10+tag1,40,64 
+PORT-UNKNOWN     Print House Therapy                PH 3.10B               SW12       ports=?              vlan=13          [blank]

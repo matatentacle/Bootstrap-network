@@ -1,0 +1,41 @@
+get system status
+Version: FortiGate-120G v7.4.12,build2902,260505 (GA.M)
+First GA patch build date: 230509
+FortiCare Registration Level: Enforce
+Current Security Level: High
+Firmware Signature: certified
+Virus-DB: 93.00602(2025-01-28 08:26)
+Extended DB: 93.00602(2025-01-28 08:25)
+AV AI/ML Model: 4.00195(2025-01-28 08:45)
+IPS-DB: 30.00943(2025-01-25 01:22)
+IPS-ETDB: 0.00000(2001-01-01 00:00)
+APP-DB: 37.00306(2026-10-08 00:16)
+Proxy-IPS-DB: 6.00741(2015-12-01 02:30)
+Proxy-IPS-ETDB: 0.00000(2001-01-01 00:00)
+Proxy-APP-DB: 37.00306(2026-10-08 00:16)
+FMWP-DB: 26.00103(2026-10-09 17:28)
+IPS Malicious URL Database: 5.00307(2025-01-28 06:00)
+IoT-Detect: 0.00000(2022-08-17 17:31)
+OT-Detect-DB: 0.00000(2001-01-01 00:00)
+OT-Patch-DB: 0.00000(2001-01-01 00:00)
+OT-Threat-DB: 6.00741(2015-12-01 02:30)
+IPS-Engine: 7.00604(2026-04-13 22:25)
+Serial-Number: FG120GTK24015905
+BIOS version: 06000104
+System Part-Number: P28808-04
+          Log hard disk: Not available
+Hostname: FW-120G-01
+Private Encryption: Disable
+Operation Mode: NAT
+Current virtual domain: root
+Max number of virtual domains: 10
+Virtual domains status: 1 in NAT mode, 0 in TP mode
+Virtual domain configuration: disable
+FIPS-CC mode: disable
+Current HA mode: standalone
+Branch point: 2902
+Release Version Information: GA
+System time: Tue Oct 13 18:37:25 2026
+Last reboot reason: power cycle
+
+FW-120G-01 $ 

@@ -1,0 +1,26 @@
+Access ports carrying a tenant VLAN that no row of the config sheet claims (uplinks excluded)
+SW01 port 1   untagged VLAN 10   tagged 1,35
+SW01 port 6   untagged VLAN 10   tagged 1
+SW01 port 8   untagged VLAN 34   tagged 1
+SW01 port 11  untagged VLAN 101  tagged 1
+SW01 port 20  untagged VLAN 11   tagged 1
+SW01 port 22  untagged VLAN 10   tagged 1
+SW02 port 1   untagged VLAN 27   tagged 1
+SW02 port 6   untagged VLAN 65   tagged 1
+SW05 port 7   untagged VLAN 38   tagged -
+SW05 port 11  untagged VLAN 60   tagged -
+SW05 port 20  untagged VLAN 55   tagged 1
+SW06 port 4   untagged VLAN 64   tagged 1
+SW08 port 2   untagged VLAN 26   tagged 1
+SW08 port 6   untagged VLAN 50   tagged 1
+SW09 port 2   untagged VLAN 45   tagged 1
+SW09 port 3   untagged VLAN 48   tagged 1
+SW10 port 2   untagged VLAN 13   tagged 1
+SW11 port 2   untagged VLAN 14   tagged 1
+SW12 port 2   untagged VLAN 13   tagged 1
+SW12 port 5   untagged VLAN 153  tagged -
+SW12 port 6   untagged VLAN 153  tagged -
+SW12 port 20  untagged VLAN 48   tagged 1
+SW13 port 2   untagged VLAN 28   tagged 1
+SW13 port 3   untagged VLAN 29   tagged 1
+SW15 port 5   untagged VLAN 17   tagged 1

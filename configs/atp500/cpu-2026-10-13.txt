@@ -1,0 +1,4 @@
+show cpu status
+CPU utilization: 13 %
+CPU utilization for 1 min: 14 %
+CPU utilization for 5 min: 19 %

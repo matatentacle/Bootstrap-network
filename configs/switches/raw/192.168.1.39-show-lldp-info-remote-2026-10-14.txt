@@ -1,0 +1,15 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId             PortId  PortDesc             SystemName  
+  ---------  -----------------  -----------------  --------  ---------------------  
+          1  bc:cf:4f:2f:e1:e4                  1    UPLINK          NWA1123-AC-HD  
+          6      192.168.10.10  80:5e:c0:d5:c0:6f  WAN PORT               SIP-T46S  
+          9  78:18:ec:f2:6b:cb              port4                       FW-120G-01  
+         10  78:18:ec:f2:6b:cb              port3                       FW-120G-01  
+         16  ec:3e:b3:4f:78:f7                  1       lan                PHGShop  
+         23  bc:cf:4f:bb:e6:85                 23    Port23                 GS1920  
+         25  bc:cf:4f:bb:d8:b3                 25    Port25   PH3 Third Floor SW12  
+         26  bc:cf:4f:bb:c8:f4                 25    Port25  PH2 Second Floor SW04  
+         27  bc:cf:4f:bb:ca:16                 25    Port25   PH1 First Floor SW03  
+         28  bc:cf:4f:ce:00:92                  9     Port9                 GS1920  

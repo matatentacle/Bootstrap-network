@@ -1,0 +1,225 @@
+show running-config
+  Building configuration...
+
+  Current configuration: 
+
+; Product Name = GS1920-8HP
+; Firmware Version = V5.00(ABKZ.3) | 03/24/2026
+no service-control telnet 
+no service-control snmp 
+no remote-management 1 service telnet  
+vlan 1 
+  name 1 
+  normal "" 
+  fixed 1-10 
+  forbidden "" 
+  untagged 7-10 
+  ip address default-management dhcp-bootp 
+exit 
+vlan 17 
+  name VLAN17 
+  normal 1,4,6 
+  fixed 2-3,5,7-10 
+  forbidden "" 
+  untagged 2-3,5 
+exit 
+vlan 46 
+  name VLAN46 
+  normal 2-5 
+  fixed 1,6-10 
+  forbidden "" 
+  untagged 1,6 
+exit 
+vlan 66 
+  name VLAN66 
+  normal 1-3,5-6 
+  fixed 4,7-10 
+  forbidden "" 
+  untagged 4 
+exit 
+classifier match-order manual 
+interface port-channel 1  
+  name Port1 
+  pvid 46 
+  ingress-check 
+  bandwidth-limit ingress 50000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 50000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 2  
+  name Port2 
+  pvid 17 
+  ingress-check 
+  bandwidth-limit ingress 100000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 100000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 3  
+  name Port3 
+  pvid 17 
+  ingress-check 
+  bandwidth-limit ingress 100000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 100000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 4  
+  name Port4 
+  pvid 66 
+  ingress-check 
+  bandwidth-limit ingress 30000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 30000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 5  
+  name Port5 
+  pvid 17 
+  ingress-check 
+  bandwidth-limit ingress 100000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 100000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 6  
+  name Port6 
+  pvid 46 
+  ingress-check 
+  bandwidth-limit ingress 50000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 50000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 7  
+  name Port7 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 8  
+  name Port8 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 9  
+  name Port9 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 10  
+  name Port10 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+spanning-tree 
+spanning-tree 1 
+spanning-tree 2 
+spanning-tree 3 
+spanning-tree 4 
+spanning-tree 5 
+spanning-tree 6 
+spanning-tree 7 
+spanning-tree 8 
+spanning-tree 9 
+spanning-tree 10 
+spanning-tree 1 edge-port 
+spanning-tree 2 edge-port 
+spanning-tree 3 edge-port 
+spanning-tree 4 edge-port 
+spanning-tree 5 edge-port 
+spanning-tree 6 edge-port 
+spanning-tree 7 edge-port 
+spanning-tree 8 edge-port 
+spanning-tree 9 edge-port 
+spanning-tree 10 edge-port 
+timesync server pool.ntp.org time.google.com 
+timesync ntp 
+storm-control 
+bandwidth-control 
+admin-password <REDACTED:f8327ade>
+aaa server key <REDACTED:bf86075c>
+rmon statistics etherstats 1 port-channel 1   
+rmon statistics etherstats 2 port-channel 2   
+rmon statistics etherstats 3 port-channel 3   
+rmon statistics etherstats 4 port-channel 4   
+rmon statistics etherstats 5 port-channel 5   
+rmon statistics etherstats 6 port-channel 6   
+rmon statistics etherstats 7 port-channel 7   
+rmon statistics etherstats 8 port-channel 8   
+rmon statistics etherstats 9 port-channel 9   
+rmon statistics etherstats 10 port-channel 10   
+pwr mode consumption 
+errdisable recovery 
+errdisable recovery cause loopguard 
+display user system snmp  
+display aaa authentication authorization server  
+cloud acl protected DeviceProtectedGatewayAclRule allow source-ip 192.168.1.1 mask-bits 32  
+cloud acl protected ServiceRuleDst0 allow ip-protocol udp destination-socket 123  
+cloud acl protected ServiceRuleDst1 allow ip-protocol tcp destination-ip 52.210.12.1 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst2 allow ip-protocol tcp destination-ip 52.48.115.44 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst3 allow ip-protocol tcp destination-ip 34.247.112.130 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst4 allow ip-protocol tcp destination-ip 63.35.107.114 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleSrc0 allow ip-protocol udp source-socket 123  
+cloud acl protected ServiceRuleSrc1 allow ip-protocol tcp source-ip 52.210.12.1 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc2 allow ip-protocol tcp source-ip 52.48.115.44 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc3 allow ip-protocol tcp source-ip 34.247.112.130 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc4 allow ip-protocol tcp source-ip 63.35.107.114 mask-bits 32 source-socket 6667  

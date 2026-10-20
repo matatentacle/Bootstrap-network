@@ -1,0 +1,18 @@
+show system-information
+
+Product Model		: GS1920-8HP
+System Name		: GS1920
+System Mode		: Standalone
+System Contact		: 
+System Location		: 
+System up Time		:  4090:30:50 (57c5dd86 ticks)
+Ethernet Address	: bc:cf:4f:ce:00:92
+Bootbase Version	: V1.00 | 04/12/2018
+ZyNOS F/W Version	: V5.00(ABKZ.3) | 03/24/2026
+Hardware Version	: V2.0
+Config Boot Image 	: 2
+Current Boot Image 	: 2
+Current Configuration 	: 1
+RomRasSize		: 5774820 
+Serial Number		: S202L26003584
+Register MAC Address	: bc:cf:4f:ce:00:92

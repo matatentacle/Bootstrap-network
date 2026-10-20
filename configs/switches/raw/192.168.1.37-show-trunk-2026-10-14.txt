@@ -1,0 +1,21 @@
+show trunk
+Group ID T1:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T2:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T3:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T4:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T5:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	

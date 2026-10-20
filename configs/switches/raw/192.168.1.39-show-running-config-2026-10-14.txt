@@ -1,0 +1,642 @@
+show running-config
+  Building configuration...
+
+  Current configuration: 
+
+; Product Name = GS1920-24HP
+; Firmware Version = V5.00(ABMI.3) | 03/24/2026
+no service-control telnet 
+no service-control snmp 
+no remote-management 1 service telnet  
+vlan 1 
+  name 1 
+  normal "" 
+  fixed 1-28 
+  forbidden "" 
+  untagged 2,5,7,9-10,12-15,17-19,21,23-28 
+  ip address default-management dhcp-bootp 
+exit 
+vlan 10 
+  name VLAN10 
+  normal 4,8-11,16,20,24 
+  fixed 1-3,5-7,12-15,17-19,21-23,25-28 
+  forbidden "" 
+  untagged 1,3,6,22 
+exit 
+vlan 11 
+  name VLAN11 
+  normal 1,3-4,6,8-11,16,22,24 
+  fixed 2,5,7,12-15,17-21,23,25-28 
+  forbidden "" 
+  untagged 20 
+exit 
+vlan 34 
+  name VLAN34 
+  normal 1,3,6,9-11,16,20,22,24 
+  fixed 2,4-5,7-8,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged 4,8 
+exit 
+vlan 35 
+  name VLAN35 
+  normal 3-4,6,8-11,16,20,22,24 
+  fixed 1-2,5,7,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 42 
+  name VLAN42 
+  normal 1,3-4,6,8-11,20,22,24 
+  fixed 2,5,7,12-19,21,23,25-28 
+  forbidden "" 
+  untagged 16 
+exit 
+vlan 101 
+  name VLAN101 
+  normal 1,3-4,6,8-10,16,20,22,24 
+  fixed 2,5,7,11-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged 11 
+exit 
+vlan 150 
+  name VLAN150 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 151 
+  name VLAN151 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 152 
+  name VLAN152 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 153 
+  name VLAN153 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 154 
+  name VLAN154 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 155 
+  name VLAN155 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 156 
+  name VLAN156 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 157 
+  name VLAN157 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 158 
+  name VLAN158 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 159 
+  name VLAN159 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 160 
+  name VLAN160 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 161 
+  name VLAN161 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 162 
+  name VLAN162 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 163 
+  name VLAN163 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 164 
+  name VLAN164 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 165 
+  name VLAN165 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 166 
+  name VLAN166 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 167 
+  name VLAN167 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 168 
+  name VLAN168 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 169 
+  name VLAN169 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 170 
+  name VLAN170 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 171 
+  name VLAN171 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 172 
+  name VLAN172 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 173 
+  name VLAN173 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 174 
+  name VLAN174 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+vlan 175 
+  name VLAN175 
+  normal 1,3-4,6,8,11,16,20,22,24 
+  fixed 2,5,7,9-10,12-15,17-19,21,23,25-28 
+  forbidden "" 
+  untagged "" 
+exit 
+classifier match-order manual 
+interface port-channel 1  
+  name Port1 
+  pvid 10 
+  ingress-check 
+  bandwidth-limit ingress 50000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 50000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 2  
+  name Port2 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 3  
+  name Port3 
+  pvid 10 
+  ingress-check 
+  bandwidth-limit ingress 50000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 50000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 4  
+  name Port4 
+  pvid 34 
+  ingress-check 
+  bandwidth-limit ingress 30000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 30000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 5  
+  name Port5 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 6  
+  name Port6 
+  pvid 10 
+  ingress-check 
+  bandwidth-limit ingress 50000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 50000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 7  
+  name Port7 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 8  
+  name Port8 
+  pvid 34 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 9  
+  name Port9 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 10  
+  name Port10 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 11  
+  name Port11 
+  pvid 101 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 12  
+  name Port12 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 13  
+  name Port13 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 14  
+  name Port14 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 15  
+  name Port15 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 16  
+  name Port16 
+  pvid 42 
+  ingress-check 
+  bandwidth-limit ingress 30000 
+  bandwidth-limit ingress 
+  bandwidth-limit egress 30000 
+  bandwidth-limit egress 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 17  
+  name Port17 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 18  
+  name Port18 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 19  
+  name Port19 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 20  
+  name Port20 
+  pvid 11 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 21  
+  name Port21 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 22  
+  name Port22 
+  pvid 10 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 23  
+  name Port23 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 
+  broadcast-limit 100 
+  multicast-limit 
+  multicast-limit 100 
+  dlf-limit 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 24  
+  name Port24 
+  ingress-check 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 25  
+  name Port25 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 26  
+  name Port26 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 27  
+  name Port27 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+interface port-channel 28  
+  name Port28 
+  ingress-check 
+  vlan-trunking 
+  broadcast-limit 100 
+  multicast-limit 100 
+  dlf-limit 100 
+  wrr 
+exit 
+lacp 
+trunk T1 
+trunk T1 lacp 
+trunk T1 interface 9 
+trunk T1 interface 10 
+spanning-tree 
+spanning-tree 1 
+spanning-tree 2 
+spanning-tree 3 
+spanning-tree 4 
+spanning-tree 5 
+spanning-tree 6 
+spanning-tree 7 
+spanning-tree 8 
+spanning-tree 9 
+spanning-tree 10 
+spanning-tree 11 
+spanning-tree 12 
+spanning-tree 13 
+spanning-tree 14 
+spanning-tree 15 
+spanning-tree 16 
+spanning-tree 17 
+spanning-tree 18 
+spanning-tree 19 
+spanning-tree 20 
+spanning-tree 21 
+spanning-tree 22 
+spanning-tree 23 
+spanning-tree 24 
+spanning-tree 25 
+spanning-tree 26 
+spanning-tree 27 
+spanning-tree 28 
+spanning-tree 1 edge-port 
+spanning-tree 2 edge-port 
+spanning-tree 3 edge-port 
+spanning-tree 4 edge-port 
+spanning-tree 5 edge-port 
+spanning-tree 6 edge-port 
+spanning-tree 7 edge-port 
+spanning-tree 8 edge-port 
+spanning-tree 9 edge-port 
+spanning-tree 10 edge-port 
+spanning-tree 11 edge-port 
+spanning-tree 12 edge-port 
+spanning-tree 13 edge-port 
+spanning-tree 14 edge-port 
+spanning-tree 15 edge-port 
+spanning-tree 16 edge-port 
+spanning-tree 17 edge-port 
+spanning-tree 18 edge-port 
+spanning-tree 19 edge-port 
+spanning-tree 20 edge-port 
+spanning-tree 21 edge-port 
+spanning-tree 22 edge-port 
+spanning-tree 23 edge-port 
+spanning-tree 24 edge-port 
+spanning-tree 25 edge-port 
+spanning-tree 26 edge-port 
+spanning-tree 27 edge-port 
+spanning-tree 28 edge-port 
+timesync server time.google.com pool.ntp.org 
+timesync ntp 
+storm-control 
+bandwidth-control 
+admin-password <REDACTED:2a8fcf3d>
+aaa server key <REDACTED:bf86075c>
+rmon statistics etherstats 1 port-channel 1   
+rmon statistics etherstats 2 port-channel 2   
+rmon statistics etherstats 3 port-channel 3   
+rmon statistics etherstats 4 port-channel 4   
+rmon statistics etherstats 5 port-channel 5   
+rmon statistics etherstats 6 port-channel 6   
+rmon statistics etherstats 7 port-channel 7   
+rmon statistics etherstats 8 port-channel 8   
+rmon statistics etherstats 9 port-channel 9   
+rmon statistics etherstats 10 port-channel 10   
+rmon statistics etherstats 11 port-channel 11   
+rmon statistics etherstats 12 port-channel 12   
+rmon statistics etherstats 13 port-channel 13   
+rmon statistics etherstats 14 port-channel 14   
+rmon statistics etherstats 15 port-channel 15   
+rmon statistics etherstats 16 port-channel 16   
+rmon statistics etherstats 17 port-channel 17   
+rmon statistics etherstats 18 port-channel 18   
+rmon statistics etherstats 19 port-channel 19   
+rmon statistics etherstats 20 port-channel 20   
+rmon statistics etherstats 21 port-channel 21   
+rmon statistics etherstats 22 port-channel 22   
+rmon statistics etherstats 23 port-channel 23   
+rmon statistics etherstats 24 port-channel 24   
+rmon statistics etherstats 25 port-channel 25   
+rmon statistics etherstats 26 port-channel 26   
+rmon statistics etherstats 27 port-channel 27   
+rmon statistics etherstats 28 port-channel 28   
+pwr mode consumption 
+errdisable recovery 
+errdisable recovery cause loopguard 
+display user system snmp  
+display aaa authentication authorization server  
+cloud acl protected DeviceProtectedGatewayAclRule allow source-ip 192.168.1.1 mask-bits 32  
+cloud acl protected ServiceRuleDst0 allow ip-protocol udp destination-socket 123  
+cloud acl protected ServiceRuleDst1 allow ip-protocol tcp destination-ip 52.210.12.1 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst2 allow ip-protocol tcp destination-ip 52.48.115.44 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst3 allow ip-protocol tcp destination-ip 34.247.112.130 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleDst4 allow ip-protocol tcp destination-ip 63.35.107.114 mask-bits 32 destination-socket 6667  
+cloud acl protected ServiceRuleSrc0 allow ip-protocol udp source-socket 123  
+cloud acl protected ServiceRuleSrc1 allow ip-protocol tcp source-ip 52.210.12.1 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc2 allow ip-protocol tcp source-ip 52.48.115.44 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc3 allow ip-protocol tcp source-ip 34.247.112.130 mask-bits 32 source-socket 6667  
+cloud acl protected ServiceRuleSrc4 allow ip-protocol tcp source-ip 63.35.107.114 mask-bits 32 source-socket 6667  

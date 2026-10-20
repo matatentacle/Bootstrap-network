@@ -1,0 +1,19 @@
+
+FORTIGATE VLANS,,,secondary Subnet (193.221.131.32/255.255.255.224).
+Vorboss lease line,,,193.221.131.32 - 193.221.131.63
+Public IP:,193.221.132.138,,VLAN from 150-160 set up,,161 was set up by Asim for FF on NAT - not needed
+VLANs 150-160
+
+Number,Status,VLAN,VLAN Name,LAN No.,IP address,BANDWIDTH,CLIENT
+1.0,Active,150.0,VLAN150,,,100.0,CW207 - Create London
+2.0,Active,151.0,VLAN151,,,60.0,FH2.1 - ReLine
+3.0,Active,152.0,VLAN152,,,250.0,PH2.3 - Curamcare
+4.0,Active,153.0,VLAN153,,,250.0,PH3.6-8 - Cake Architecture,to bill
+5.0,Active,154.0,VLAN154,,,60.0,FH2.11 - 01-Profiles Ltd/ Gunga
+6.0,Active,155.0,VLAN155,,,250.0,FHG1 - Colab
+7.0,Active,156.0,VLAN156,,,30.0,PH3.17-18A - Harp-E
+8.0,Active,157.0,VLAN157,,,30.0,PH1.14 - Henry Playfoot
+9.0,Active,158.0,VLAN158,,,250.0,Fair Finance,to bill
+10.0,Active,159.0,VLAN159,,,30.0,St Paul's Waldorf School,"was on 158 without being recorded, so was given to Fair Finance"
+11.0,Active,160.0,VLAN160,,,-,Simon Campbell,not charged
+11.0,Active,161.0,VLAN161,,,500.0,Mediorite

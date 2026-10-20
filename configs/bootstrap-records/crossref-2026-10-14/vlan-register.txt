@@ -1,0 +1,288 @@
+VLAN register: sheet (7 Oct 2026) vs devices (13/14 Oct 2026)
+VLAN 1    -         sheet=-                                               bw=-        dev=                                    leases=    arp=0   ports=-
+          sheet tenants: Volunteer Centre Hackney [CW207] SW05:8.0
+          >> NOT ON EITHER GATEWAY
+VLAN 10   ATP500    sheet=Active       Vlan10_BootStrap                   bw=100.0    dev=Vlan10_BootStrap               up   leases=92  arp=23  ports=SW01:p1, SW01:p3, SW01:p6, SW01:p22, SW02:p4, SW05:p3, SW05:p4, SW05:p6, SW12:p1, SW13:p18, SW13:p20
+          rule: Vlan_10_Bootstrap down=97M up=97M
+          SNAT: 157.231.128.130
+          sheet tenants: Bootstrap Reception [Reception] SW01:3 | Bootstrap Office - PHG3-5 [PHG3-5] SW02:4 | Bootstrap Office - PH3.9 [PH3.9] SW13:18/20 | Bootstrap Newton Dunbar [PH3.2] SW12:1 | Bootstrap Quiet Room/ LAWA [PH2.12] SW04:13 | Bootstrap Office CW205 (prv Felicity Kay) [CW208] SW05:6 / 3/4 | kryshna.popat@gmail.com [3.10 B] SW12:1.0 | angelaconnealy@btopenworld.com [Print House 3.10A] SW12:1.0
+VLAN 11   ATP500    sheet=Inactive     Vlan11_Curam                       bw=0.0      dev=Vlan11_Curam                   up   leases=0   arp=0   ports=SW01:p20
+          rule: Vlan_11_Curam down=97M up=97M
+          SNAT: 157.231.128.131
+          sheet tenants: Curam [FH2.11/12 (initial setup PHG2)] SW06:1
+          >> SHEET INACTIVE BUT SWITCH PORTS STILL ASSIGNED; device SNATs to 157.231.128.131, sheet public IP column blank
+VLAN 12   ATP500    sheet=Inactive     Vlan12_bars                        bw=100.0    dev=Vlan12_bars                    DOWN leases=0   arp=0   ports=SW08:p4, SW08:p18, SW08:p19, SW08:p20, SW08:p21, SW08:p22, SW08:p23
+          rule: Vlan_12_Bars down=78M up=19M
+          sheet tenants: Thames Reach [303, 310 & 311] SW08:Switch Port 24 - patched to CW311 wall port 165 / Switch Port 12 - patched to CW303 wall port 154 / Switch Port 4 - LAN patched to CW310 port 114 / Switch Port 3 - AP patched to CW310 port 113 / Switch Port 11,15,16,18,19,20,21,22,23  - also assigned to Thames Reach VLANS /
+          >> SHEET INACTIVE BUT SWITCH PORTS STILL ASSIGNED
+VLAN 13   ATP500    sheet=MAKE SHARED  Vlan13_BootstrapCR                 bw=100.0    dev=Vlan13_BootstrapCR             up   leases=0   arp=0   ports=SW10:p2, SW12:p2
+          rule: Vlan_13_BootstrapCR down=39M up=9M
+          sheet tenants: Print House Therapy [PH 3.10B] SW12:
+VLAN 14   ATP500    sheet=Active       Vlan14_Tenticle                    bw=100.0    dev=Vlan14_Tenticle                up   leases=1   arp=1   ports=SW03:p2, SW11:p2
+          rule: Vlan_14_Tenticle down=100M up=100M
+          SNAT: 157.231.128.134
+          sheet tenants: Tentacle (Jordan Copeland) [PH1.9A] SW03:02/03
+          >> device SNATs to 157.231.128.134, sheet public IP column blank
+VLAN 15   ATP500    sheet=Active       Vlan15_InsideJob                   bw=60.0     dev=Vlan15_InsideJob               up   leases=0   arp=0   ports=-
+          rule: Vlan_15_InsideJob down=60M up=60M
+          sheet tenants: Felicity Kay [CW301] SW08:17.0
+          >> SHEET ACTIVE, NO HOSTS SEEN; no access port found on the 14 read switches
+VLAN 16   ATP500    sheet=Active       Vlan16_Fair_Finance                bw=100.0    dev=Vlan16_Fair_Finance            up   leases=2   arp=1   ports=SW07:p2, SW07:p3, SW07:p4, SW07:p5, SW07:p6, SW07:p7, SW07:p8, SW07:p9
+          rule: Vlan_16_Fair_Finance down=100M up=100M
+          sheet tenants: Fair Finance [FH1.1] SW07:02,03,04,05,06,07,08,09
+VLAN 17   ATP500    sheet=Active       Vlan17_40tf_Brewery                bw=100.0    dev=Vlan17_40tf_Brewery            up   leases=27  arp=18  ports=SW15:p2, SW15:p3, SW15:p5
+          rule: Vlan_17_40ft_Brewery down=50M up=50M
+          sheet tenants: 40FT Brewery Taproom [Taproom] SW15:02/03
+VLAN 18   ATP500    sheet=Active       Vlan18_Arnie_Productions           bw=50.0     dev=Vlan18_Arnie_Productions       up   leases=8   arp=4   ports=SW05:p1
+          rule: Vlan_18_Arnie_productions down=50M up=50M
+          sheet tenants: Arnie Productions LTD [CW209] SW05:01
+VLAN 19   ATP500    sheet=Inactive     Vlan19_Cake_Architecture_Ltd       bw=0.0      dev=Vlan19_Cake_Architecture_Ltd   up   leases=0   arp=0   ports=-
+          rule: Vlan19_Cake_Architecture down=29M up=29M
+          sheet tenants: CAKE Architecture [PH3.12 > MOVED TO PH3.17/18] SW12:9.0
+VLAN 20   ATP500    sheet=Active       Vlan20_Julia_Brenard               bw=100.0    dev=Vlan20_Julia_Brenard           up   leases=9   arp=3   ports=SW03:p4
+          rule: Vlan20_Julia_Brenard down=250M up=250M
+          sheet tenants: JULIA BRENARD LTD [UNIT 4] SW03:04
+VLAN 21   ATP500    sheet=Active       Vlan21_Compost_Creative            bw=100.0    dev=Vlan21_Compost_Creative        up   leases=1   arp=1   ports=SW08:p1
+          rule: Vlan21_Compost_Creative down=200M up=200M
+          sheet tenants: Compost Creative [CW308 / 309] SW08:1
+VLAN 22   ATP500    sheet=Inactive     Vlan22_OfficeS_M                   bw=-        dev=Vlan22_OfficeS_M               up   leases=0   arp=0   ports=-
+          rule: Vlan22_OfficeSM down=20M up=20M
+VLAN 23   ATP500    sheet=Inactive     Vlan23_Wine_Bar_PHB8               bw=-        dev=Vlan23_Wine_Bar_PHB8           up   leases=0   arp=0   ports=-
+          rule: Vlan23_WineBarPHB8 down=100M up=100M
+VLAN 24   ATP500    sheet=Active       Vlan24_Lickerish                   bw=60.0     dev=Vlan24_Lickerish               up   leases=1   arp=1   ports=SW04:p5
+          rule: Vlan24_ Lickerish down=60M up=60M
+          sheet tenants: LICKERISH LTD [PH2.2] SW04:5.0
+VLAN 25   ATP500    sheet=Inactive     Vlan25_Pango                       bw=-        dev=Vlan25_Pango                   up   leases=0   arp=0   ports=-
+          rule: Vlan25_Pngo down=30M up=30M
+VLAN 26   ATP500    sheet=Active       Vlan26_LiveThroughThis             bw=30.0     dev=Vlan26_LiveThroughThis         up   leases=12  arp=8   ports=SW08:p2, SW08:p13
+          rule: Vlan26_AncutaSarca down=30M up=30M
+          sheet tenants: Live Through This / OUTpatients [CW302] SW08:13.0
+VLAN 27   ATP500    sheet=Active       Vlan27_DGN_Studio                  bw=30.0     dev=Vlan27_DGN_Studio              up   leases=7   arp=1   ports=SW02:p1, SW03:p17
+          rule: Vlan27_DUPEVFX down=500M up=500M
+          SNAT: 157.231.128.132
+          sheet tenants: DGN Studio LTD [PH1.15] SW03:17.0
+          >> device SNATs to 157.231.128.132, sheet public IP column blank
+VLAN 28   ATP500    sheet=Active       Vlan28_SarahDawes                  bw=30.0     dev=Vlan28_SarahDawes              up   leases=11  arp=8   ports=SW06:p6, SW13:p2
+          rule: vlan28_sarahdawes down=100M up=100M
+          sheet tenants: Sarah Dawes Limited [PH3.18] SW01: | Urban Good CIC [FH2.13] SW06:6.0
+VLAN 29   ATP500    sheet=Inactive     Vlan29_PaperHouseProjects          bw=-        dev=Vlan29_PaperHouseProjects      up   leases=0   arp=0   ports=SW13:p3
+          rule: Vlan29_paperhouseproject down=60M up=60M
+          sheet tenants: Paper House Project [PH 1.7] :
+          >> SHEET INACTIVE BUT SWITCH PORTS STILL ASSIGNED
+VLAN 30   ATP500    sheet=Inactive     Vlan30_Colourworks                 bw=-        dev=Vlan30_Colourworks             up   leases=0   arp=0   ports=-
+VLAN 31   ATP500    sheet=-            vlan31_Lickerish                   bw=-        dev=vlan31_Lickerish               up   leases=0   arp=0   ports=-
+VLAN 32   ATP500    sheet=Active       Vlan32_10pm_Studio                 bw=30.0     dev=Vlan32_10pm_Studio             up   leases=3   arp=2   ports=SW13:p7
+          rule: Vlan32_10pm_studio down=30M up=30M
+          sheet tenants: 10pm Studio ltd [PH3.16] SW13:7.0
+VLAN 33   ATP500    sheet=Inactive     Vlan33_HaberdasheryLondon          bw=-        dev=Vlan33_HaberdasheryLondon      up   leases=0   arp=0   ports=-
+          rule: Vlan33_Haberdashery down=100M up=100M
+          SNAT: 157.231.128.133
+          >> device SNATs to 157.231.128.133, sheet public IP column blank
+VLAN 34   ATP500    sheet=Active       Vlan34_SistahSpace                 bw=30.0     dev=Vlan34_SistahSpace             up   leases=6   arp=3   ports=SW01:p4, SW01:p8, SW03:p5, SW03:p15
+          rule: Vlan34_SistahSpace down=30M up=30M
+          sheet tenants: Sistah Space [6-8 3rd floor > moved to PH1.3] SW03:5/15 | Sistah Space [PHG1 (shop)] SW01:4.0
+VLAN 35   ATP500    sheet=Active       Vlan35_NewcomerWines               bw=60.0     dev=Vlan35_NewcomerWines           up   leases=10  arp=9   ports=SW06:p2
+          rule: Vlan35_NewcomerWines down=60M up=60M
+          sheet tenants: Newcomer Wines Ltd [FH2.13] SW06:2.0
+VLAN 36   ATP500    sheet=Active       Vlan_36_Neighbourhood_Studio       bw=30.0     dev=Vlan_36_Neighbourhood_Studio   up   leases=1   arp=1   ports=SW04:p6
+          rule: Vlan36_Neighbourhood down=30M up=30M
+          sheet tenants: Atelier Baulier / Neighbourhood studio [CW301] : | Oscar Deen Eyewear [Oscar Deen Eyewear Room] SW04:6.0
+VLAN 37   ATP500    sheet=Active       VLAN37_Wazzo_LTD                   bw=60.0     dev=VLAN37_Wazzo_LTD               up   leases=3   arp=0   ports=SW05:p5
+          rule: Vlan37_Wazzo down=60M up=60M
+          sheet tenants: Wazzo Ltd. [CW203] SW05:5.0
+VLAN 38   ATP500    sheet=Active       Vlan38_Pinzutu_Films               bw=30.0     dev=Vlan38_Pinzutu_Films           up   leases=17  arp=2   ports=SW05:p7, SW05:p9, SW05:p14
+          rule: Vlan38_Pinzutu_Films down=100M up=100M
+          sheet tenants: PINZUTU FILMS [CW210] SW05:14.0 | PINZUTU FILMS [CW201] SW05:9.0
+VLAN 39   ATP500    sheet=Active       Scoff_Studios                      bw=100.0    dev=Scoff_Studios                  up   leases=0   arp=1   ports=SW08:p15, SW08:p16
+          rule: Vlan39_Scoff_studios down=30M up=30M
+          sheet tenants: Thames Reach [303, 310 & 311] SW08:Switch Port 24 - patched to CW311 wall port 165 / Switch Port 12 - patched to CW303 wall port 154 / Switch Port 4 - LAN patched to CW310 port 114 / Switch Port 3 - AP patched to CW310 port 113 / Switch Port 11,15,16,18,19,20,21,22,23  - also assigned to Thames Reach VLANS /
+VLAN 40   ATP500    sheet=Active       Vlan_40_Office_SM                  bw=-        dev=Vlan_40_Office_SM              up   leases=8   arp=3   ports=-
+          rule: Vlan40_OfficeS_M down=100M up=100M
+          sheet tenants: African Community School [PHG2] SW01:16.0 | African Community School [PHG2] SW02:4.0
+          >> no access port found on the 14 read switches
+VLAN 41   ATP500    sheet=Active       Vlan41_The_Raze_Collective         bw=60.0     dev=Vlan41_The_Raze_Collective     up   leases=8   arp=1   ports=SW08:p10
+          rule: Vlan41_The_Raze down=50M up=50M
+          sheet tenants: Raze Collective/ Eat Club [CW307M] SW08:10.0
+VLAN 42   ATP500    sheet=Active       Vlan42_FormFormForm_ltd            bw=-        dev=Vlan42_FormFormForm_ltd        up   leases=12  arp=5   ports=SW01:p16
+          rule: Vlan42_FormFormForm_ltd down=250M up=250M
+          sheet tenants: Bona Food [PHG2] SW01:16.0
+VLAN 43   ATP500    sheet=Inactive     Vlan_Silverfish_Entertainment      bw=-        dev=Vlan_Silverfish_Entertainment  up   leases=0   arp=0   ports=-
+          rule: Vlan43_Silverfish_Entertainment down=100M up=100M
+VLAN 44   ATP500    sheet=Active       Vlan44_vbqspeakers                 bw=30.0     dev=Vlan44_vbqspeakers             up   leases=5   arp=3   ports=SW08:p5
+          rule: Vlan44_VBQSpeakers down=30M up=30M
+          sheet tenants: VBQ Limited [C304] SW08:5.0 | Ryan Oxley [CW304] SW08:5.0
+VLAN 45   ATP500    sheet=Inactive     Vlan45_SnafuPictures               bw=100.0    dev=Vlan45_SnafuPictures           up   leases=0   arp=0   ports=SW09:p2
+          rule: Vlan45_SnafuPictures down=100M up=100M
+          SNAT: 157.231.128.137
+          sheet tenants: Snafu Pictures [PH2.5 PH2.4] SW04:3 & 4 active
+          >> SHEET INACTIVE BUT SWITCH PORTS STILL ASSIGNED
+VLAN 46   ATP500    sheet=Active       vlan46_AcmeFireCult                bw=50.0     dev=vlan46_AcmeFireCult            up   leases=36  arp=16  ports=SW15:p1, SW15:p6
+          rule: vlan46_AcmeFireCult down=100M up=100M
+          sheet tenants: Acme by 40ft [PH1.3 > moved to basement 01/02/25] SW15:2025-06-01 00:00:00
+VLAN 47   ATP500    sheet=-            Vlan47_LatinAmerica                bw=-        dev=Vlan47_LatinAmerica            up   leases=0   arp=0   ports=-
+          rule: Vlan47_LatinAmerica down=50M up=50M
+VLAN 48   ATP500    sheet=Inactive     Vlan48_FieldVision                 bw=100.0    dev=Vlan48_FieldVision             up   leases=21  arp=1   ports=SW09:p3, SW09:p4, SW09:p6, SW12:p20
+          rule: Vlan48_FieldVision down=100M up=100M
+          sheet tenants: Field Vision Bars [FH3] SW09:4/6 | Field Vision Bars [Rooftop] :
+          >> SHEET INACTIVE BUT LIVE (1 arp/21 leases); SHEET INACTIVE BUT SWITCH PORTS STILL ASSIGNED
+VLAN 49   ATP500    sheet=Active       Vlan49_StudioArchetype             bw=100.0    dev=Vlan49_StudioArchetype         up   leases=3   arp=4   ports=SW05:p13
+          rule: Vlan49_ down=100M up=100M
+          sheet tenants: Studio Archetype Ltd. [CW204] SW05:13.0
+VLAN 50   ATP500    sheet=Active       Vlan50_AdamAftanas                 bw=500.0    dev=Vlan50_AdamAftanas             up   leases=1   arp=1   ports=SW08:p6, SW08:p7
+          rule: Vlan50_ down=500M up=500M
+          sheet tenants: Adam Aftanas Studio Ltd [CW305] SW08:7.0
+VLAN 51   ATP500    sheet=Active       Vlan51_HelenKerridge               bw=30.0     dev=Vlan51_HelenKerridge           up   leases=9   arp=4   ports=SW03:p10
+          rule: Vlan51_HelenKerridge down=30M up=30M
+          sheet tenants: Full circle Psy/ Mark Kinnally [PH1.2] SW03:10.0
+VLAN 52   ATP500    sheet=Active       Vlan52_NordCityltd                 bw=100.0    dev=Vlan52_NordCityltd             up   leases=11  arp=1   ports=SW03:p1
+          rule: Vlan52_NordCityltd down=100M up=100M
+          sheet tenants: Nordicity Limited [PH1.1] SW03:1.0
+VLAN 53   ATP500    sheet=Active       Vlan53_BridgeTheGap                bw=30.0     dev=Vlan53_BridgeTheGap            up   leases=0   arp=0   ports=SW12:p13
+          rule: Vlan53_StarkCasting down=30M up=30M
+          sheet tenants: Bridge the gap ending digital poverty C.I.C [PH3.5 > PH2.4-5] SW12:13.0
+          >> SHEET ACTIVE, NO HOSTS SEEN
+VLAN 54   ATP500    sheet=Active       vlan54_Thamesreach                 bw=100.0    dev=vlan54_Thamesreach             up   leases=35  arp=4   ports=SW08:p3, SW08:p11, SW08:p12, SW08:p24
+          rule: vlan54_Thamesreach down=100M up=100M
+          SNAT: 157.231.128.136
+          sheet tenants: Thames Reach [303, 310 & 311] SW08:Switch Port 24 - patched to CW311 wall port 165 / Switch Port 12 - patched to CW303 wall port 154 / Switch Port 4 - LAN patched to CW310 port 114 / Switch Port 3 - AP patched to CW310 port 113 / Switch Port 11,15,16,18,19,20,21,22,23  - also assigned to Thames Reach VLANS /
+          >> device SNATs to 157.231.128.136, sheet public IP column blank
+VLAN 55   ATP500    sheet=Active       Vlan55_Studio_Cw208                bw=60.0     dev=Vlan55_Studio_Cw208            up   leases=1   arp=1   ports=SW05:p20, SW08:p17
+          rule: Vlan55_Studio_CW208 down=100M up=100M
+          sheet tenants: Balaam Murphy [CW301] SW08:17.0
+VLAN 56   ATP500    sheet=Active       Vlan56_OpenDemocracy               bw=250.0    dev=Vlan56_OpenDemocracy           up   leases=7   arp=1   ports=SW12:p9
+          rule: Vlan56_OpenDemocracy down=250M up=250M
+          sheet tenants: openDemocracy [PH2.7, 2.8, 2.9, 2.10 > MOVED TO PH3.12/13] SW12:9.0
+VLAN 58   ATP500    sheet=Active       Vlan58_Mediorite                   bw=100.0    dev=Vlan58_Mediorite               up   leases=2   arp=1   ports=SW03:p7
+          rule: Vlan58_Mediorite down=100M up=1000M
+          SNAT: 157.231.128.138
+          sheet tenants: Mediorite [PH1.7] SW03:7.0
+          >> device SNATs to 157.231.128.138, sheet public IP column blank
+VLAN 59   ATP500    sheet=Active       Vlan59_FullTimeHobbyLtd            bw=100.0    dev=Vlan59_FullTimeHobbyLtd        up   leases=11  arp=3   ports=-
+          rule: Vlan59_FullTimeHobbyLimited down=100M up=1000M
+          sheet tenants: Full Time Hobby [FHG2 (Bootstrap old office)] SW02:2.0
+          >> no access port found on the 14 read switches
+VLAN 60   ATP500    sheet=Active       Vlan60_BalaamMurphyLtd             bw=30.0     dev=Vlan60_BalaamMurphyLtd         up   leases=6   arp=2   ports=SW05:p11
+          rule: Vlan60_BalaamMurphyLtd down=60M up=60M
+          sheet tenants: Balaam Murphy [CW208] SW05:6.0 | Arbor Windows Limited [206.0] SW05:14.0
+VLAN 61   ATP500    sheet=Inactive     Vlan61_ForwardSlashMediaLtd        bw=100.0    dev=Vlan61_ForwardSlashMediaLtd    up   leases=0   arp=0   ports=-
+          rule: Vlan61_ForwardSlashMediaLtd down=100M up=100M
+VLAN 62   ATP500    sheet=Active       Vlan62_ProjectsOffice              bw=30.0     dev=Vlan62_ProjectsOffice          up   leases=11  arp=4   ports=SW03:p14
+          rule: Vlan62_ProjectsOffice down=60M up=60M
+          sheet tenants: Teim Accountants [PH1.13] SW03:14.0
+VLAN 63   ATP500    sheet=Inactive     Vlan63_JoannaRzepczynska           bw=30.0     dev=Vlan63_JoannaRzepczynska       up   leases=0   arp=0   ports=-
+          rule: Vlan63_JoannaRzepczynska down=100M up=100M
+          sheet tenants: Joanna Rzepczynska [CW307] SW08:10.0
+VLAN 64   ATP500    sheet=Active       Vlan64_TheDustyKnuckleR1           bw=250+100  dev=Vlan64_TheDustyKnuckleR1       up   leases=30  arp=8   ports=SW02:p5, SW06:p4, SW09:p1
+          rule: Vlan64_TheDustyKnuckleR1 down=250M up=250M
+          sheet tenants: The Dusty Knuckle [The Dusty Knuckle Cafe and Bakery] SW02:2026-05-04 00:00:00 | The Dusty Knuckle [FH1.3] SW09:1.0 | The Dusty Knuckle [PHG5] SW02:4.0
+VLAN 65   ATP500    sheet=-            Vlan65_TheDustyKnuckleR2           bw=-        dev=Vlan65_TheDustyKnuckleR2       up   leases=0   arp=0   ports=SW02:p6
+          rule: Vlan65_TheDustyKnuckleR2 down=200M up=200M
+VLAN 66   ATP500    sheet=Active       Vlan66_StudioMcDonnell             bw=30.0     dev=Vlan66_StudioMcDonnell         up   leases=6   arp=3   ports=SW15:p4
+          rule: Vlan66_StudioMcdonnell down=30M up=30M
+          sheet tenants: Andy McDonnell [PHB9] SW15:4.0
+VLAN 67   ATP500    sheet=Active       Vlan67_SilverfishProductions       bw=100.0    dev=Vlan67_SilverfishProductions   up   leases=1   arp=1   ports=SW04:p16
+          rule: Vlan67_SilverfishProductions down=100M up=100M
+          sheet tenants: Silverfish Productions Limited [PH1.2] : | Silverfish Productions Limited [FHG2 (Bootstrap old office)] SW02:2.0 | Silverfish Productions Limited [PH2.1] SW04:16.0
+VLAN 68   ATP500    sheet=Inactive     Vlan68_RapidEyeMovers              bw=0.0      dev=Vlan68_RapidEyeMovers          up   leases=0   arp=0   ports=-
+          rule: Vlan68_RapidEyeMovers down=100M up=100M
+          SNAT: 157.231.128.139
+          sheet tenants: RapidEyeMovers Ltd [PH2.3] SW04:11 - (AP) / 12 (LAN) / 14 active
+VLAN 69   ATP500    sheet=Active       Vlan69_LAWA                        bw=100.0    dev=Vlan69_LAWA                    up   leases=58  arp=24  ports=SW04:p3, SW04:p7, SW04:p13
+          rule: Vlan69_LAWA down=100M up=100M
+          sheet tenants: Latin American Women's Aid [Suite 11, suite 9, suite 1, suite 2, suite 4 third floor.] SW04:2025-07-01 00:00:00
+VLAN 70   ATP500    sheet=Active       Vlan70_LeadersUnlocked             bw=60.0     dev=Vlan70_LeadersUnlocked         up   leases=6   arp=1   ports=SW05:p12
+          rule: Vlan60_LeaderUnlocked down=60M up=60M
+          sheet tenants: Leaders Unlocked [Unit 201] SW05:2025-10-09 00:00:00 | Abisoye Odugbesan [CW202] SW05:12.0
+          >> sheet public IP 192.168.70.2 but no policy-route SNAT
+VLAN 71   ATP500    sheet=Active       Vlan71_CafeOTO                     bw=60.0     dev=Vlan71_CafeOTO                 up   leases=1   arp=1   ports=SW02:p7
+          rule: Vlan71_CafeOTO down=60M up=60M
+          SNAT: 157.231.128.140
+          sheet tenants: Cafe OTO [cafe] SW02:7.0
+          >> device SNATs to 157.231.128.140, sheet public IP column blank
+VLAN 72   ATP500    sheet=Active       Vlan72_AshfordSon                  bw=100.0    dev=Vlan72_AshfordSon              up   leases=13  arp=10  ports=SW13:p8
+          sheet tenants: Ashford & Sons Ltd [14.0] SW13:8.0
+VLAN 73   ATP500    sheet=Active       Vlan73_MAKE                        bw=100.0    dev=Vlan73_CivilSociety            up   leases=1   arp=1   ports=SW03:p12
+          rule: Vlan73_MAKE down=30M up=30M; Vlan72_AshfordSons down=100M up=100M
+          sheet tenants: MAKE [CW 302] SW08:11.0 | Civil Society Consulting CIC [PH1.17] SW03:12.0
+VLAN 74   ATP500    sheet=Active       Vlan74_WisemartSolicitors          bw=100.0    dev=Vlan74_WisemartSolicitors      up   leases=1   arp=1   ports=SW03:p11
+          rule: Vlan74_WisemartSolictors down=100M up=100M
+          sheet tenants: Wisemart Solicitors [Unit 8-9, Unit 6] SW03:11.0
+VLAN 101  FortiGate sheet=-                                               bw=-        dev=vlan101                        cfg  leases=    arp=0   ports=SW01:p11
+          >> NOT IN VLAN SHEET
+VLAN 102  FortiGate sheet=-                                               bw=-        dev=102                            cfg  leases=    arp=0   ports=-
+          >> NOT IN VLAN SHEET
+VLAN 150  FortiGate sheet=Active       CW207 - Create London              bw=100.0    dev=vlan150                        cfg  leases=    arp=1   ports=SW05:p8
+          rule: out=146M in=0M
+          sheet tenants: Create London [CW207] SW05:8.0
+VLAN 151  FortiGate sheet=Active       FH2.1 - ReLine                     bw=60.0     dev=vlan151                        cfg  leases=    arp=11  ports=SW06:p3
+          rule: out=58M in=0M
+          sheet tenants: Reline London Ltd [FH2.1 & 2.14] SW06:3.0
+VLAN 152  FortiGate sheet=Active       PH2.3 - Curamcare                  bw=250.0    dev=vlan152                        cfg  leases=    arp=10  ports=SW04:p12
+          rule: out=97M in=0M
+          sheet tenants: Curam [PH2.3] SW04:11 - (AP) / 12 (LAN) / 14 active
+VLAN 153  FortiGate sheet=Active       PH3.6-8 - Cake Architecture        bw=250.0    dev=vlan153                        cfg  leases=    arp=31  ports=SW12:p3, SW12:p4, SW12:p5, SW12:p6
+          sheet tenants: CAKE Architecture [PH3.12 > MOVED TO PH3.17/18] SW13:4.0 | CAKE Architecture [PH3.6-8] SW12:03/ 04
+VLAN 154  FortiGate sheet=Active       FH2.11 - 01-Profiles Ltd/ Gunga    bw=60.0     dev=vlan154                        cfg  leases=    arp=5   ports=SW06:p1
+          rule: out=58M in=0M
+          sheet tenants: 01-Profiles Ltd (Cal & Michaela - Gunga) [FH2.11-12] SW06:1
+VLAN 155  FortiGate sheet=Active       FHG1 - Colab                       bw=250.0    dev=vlan155                        cfg  leases=    arp=0   ports=SW07:p12
+          rule: out=97M in=0M
+          sheet tenants: Bootstrap CoLab space [FHG1] SW07:12
+          >> SHEET ACTIVE, NO ARP ON FORTIGATE
+VLAN 156  FortiGate sheet=Active       PH3.17-18A - Harp-E                bw=30.0     dev=vlan156                        cfg  leases=    arp=10  ports=SW13:p4
+          sheet tenants: Harp-e [PH3.17-18] SW13:4.0
+VLAN 157  FortiGate sheet=Active       PH1.14 - Henry Playfoot            bw=30.0     dev=vlan157                        cfg  leases=    arp=3   ports=SW03:p16
+          sheet tenants: henry@henryplayfoot.com [1.14] SW03:16.0
+VLAN 158  FortiGate sheet=Active       Fair Finance                       bw=250.0    dev=vlan158                        cfg  leases=    arp=1   ports=SW06:p10, SW06:p12
+          rule: out=97M in=0M
+          sheet tenants: Fair Finance [FH1.1] SW06:2026-12-10 00:00:00
+VLAN 159  FortiGate sheet=Active       St Paul's Waldorf School           bw=30.0     dev=vlan159                        cfg  leases=    arp=7   ports=SW04:p8, SW04:p10
+          sheet tenants: St Paul’s Waldorf School [PH2.13] SW04:2026-10-08 00:00:00
+VLAN 160  FortiGate sheet=Active       Simon Campbell                     bw=-        dev=vlan160                        cfg  leases=    arp=6   ports=SW03:p6
+          sheet tenants: Simon Campbell [PH1.5] SW03:06
+VLAN 161  FortiGate sheet=Active       Mediorite                          bw=500.0    dev=vlan161                        cfg  leases=    arp=0   ports=-
+          >> SHEET ACTIVE, NO ARP ON FORTIGATE; no access port found on the 14 read switches
+VLAN 162  FortiGate sheet=-                                               bw=-        dev=vlan162                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 163  FortiGate sheet=-                                               bw=-        dev=vlan163                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 164  FortiGate sheet=-                                               bw=-        dev=vlan164                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 165  FortiGate sheet=-                                               bw=-        dev=vlan165                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 166  FortiGate sheet=-                                               bw=-        dev=vlan166                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 167  FortiGate sheet=-                                               bw=-        dev=vlan167                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 168  FortiGate sheet=-                                               bw=-        dev=vlan168                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 169  FortiGate sheet=-                                               bw=-        dev=vlan169                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 170  FortiGate sheet=-                                               bw=-        dev=vlan170                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 171  FortiGate sheet=-                                               bw=-        dev=vlan171                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 172  FortiGate sheet=-                                               bw=-        dev=vlan172                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 173  FortiGate sheet=-                                               bw=-        dev=vlan173                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 174  FortiGate sheet=-                                               bw=-        dev=vlan174                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 175  FortiGate sheet=-                                               bw=-        dev=vlan175                        cfg  leases=    arp=0   ports=-
+          rule: out=100M in=0M
+          >> NOT IN VLAN SHEET
+VLAN 200  FortiGate sheet=-                                               bw=-        dev=vlan200-TEST                   cfg  leases=    arp=0   ports=-
+          >> NOT IN VLAN SHEET

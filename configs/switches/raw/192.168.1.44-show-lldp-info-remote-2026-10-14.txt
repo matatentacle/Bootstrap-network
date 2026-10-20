@@ -1,0 +1,10 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc   SystemName  
+  ---------  -----------------  ------  --------  -----------  
+          1  d4:1a:d1:44:61:25       1       lan      TDK-FH1  
+          6  d4:1a:d1:58:d3:75       1       lan  NWA1123ACv3  
+         23  bc:cf:4f:c4:bf:48      23    Port23       GS1920  
+         24  bc:cf:4f:c4:bc:90      23    Port23       GS1920  
+         25  bc:cf:4f:bb:e6:85      25    Port25       GS1920  

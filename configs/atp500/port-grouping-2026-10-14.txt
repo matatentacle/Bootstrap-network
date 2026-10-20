@@ -1,0 +1,11 @@
+show port-grouping
+No. Representative Name  Port1 Port2 Port3 Port4 Port5 Port6 Port7 Port8
+===============================================================================
+1   ge1                  yes   no    no    no    no    no    no    no    
+2   ge2                  no    yes   no    no    no    no    no    no    
+3   ge3                  no    no    yes   no    no    no    no    no    
+4   LAN1                 no    no    no    yes   no    no    no    no    
+5   ge5                  no    no    no    no    yes   no    no    no    
+6   ge6                  no    no    no    no    no    yes   no    no    
+7   ge7                  no    no    no    no    no    no    yes   no    
+8   ge8                  no    no    no    no    no    no    no    yes   

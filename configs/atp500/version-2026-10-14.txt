@@ -1,0 +1,6 @@
+show version
+Zyxel Communications Corp.
+image number model                            firmware version                                                  build date           boot status         
+===============================================================================
+1            ATP500                           V5.43(ABFU.0)                                                     2026-07-29 14:24:20  Running              
+2            ATP500                           V5.42(ABFU.1)                                                     2026-02-07 19:45:21  Standby              

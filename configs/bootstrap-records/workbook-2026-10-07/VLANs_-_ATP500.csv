@@ -1,0 +1,65 @@
+Number,Status,VLAN,VLAN Name,LAN No.,IP address,,RESTRICT BANDWIDTH,Public IP,NOTES
+1.0,Active,vlan10,Vlan10_BootStrap,LAN1/10,static --192.168.10.254,255.255.255.0,100.0,157.231.128.130,Our VLAN. VLAN possibly shared with several tenants - needs to be separated (D4:1A:D1:44:61:25 & 50:E0:39:3B:1D:C7)
+2.0,Inactive,vlan11,Vlan11_Curam,LAN1/11,static --192.168.11.254,255.255.255.0,0.0,,moved to Fortigate vlan151
+3.0,Inactive,vlan12,Vlan12_bars,LAN1/12,static --192.168.12.254,255.255.255.0,100.0,,Given to Thames Reach
+4.0,MAKE SHARED,vlan13,Vlan13_BootstrapCR,LAN1/13,static --192.168.13.254,255.255.255.0,100.0,,MAKE AS SHARED VLAN (CHANGE THOSE ON VLAN 1 TO VLAN 13)
+5.0,Active,vlan14,Vlan14_Tenticle,LAN1/14,static --192.168.14.254,255.255.255.0,100.0,,Possible NAT config
+6.0,Active,vlan15,Vlan15_InsideJob,LAN1/15,static --192.168.15.254,255.255.255.0,60.0,,Given to Felicity Kay in CW208
+7.0,Active,vlan16,Vlan16_Fair_Finance,LAN1/16,static --192.168.16.254,255.255.255.0,100.0
+8.0,Active,vlan17,Vlan17_40tf_Brewery,LAN1/17,static --192.168.17.254,255.255.255.0,100.0,,D4:1A:D1:49:2E:03 / BC:CF:4F:2F:B7:5A,40ft Tap Room
+9.0,Active,vlan18,Vlan18_Arnie_Productions,LAN1/18,static --192.168.18.254,255.255.255.0,50.0
+10.0,Inactive,vlan19,Vlan19_Cake_Architecture_Ltd,LAN1/19,static --192.168.19.254,255.255.255.0,0.0,,moved to Fortigate
+11.0,Active,vlan20,Vlan20_Julia_Brenard,LAN1/20,static --192.168.20.254,255.255.255.0,100.0
+12.0,Active,vlan21,Vlan21_Compost_Creative,LAN1/21,static --192.168.21.254,255.255.255.0,100.0
+13.0,Inactive,vlan22,Vlan22_OfficeS_M,LAN1/22,static --192.168.22.254,255.255.255.0,,,Left - can be reused
+31.0,Active,vlan40,Vlan_40_Office_SM,LAN1/40,static --192.168.40.254,255.255.255.0,,,given to African Community School
+14.0,Inactive,vlan23,Vlan23_Wine_Bar_PHB8,LAN1/23,static --192.168.23.254,255.255.255.0,,,can be reused
+15.0,Active,vlan24,Vlan24_Lickerish,LAN1/24,static --192.168.24.254,255.255.255.0,60.0
+22.0,,vlan31,vlan31_Lickerish,LAN1/31,static --192.168.31.254,255.255.255.0,,,?? They have 2 VLANS under their name - NAT CONFIG
+16.0,Inactive,vlan25,Vlan25_Pango,LAN1/25,static --192.168.25.254,255.255.255.0,,,Left - can be reused
+17.0,Active,vlan26,Vlan26_LiveThroughThis,LAN1/26,static --192.168.26.254,255.255.255.0,30.0,,(OUTpatients)
+18.0,Active,vlan27,Vlan27_DGN_Studio,LAN1/27,static --192.168.27.254,255.255.255.0,30.0,,On Dupe's NAT?
+19.0,Active,vlan28,Vlan28_SarahDawes,LAN1/28,static --192.168.28.254,255.255.255.0,30.0,,Given to Urban Good CIC in FH2.13
+20.0,Inactive,vlan29,Vlan29_PaperHouseProjects,LAN1/29,static --192.168.29.254,255.255.255.0,,,Left - can be reused
+21.0,Inactive,vlan30,Vlan30_Colourworks,LAN1/30,static --192.168.30.254,255.255.255.0,,,can be reused
+23.0,Active,vlan32,Vlan32_10pm_Studio,LAN1/32,static --192.168.32.254,255.255.255.0,30.0,,D4:1A:D1:49:2E:21
+24.0,Inactive,vlan33,Vlan33_HaberdasheryLondon,LAN1/33,static --192.168.33.254,255.255.255.0,,,Left - can be reused
+25.0,Active,vlan34,Vlan34_SistahSpace,LAN1/34,static --192.168.34.254,255.255.255.0,30.0
+26.0,Active,vlan35,Vlan35_NewcomerWines,LAN1/35,static --192.168.35.254,255.255.255.0,60.0
+27.0,Active,vlan36,Vlan_36_Neighbourhood_Studio,LAN1/36,static --192.168.36.254,255.255.255.0,30.0,,Given to Oscar Deen in PH2.11
+28.0,Active,vlan37,VLAN37_Wazzo_LTD,LAN1/37,static --192.168.37.254,255.255.255.0,60.0,,50:E0:39:3B:1D:E8
+29.0,Active,vlan38,Vlan38_Pinzutu_Films,LAN1/38,static --192.168.38.254,255.255.255.0,30.0
+30.0,Active,vlan39,Scoff_Studios,LAN1/39,static --192.168.39.254,255.255.255.0,100.0,,Was Scoff Stiudios - Given to Thames Reach for firewall install - NAT config
+32.0,Active,vlan41,Vlan41_The_Raze_Collective,LAN1/41,static --192.168.41.254,255.255.255.0,60.0,,EC:3E:B3:4F:78:EE /
+33.0,Active,vlan42,Vlan42_FormFormForm_ltd,LAN1/42,static --192.168.42.254,255.255.255.0,,,Given to Bona Food
+34.0,Inactive,vlan43,Vlan_Silverfish_Entertainment,LAN1/43,static --192.168.43.254,255.255.255.0,,,Can be reused
+57.0,Active,vlan67,Vlan67_SilverfishProductions,LAN1/67,static --192.168.67.254,255.255.255.0,100.0,,/ D4:1A:D1:44:5E:E5
+35.0,Active,vlan44,Vlan44_vbqspeakers,LAN1/44,static --192.168.44.254,255.255.255.0,30.0
+36.0,Inactive,vlan45,Vlan45_SnafuPictures,LAN1/45,static --192.168.45.254,255.255.255.0,100.0,157.231.128.137,"left office, can be reused. NAT config"
+37.0,Active,vlan46,vlan46_AcmeFireCult,LAN1/46,static --192.168.46.254,255.255.255.0,50.0,,EC:3E:B3:4F:78:D6 / BC:CF:4F:2E:DF:7E - connected to TPLink (BC:CF:4F:5A:80:E2 - Bar Switch SW16>SW15)
+38.0,,vlan47,Vlan47_LatinAmerica,LAN1/47,static --192.168.47.254,255.255.255.0,,,Duplicate for LAWA?
+39.0,Inactive,vlan48,Vlan48_FieldVision,LAN1/48,static --192.168.48.254,255.255.255.0,100.0,,left - can be reused
+40.0,Active,vlan49,Vlan49_StudioArchetype,LAN1/49,static --192.168.49.254,255.255.255.0,100.0
+41.0,Active,vlan50,Vlan50_AdamAftanas,LAN1/50,static --192.168.50.254,255.255.255.0,500.0,,Closer 2021
+42.0,Active,vlan51,Vlan51_HelenKerridge,LAN1/51,static --192.168.51.254,255.255.255.0,30.0
+43.0,Active,vlan52,Vlan52_NordCityltd,LAN1/52,static --192.168.52.254,255.255.255.0,100.0
+44.0,Active,vlan53,Vlan53_BridgeTheGap,LAN1/53,static --192.168.53.254,255.255.255.0,30.0
+45.0,Active,vlan54,vlan54_Thamesreach,LAN1/54,static --192.168.54.254,255.255.255.0,100.0,,D4:1A:D1:48:44:41 - Thames Reach firewall is being put on VLAN 39 (Scoff studios) This one will be reused for Thames Reach as an empty extra VLAN
+46.0,Active,vlan55,Vlan55_Studio_Cw208,LAN1/55,static --192.168.55.254,255.255.255.0,60.0,,D4:1A:D1:48:44:38 - Given to Balaam Murphy
+47.0,Active,vlan56,Vlan56_OpenDemocracy,LAN1/56,static --192.168.56.254,255.255.255.0,250.0
+48.0,Active,vlan58,Vlan58_Mediorite,LAN1/58,static --192.168.58.254,255.255.255.0,100.0
+49.0,Active,vlan59,Vlan59_FullTimeHobbyLtd,LAN1/59,static --192.168.59.254,255.255.255.0,100.0,,D4:1A:D1:44:61:28 / D4:1A:D1:48:38:E3
+50.0,Active,vlan60,Vlan60_BalaamMurphyLtd,LAN1/60,static --192.168.60.254,255.255.255.0,30.0,,Given to Arbor Windows CW206 - Balaam Murphy have vlan 55
+51.0,Inactive,vlan61,Vlan61_ForwardSlashMediaLtd,LAN1/61,static --192.168.61.254,255.255.255.0,100.0,,Left - can be reused (50:E0:39:3B:1D:C7 - taken by Bootstrap)
+52.0,Active,vlan62,Vlan62_ProjectsOffice,LAN1/62,static --192.168.62.254,255.255.255.0,30.0,,Given to Teim Accountants
+53.0,Inactive,vlan63,Vlan63_JoannaRzepczynska,LAN1/63,static --192.168.63.254,255.255.255.0,30.0,,EC:3E:B3:4F:78:EE - Serves by CW 307/307M,"can be reused, cancelled internet 23/01/25"
+54.0,Active,vlan64,Vlan64_TheDustyKnuckleR1,LAN1/64,static --192.168.64.254,255.255.255.0,250+100,,on SW02 & SW09
+55.0,,vlan65,Vlan65_TheDustyKnuckleR2,LAN1/65,static --192.168.65.254,255.255.255.0,,,??
+56.0,Active,vlan66,Vlan66_StudioMcDonnell,LAN1/66,static --192.168.66.254,255.255.255.0,30.0,,D4:1A:D1:44:5E:E2
+58.0,Inactive,vlan68,Vlan68_RapidEyeMovers,LAN1/68,static --192.168.68.254,255.255.255.0,0.0,157.231.128.139,left - static IP was provided
+59.0,Active,vlan69,Vlan69_LAWA,LAN1/69,static --192.168.69.254,255.255.255.0,100.0,,Possible NAT config. Room port 15 into netgear>APS & printer. Had a Draytek but not in use in PH2.6-10  ( / D4:1A:D1:58:D3:69 /  / D4:1A:D1:48:44:1D /  / D4:1A:D1:48:44:47)
+60.0,Active,vlan70,Vlan70_LeadersUnlocked,LAN1/70,static --192.168.70.254,255.255.255.0,60.0,192.168.70.2,D4:1A:D1:49:3B:A4 - Given to Abisoye Odugbesan in CW202
+61.0,Active,vlan71,Vlan71_CafeOTO,LAN1/71,static --192.168.71.254,255.255.255.0,60.0
+62.0,Active,vlan72,Vlan72_AshfordSon,LAN1/72,static --192.168.72.254,255.255.255.0,100.0,,D4:1A:D1:48:38:CE
+63.0,Active,vlan73,Vlan73_MAKE,LAN1/73,static --192.168.73.254,255.255.255.0,100.0,,Given to Civil Society PH1.17
+64.0,Active,vlan74,Vlan74_WisemartSolicitors,LAN1/74,static --192.168.74.254,255.255.255.0,100.0

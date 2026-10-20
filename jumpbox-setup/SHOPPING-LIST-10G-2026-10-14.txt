@@ -1,0 +1,59 @@
+BOOTSTRAP 10G MIGRATION - SFP MODULE + FIBRE PATCH SHOPPING LIST (rev 2)
+Prepared 14 Oct 2026 for Shopna, from Mat's "New Plan" on the Bootstrap Miro board.
+Rev 2 after Mat's answers: XS1935 1G on SFP+ proven (aftermarket module on SW101
+port 1 works), all tie lines are OM4, FHG singlemode link already up (dropped),
+generic optics acceptable. Prices from Cable Monkey, ex VAT, checked 14 Oct 2026.
+
+ORDER LIST                                                           Qty  Unit exVAT
+1  Zyxel-compatible 1G SX SFP, SFP-SX-C (850nm, LC, MMF)             12  33.00
+   https://www.cablemonkey.co.uk/1g-sx-multimode-spf-modules/98192-zyxel-sfp-sx-c.html
+   Goes in SW101 SFP 4-6 and SW102 SFP 1-6 (8 satellites + SW01 link). 2 spares.
+2  Fortinet-compatible 10G SR SFP+, FS-TRAN-SFP+SR-C                  1  62.37
+   https://www.cablemonkey.co.uk/10g-sr-multimode-sfp-modules/98261-fortinet-fs-tran-sfpsr-c.html
+   Goes in FortiGate x2 (or x3), second leg of the LAG to SW101.
+3  Zyxel-compatible 10G SR SFP+, SFP10G-SR-C                          1  62.37
+   https://www.cablemonkey.co.uk/10g-sr-multimode-sfp-modules/98278-zyxel-sfp10g-sr-c.html
+   Goes in SW101 SFP 2.
+4  LC-LC duplex OM4 50/125 patch lead 3m VIOLET                      12  ~5.36
+   https://www.cablemonkey.co.uk/multimode-fibre-patch-cables/41888-22920-lc-lc-multimode-duplex-fibre-patch-leads.html#/61-length-3m/103-fibre_size-om4_50_125/1066-cable_colour-violet
+   Panels to SW101/SW102 (8) + SW102 to SW01 (1). 3 spares.
+5  LC-LC duplex OM4 50/125 patch lead 3m AQUA                         1  ~5.36
+   https://www.cablemonkey.co.uk/multimode-fibre-patch-cables/41888-1519748-lc-lc-multimode-duplex-fibre-patch-leads.html#/61-length-3m/103-fibre_size-om4_50_125/7032-cable_colour-aqua
+   FortiGate x2 to SW101 SFP 2.
+
+Total: about GBP 590.42 ex VAT / 708.50 inc VAT, before delivery.
+
+NOTES
+- Patch lead page shows one price; confirm the 3m/2m option price in the basket.
+- OM4 Violet is "low stock, subject to lead time" at Cable Monkey. Aqua is the same
+  lead in a different colour and is fine if violet would hold up the order.
+- Lines 2 and 3 are the vendor-coded parts for convenience. Mat already runs
+  generic OEM SFP-10G-SR in FortiGate x1 and x4, so a generic from the same
+  source is also fine and cheaper.
+- Nothing singlemode needed: FHG is already on SW101 port 1.
+- Already in place, do not re-buy: Vorboss WAN module in x4, first x1 -> SW101
+  10G link (both modules + aqua lead), 1G modules in all 8 satellite switches.
+- Still to do later (config, not purchase): take x2 or x3 out of the FortiGate
+  "fortilink" aggregate before adding it to the x1 LAG.
+
+WHERE EACH NEW PART GOES (pair 1 of each OM4 tie line is reused)
+SW101 SFP 2 <- FortiGate x2 direct              10G SR both ends, aqua 3m
+SW101 SFP 4 <- Patch-2 port 1   PH3             1G SX, violet 3m
+SW101 SFP 5 <- Patch-2 port 9   PH2             1G SX, violet 3m
+SW101 SFP 6 <- Patch-2 port 17  PH1             1G SX, violet 3m
+SW102 SFP 1 <- Patch-3 port 1   Basement (PHB)  1G SX, violet 3m
+SW102 SFP 2 <- Patch-3 port 9   FH3             1G SX, violet 3m
+SW102 SFP 3 <- Patch-3 port 17  FH2             1G SX, violet 3m
+SW102 SFP 4 <- Patch-4 port 1   CW3             1G SX, violet 3m
+SW102 SFP 5 <- Patch-4 port 9   CW2             1G SX, violet 3m
+SW102 SFP 6 <- SW01 port 25 direct              1G SX in SW102, SW01 reuses its module, violet 3m
+
+Artifact version for Shopna (links + prices): see chat / Claude artifacts gallery.
+
+CONSOLE CABLE (added 14 Oct 2026; FTDI chipset so ser2net can key on the FTDI serial)
+C1  StarTech ICUSBROLLOVR USB-A to RJ45 console, 1.8m, FTDI          1   24.99
+    https://www.ebuyer.com/913082-startech-com-1-8-m-cisco-usb-console-cable-usb-to-rj45-icusbrollovr
+    FortiGate 120G front Console (RJ45, 9600 8N1). Also fits GS1920 switch consoles.
+    The old FortiGate lead never enumerated on the jump box USB bus; this replaces it.
+No console lead for the ATP500: it is being retired and is reachable over the network.
+Supplier rule from Mat: reputable retailers only (Cable Monkey, Ebuyer and the like), no marketplace sellers.

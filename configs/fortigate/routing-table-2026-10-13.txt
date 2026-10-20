@@ -1,0 +1,46 @@
+get router info routing-table all
+Codes: K - kernel, C - connected, S - static, R - RIP, B - BGP
+       O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       V - BGP VPNv4
+       * - candidate default
+
+Routing table for VRF=0
+S*      0.0.0.0/0 [10/0] via 193.221.132.137, x4, [1/0]
+C       192.168.10.0/24 is directly connected, mgmt
+C       192.168.70.0/24 is directly connected, vlan70
+C       192.168.100.0/24 is directly connected, lan
+C       192.168.150.0/24 is directly connected, vlan150
+C       192.168.151.0/24 is directly connected, vlan151
+C       192.168.152.0/24 is directly connected, vlan152
+C       192.168.153.0/24 is directly connected, vlan153
+C       192.168.154.0/24 is directly connected, vlan154
+C       192.168.155.0/24 is directly connected, vlan155
+C       192.168.156.0/24 is directly connected, vlan156
+C       192.168.157.0/24 is directly connected, vlan157
+C       192.168.158.0/24 is directly connected, vlan158
+C       192.168.159.0/24 is directly connected, vlan159
+          C       192.168.160.0/24 is directly connected, vlan160
+C       192.168.161.0/24 is directly connected, vlan161
+C       192.168.162.0/24 is directly connected, vlan162
+C       192.168.163.0/24 is directly connected, vlan163
+C       192.168.164.0/24 is directly connected, vlan164
+C       192.168.165.0/24 is directly connected, vlan165
+C       192.168.166.0/24 is directly connected, vlan166
+C       192.168.167.0/24 is directly connected, vlan167
+C       192.168.168.0/24 is directly connected, vlan168
+C       192.168.169.0/24 is directly connected, vlan169
+C       192.168.170.0/24 is directly connected, vlan170
+C       192.168.171.0/24 is directly connected, vlan171
+C       192.168.172.0/24 is directly connected, vlan172
+C       192.168.173.0/24 is directly connected, vlan173
+C       192.168.174.0/24 is directly connected, vlan174
+C       192.168.175.0/24 is directly connected, vlan175
+C       192.168.200.0/24 is directly connected, vlan200-TEST
+C       192.168.201.0/24 is directly connected, x1
+C       193.221.131.32/27 is directly connected, x4
+C       193.221.132.136/29 is directly connected, x4
+
+FW-120G-01 $ 

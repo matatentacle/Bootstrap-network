@@ -1,0 +1,8 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc    SystemName  
+  ---------  -----------------  ------  --------  ------------  
+          7  68:86:a7:6c:b4:d5    fa12                          
+          8  c8:00:84:8a:8c:4d    fa12            switch8a8c4d  
+         23  bc:cf:4f:bb:e4:7b      23    Port23        GS1920  

@@ -1,0 +1,79 @@
+BOOTSTRAP GATEWAY DISCOVERY REPORT
+13 October 2026, written for Mat
+
+SUMMARY
+Both gateways are fully read out and nothing on either was changed. The jump box is racked, reachable over Tailscale, and has a leg into each gateway's management network.
+- FortiGate-120G FW-120G-01, FortiOS 7.4.12, serial FG120GTK24015905. Only a read-only admin is visible, so full admin still needs the console.
+- Tenants on the FortiGate are VLANs 150 to 175 (26 of them) on a 1G bond, not 150 to 157 on 10G as the handover said.
+- ATP500 on 5.43(ABFU.0), running config captured after your 2FA code. No DHCP reservation exists for the jump box.
+- HTTPS admin is enabled on the FortiGate's public WAN interface. Logged for lockdown, not touched.
+- Neither console lead is usable yet: the FortiGate lead is not on the jump box USB bus, the ATP500 lead is not cabled.
+
+JUMP BOX
+Terminal-only, racked, reachable at Tailscale 100.83.139.20 with Tailscale SSH on. Plain SSH to that address works too.
+
+Connectivity (one default route):
+  Mat's laptop --Tailscale SSH--> Jump box MINI-PC-6
+  Jump box --USB NIC enx503eaacea0c4, DEFAULT ROUTE--> ATP500 ge7 192.168.254.1 --ge1--> Internet
+  Jump box --enp3s0 192.168.10.98, direct cable, no default route--> FortiGate mgmt 192.168.10.99
+  FortiGate --x4 Vorboss 193.221.132.138--> Internet
+
+The USB adapter is the only leg with internet, so it carries the default route and Tailscale. The onboard port is a dead-end management cable to the FortiGate.
+- Desktop, RustDesk and all snaps removed yesterday; the Celeron J1800 with 1.8 GB RAM could not carry them. Disk 64% used.
+- FortiGate leg addressed tonight with NetworkManager (the box's renderer) rather than a netplan file: 192.168.10.98/24, never-default, one default route only.
+- ufw denies inbound except rate-limited SSH, mosh, and everything on the Tailscale interface. fail2ban watches SSH. Password login still enabled because no SSH key is on the box yet.
+- Subnet routing stays off; ~/jumpbox-setup/subnet-router.sh turns it on for the two management subnets when wanted.
+- Everything pulled from the gateways is in a git repo at /srv/configs, committed tonight.
+
+FORTIGATE
+FortiGate-120G FW-120G-01, FortiOS 7.4.12 build 2902, serial FG120GTK24015905, standalone, idle at about 4% CPU. Captured over SSH with the mat account; full configuration is 45,286 lines in /srv/configs/fortigate.
+
+Ports:
+  mgmt            up 1G       192.168.10.99/24, leg to the jump box
+  x4              up 10G      WAN "Vorboss" 193.221.132.138/29, default via .137, secondary 193.221.131.33/27
+  x1              up 10G      alias "LAN" 192.168.201.1/24, carries only vlan70 and vlan200-TEST
+  port3 + port4   up 1G each  LACP bond LAN-Bond-2, carries every tenant VLAN 150 to 175
+  x2 + x3         down        members of the FortiLink aggregate, so x2 exists but is not free
+  port1           down        parent of vlan101 and vlan102
+  port16          down        192.168.1.99/24 with plain HTTP admin allowed
+  port2, 5-15, 17-24  down    free
+
+Handover correction: the tenant VLANs ride the 1G bond on port3+port4, not a single 10G uplink. Check which cable actually lands on Zyxel switch 101 port 10; the only 10G LAN-side port that is up carries just two VLANs.
+
+Admins: only "mat" is visible (super_admin_readonly, trusted hosts 0.0.0.0/0 on all ten slots, two-factor off). A read-only profile cannot see other admins, so a super_admin almost certainly exists. Reaching it needs the console.
+
+Policies: 31 total. One accept+NAT policy per tenant VLAN out to x4, the same for vlan70, vlan200-TEST and x1. Two inbound: x4 to vlan151 via a VIP, and x4 to vlan161. Public VIPs: 193.221.131.34 -> 192.168.161.250; 193.221.131.33 -> 192.168.151.254 (named as disabled). SSL-VPN policy lands on vlan101. DNS is Google, NTP on, central management FortiGuard, no syslog server.
+
+ATP500
+V5.43(ABFU.0) built 2026-07-29 running, V5.42(ABFU.1) on standby. Logged in as MKennedyAdmin with your Authenticator code, captured version, CPU, memory, interfaces, DHCP bindings and the 4,492-line running config, then logged out. Files in /srv/configs/atp500.
+  WAN                  ge1 157.231.154.206/30 and ge1:1 157.125.150.201/29
+  Management leg       ge7 192.168.254.1/24, internal, DHCP pool Network_Pool_GE7
+  Tenant VLANs         vlan10 upwards, each x.x.N.254 on the LAN side
+  Admin-level accounts admin, Shopna, MKennedyAdmin (full admin); bootstrapadmin, Mat-Kennedy (limited)
+  Jump box lease       192.168.254.100, not reserved, lease to 2036-10-10
+
+No reservation: the handover expected the jump box at .10. It holds a ten-year lease on .100 with reserve=no. Either add the reservation in a change window or pin the address statically on the box.
+Shopna: a full-admin account under that name exists alongside the three expected ones. Confirm who that is before lockdown.
+Quirks confirmed in config, not touched: weekly reboot Monday 04:00; cloud-helper firmware auto-update with reboot Sunday 00:00; policy 3 "Webaccess" allow-any.
+
+LOCKDOWN FINDINGS, NOT TOUCHED (most important first)
+1. FortiGate GUI exposed on the public WAN: x4 at 193.221.132.138 allows ping and HTTPS admin, and the only visible admin has no trusted-host restriction.
+2. ATP500 management open from every zone: HTTPS 50483 and SSH 22 accept from everywhere; the HTTPS landing page answers without authentication.
+3. ATP500 policy 3 "Webaccess" is allow-any, making every deny rule below it dead.
+4. Unattended reboots on the ATP500: weekly Monday 04:00 and firmware auto-update with reboot Sunday 00:00, on a box carrying about 44 tenants.
+5. Plain HTTP admin on the FortiGate on port16 and vlan101 (both down today, so latent).
+6. FortiGate trusted hosts 0.0.0.0/0 for mat, two-factor off.
+7. No syslog target on the FortiGate; DNS at 8.8.8.8 / 8.8.4.4.
+8. Unknown full-admin account "Shopna" on the ATP500.
+
+BLOCKED AND NEXT STEPS
+[ ] FortiGate console lead: not detected on the jump box USB bus. Only the UE300 and an empty 4-port hub are enumerated; the kernel has never logged an FTDI device. Check it is plugged into this box and seated, or try a hub port. Until then there is no route to full admin on the FortiGate.
+[ ] ATP500 console lead: not cabled yet (115200 8N1).
+[ ] ser2net: installed and disabled; configured once both leads are identified by serial.
+[ ] Jump box address on the ATP500 side: reservation for .10 in a change window, or pin .100 statically.
+[ ] Which cable is on Zyxel switch 101 port 10 (tenants are on the port3+port4 bond, not x1).
+[ ] Identify "Shopna" on the ATP500.
+[ ] Copy today's ATP500 startup config into /srv/configs/atp500 for commit.
+[ ] SSH key for the jump box, then password login off.
+
+For future ATP500 sessions: I open the session, you send the six-digit code, I run the read-only commands and log out.

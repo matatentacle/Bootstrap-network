@@ -1,0 +1,28 @@
+get system interface transceiver
+Interface port17 - Transceiver is not detected.
+Interface port18 - Transceiver is not detected.
+Interface port19 - Transceiver is not detected.
+Interface port20 - Transceiver is not detected.
+Interface port21 - Transceiver is not detected.
+Interface port22 - Transceiver is not detected.
+Interface port23 - Transceiver is not detected.
+Interface port24 - Transceiver is not detected.
+Interface x1 - SFP/SFP+/SFP28, 10GBASE-SR
+  Vendor Name  :            OEM             
+  Part No.     :            SFP-10G-SR      
+  Serial No.   :            CS101N42751     
+Interface x2 - Transceiver is not detected.
+Interface x3 - Transceiver is not detected.
+Interface x4 - SFP/SFP+/SFP28, 10GBASE-SR
+  Vendor Name  :            OEM             
+  Part No.     :            SFP-10G-SR      
+  Serial No.   :            CS101N57573     
+
+                                       Optical      Optical      Optical
+SFP/SFP+     Temperature  Voltage      Tx Bias      Tx Power     Rx Power
+Interface    (Celsius)    (Volts)      (mA)         (dBm)        (dBm)
+------------ ------------ ------------ ------------ ------------ ------------ 
+x1            37.9         3.38         5.86         -1.9         -2.2       
+          x4            39.9         3.35         6.16         -1.9         -2.2       
+++ : high alarm, + : high warning, - : low warning, -- : low alarm, ? : suspect.
+FW-120G-01 $ 

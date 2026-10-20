@@ -1,0 +1,18 @@
+show system-information
+
+Product Model		: GS1920-24HP
+System Name		: PH2 Second Floor SW04
+System Mode		: Standalone
+System Contact		: 
+System Location		: 
+System up Time		:  4091:28:18 (57cb201a ticks)
+Ethernet Address	: bc:cf:4f:bb:c8:f4
+Bootbase Version	: V1.00 | 04/12/2018
+ZyNOS F/W Version	: V5.00(ABMI.3) | 03/24/2026
+Hardware Version	: V2.0
+Config Boot Image 	: 2
+Current Boot Image 	: 2
+Current Configuration 	: 1
+RomRasSize		: 5774820 
+Serial Number		: S202L15002444
+Register MAC Address	: bc:cf:4f:bb:c8:f4

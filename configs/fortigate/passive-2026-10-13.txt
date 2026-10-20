@@ -1,0 +1,26 @@
+# FortiGate passive discovery 2026-10-13 (no login)
+
+## TLS certificate (443)
+subject=O = Fortinet Ltd., CN = FortiGate
+issuer=O = Fortinet Ltd., CN = FortiGate
+notBefore=Jan 14 15:31:16 2025 GMT
+notAfter=Apr 19 15:31:16 2027 GMT
+serial=63307F0B523793D4
+
+## HTTP headers
+HTTP/2 405 
+x-frame-options: SAMEORIGIN
+content-security-policy: frame-ancestors 'self'
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=63072000
+date: Tue, 13 Oct 2026 17:24:07 GMT
+
+
+## SSH
+hostkey type: ecdsa-sha2-nistp256
+hostkey type: ssh-ed25519
+hostkey type: ssh-rsa
+2048 SHA256:ElVP8T1zvLHSeS0IT9jQXb7HBsrBONcWXHMEVvi9Nac 192.168.10.99 (RSA)
+256 SHA256:zk5OsKFY0QTD1EftxuCQ3qIsWDRatwfF66gDHtuL0pg 192.168.10.99 (ECDSA)
+256 SHA256:3DVmg2a+2vBLYXH0efYWUbkOm00WFhlVuuEXiZT7cw8 192.168.10.99 (ED25519)
+banner: SSH-2.0-_bv8K

@@ -1,0 +1,9 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc            SystemName  
+  ---------  -----------------  ------  --------  --------------------  
+          4  f4:4d:5c:fe:da:1d       1       lan         PH3.17-18WIFI  
+          7  d4:1a:d1:49:2e:21       1       lan           NWA1123ACv3  
+         20  d4:1a:d1:48:44:1d       1       lan             PH3.9WIFI  
+         23  bc:cf:4f:bb:d8:b3      24    Port24  PH3 Third Floor SW12  

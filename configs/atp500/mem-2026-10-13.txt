@@ -1,0 +1,3 @@
+show mem status
+free memory: 2082528kB
+memory usage: 33%

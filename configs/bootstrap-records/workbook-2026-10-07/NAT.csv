@@ -1,0 +1,17 @@
+#,STATUS,PRIORITY,NAME,MAPPING,INTERFACE,SOURCE IP,EXTERNAL IP,INTERNAL IP,PROTOCOL,EXTERNAL PORT,INTERNAL PORT
+1.0,,1.0,VLAN27_DUPEVFX,1:1 NAT,ge1,any,Public_IP_128_132,VLAN27_Internal,any,DUPEVFX,DUPEVFX,DGN STUDIO VLAN
+2.0,,2.0,VLAN27_DUPEVFX2,Virtual Server,ge1,any,Public_IP_128_132,VLAN27_Internal,any,DUPEVFX,DUPEVFX,DGN STUDIO VLAN
+3.0,,3.0,VLAN31_Lickerish,1:1 NAT,ge1,any,Public_IP_128_135,VLAN31_internal,any,Lickerish,Lickerish,they are using vlan24 - not sure what this is for?
+4.0,,4.0,VLAN33_Haberdashery,1:1 NAT,ge1,any,Public_IP_128_136,vlan33_internal,any,Haberdashery,Haberdashery,delete/ CAN BE REUSED
+5.0,,5.0,VLAN33_Haberdashery_NAS,Virtual Server,ge1,any,Public_IP_128_133,Haberdashery_NAS,any,Haberdashery_NAS,Haberdashery_NAS,delete/ CAN BE REUSED
+6.0,,6.0,Tentacle_Router,Virtual Server,ge1,any,Public_IP_128_134,Tentacle_Router,tcp,Tentacle_Router,Tentacle_Router,Jordan Copeland
+7.0,,7.0,Tentacle_Router2,Virtual Server,ge1,any,Public_IP_128_134,Tentacle_Router,udp,Tentacle_Router2,Tentacle_Router2,Jordan Copeland
+8.0,,8.0,SnafuPictures_Router,Virtual Server,ge1,any,Public_IP_128_137,SnafuPictures_Router,tcp,SnafuPictures_Router,SnafuPictures_Router,delete/ CAN BE REUSED
+9.0,,9.0,SnafuPictures_RouterUDP,Virtual Server,ge1,any,Public_IP_128_137,SnafuPictures_Router,udp,SnafuPictures_RouterUDP,SnafuPictures_RouterUDP,delete/ CAN BE REUSED
+10.0,,10.0,MedioriteUDP,1:1 NAT,ge1,any,Public_IP_128_138,Mediorite,udp,MedioriteUDP,MedioriteUDP
+11.0,,11.0,MedioriteTCP,1:1 NAT,ge1,any,Public_IP_128_138,Mediorite,tcp,MedioriteTCP,MedioriteTCP
+12.0,,12.0,Vlan71_CafeOTO,Virtual Server,ge1,any,Public_IP_128_140,CafeOTORouterInternal,any,any,any
+13.0,,13.0,CafeOTO1t1,Virtual Server,vlan71,CafeOTORouterInternal,any,CafeOTORouter,any,any,any
+14.0,,14.0,VLAN54_THAMES,1:1 NAT,ge1,any,Public_IP_128_136,192.168.54.253,any,any,any
+
+,,,Move NATS to Fortigate

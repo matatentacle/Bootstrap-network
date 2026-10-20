@@ -1,0 +1,11 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc                 SystemName  
+  ---------  -----------------  ------  --------  -------------------------  
+          1  bc:cf:4f:5a:80:e2       5                               GS1350  
+          2  bc:cf:4f:2f:b7:5a       1    UPLINK              NWA1123-AC-HD  
+          4  d4:1a:d1:44:5e:e2       1       lan                   PHB9WIFI  
+          5  d4:1a:d1:49:2e:03       1       lan                40ftTapRoom  
+          6  ec:3e:b3:4f:78:d6       1       lan  ACMEat40ft-basementoffice  
+          9  bc:cf:4f:bb:ca:e1      28    Port28                     GS1920  

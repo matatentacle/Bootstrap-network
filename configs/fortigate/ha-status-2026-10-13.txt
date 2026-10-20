@@ -1,0 +1,17 @@
+get system ha status
+HA Health Status: OK
+Model: FortiGate-120G
+Mode: Standalone
+Group Name: 
+Group ID: 0
+Debug: 0
+Cluster Uptime: 0 days 0h:0m:0s
+Cluster state change time: N/A
+ses_pickup: disable
+override: disable
+System Usage stats:
+HBDEV stats:
+number of member: 0
+number of vcluster: 0
+
+FW-120G-01 $ 

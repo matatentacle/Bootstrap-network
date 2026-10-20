@@ -1,0 +1,13 @@
+show interfaces status
+  Port      Name          Link        State             Type          Up Time 
+  ---- ------------- -------------- ---------- -------------------- ----------
+     1         Port1           1G/F FORWARDING         10/100/1000M   19:56:55
+     2         Port2         100M/F FORWARDING         10/100/1000M 3407:49:21
+     3         Port3           Down       STOP         10/100/1000M    0:00:00
+     4         Port4           1G/F FORWARDING         10/100/1000M 4090:28:41
+     5         Port5         100M/F FORWARDING         10/100/1000M  205:24:31
+     6         Port6           1G/F FORWARDING         10/100/1000M 4090:28:41
+     7         Port7           Down       STOP         10/100/1000M    0:00:00
+     8         Port8           Down       STOP         10/100/1000M    0:00:00
+     9         Port9    1G/F    SFP FORWARDING         10/100/1000M  525:33:58
+    10        Port10           Down       STOP         10/100/1000M    0:00:00

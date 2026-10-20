@@ -1,0 +1,57 @@
+show trunk
+Group ID T1:	active 
+  Criteria :  src-dst-mac
+  Status: LACP
+  Member number: 2	  Member:9 10 
+Group ID T2:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T3:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T4:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T5:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T6:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T7:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T8:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T9:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T10:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T11:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T12:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T13:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	
+Group ID T14:	inactive 
+  Criteria :  src-dst-mac
+  Status: -
+  Member number: 0	

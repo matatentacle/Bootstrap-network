@@ -1,0 +1,30 @@
+# ATP500 passive discovery 2026-10-13 (no login)
+
+## TLS certificate (50483)
+subject=CN = atp500_D8ECE5BFDCE7
+issuer=CN = atp500_D8ECE5BFDCE7
+notBefore=Aug 24 18:52:12 2022 GMT
+notAfter=Aug 21 18:52:12 2032 GMT
+serial=509C7592257AAFD1D9FE824B77A8A75C92FEE0BE
+
+## HTTP headers
+HTTP/1.1 200 OK
+Date: Tue, 13 Oct 2026 17:24:08 GMT
+Cache-Control: no-cache, private
+Pragma: no-cache
+Expires: Mon, 16 Apr 1973 13:10:00 GMT
+Content-Type: text/html
+
+
+## SSH
+2048 SHA256:wZjPQLgQ3QZqB5Ib5QoJeoLHdHI0KC7Ij1iNHEtp7e0 192.168.254.1 (RSA)
+banner: SSH-2.0-sshd
+
+## DHCP lease seen by jump box
+DHCP4.OPTION[1]:dhcp_lease_time = 315360000
+DHCP4.OPTION[2]:dhcp_server_identifier = 192.168.254.1
+DHCP4.OPTION[3]:domain_name_servers = 192.168.254.1
+DHCP4.OPTION[5]:ip_address = 192.168.254.100
+DHCP4.OPTION[8]:requested_domain_name_servers = 1
+DHCP4.OPTION[18]:requested_routers = 1
+DHCP4.OPTION[23]:routers = 192.168.254.1

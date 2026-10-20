@@ -1,0 +1,190 @@
+Bootstrap's margin notes, pulled out of the workbook (7 Oct 2026) and tagged. These are THEIR notes, not a plan of ours.
+Tags: MOVED-TO-FORTIGATE / ON-FORTIGATE = already migrated per sheet; FREE-REUSABLE, TENANT-LEFT = candidates to drop;
+HAS-NAT, STATIC-IP, NAT-TO-FORTIGATE = public-IP/NAT work to carry over; MAKE-SHARED, SEPARATE-TENANTS, FIX-AT-VORBOSS-MOVE = design changes they want.
+
+VLAN 1: TENANT-LEFT
+    [BS config sheet] Volunteer Centre Hackney [CW207]: Main left; F4:4D:5C:FA:6A:9F
+VLAN 10: BILLING, REASSIGNED, SEPARATE-TENANTS
+    [VLANs-ATP500 tab] status=Active; Our VLAN. VLAN possibly shared with several tenants - needs to be separated (D4:1A:D1:44:61:25 & 50:E0:39:3B:1D:C7)
+    [BS config sheet] Bootstrap Reception [Reception]: 
+    [BS config sheet] Bootstrap Office - PHG3-5 [PHG3-5]: 
+    [BS config sheet] Bootstrap Office - PH3.9 [PH3.9]: 
+    [BS config sheet] Bootstrap Newton Dunbar [PH3.2]: 
+    [BS config sheet] Bootstrap Quiet Room/ LAWA [PH2.12]: Room given to LAWA
+    [BS config sheet] Bootstrap Office CW205 (prv Felicity Kay) [CW208]: / D4:1A:D1:44:5E:E8
+    [BS config sheet] kryshna.popat@gmail.com [3.10 B]: THEY ARE ON PH3.2 AP sharing with Nick Corrigan/ split charges
+    [BS config sheet] angelaconnealy@btopenworld.com [Print House 3.10A]: THEY ARE ON PH3.2 AP
+VLAN 11: MOVED-TO-FORTIGATE, REASSIGNED
+    [VLANs-ATP500 tab] status=Inactive; moved to Fortigate vlan151
+    [BS config sheet] Curam [FH2.11/12 (initial setup PHG2)]: moved to PH2.3 (RapidEye)
+VLAN 12: REASSIGNED, STATIC-IP
+    [VLANs-ATP500 tab] status=Inactive; Given to Thames Reach
+    [BS config sheet] Thames Reach [303, 310 & 311]: Static IP was requested - 157.231.128.136 Invoiced from 1st July 2023 due to delay insetting up static IP
+VLAN 13: MAKE-SHARED
+    [VLANs-ATP500 tab] status=MAKE SHARED; MAKE AS SHARED VLAN (CHANGE THOSE ON VLAN 1 TO VLAN 13)
+    [BS config sheet] Print House Therapy [PH 3.10B]: 
+VLAN 14: HAS-NAT
+    [VLANs-ATP500 tab] status=Active; Possible NAT config
+    [BS config sheet] Tentacle (Jordan Copeland) [PH1.9A]: NAT config Jordan Copeland is using this - PH1.18
+VLAN 15: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; Given to Felicity Kay in CW208
+    [BS config sheet] Felicity Kay [CW301]: moved to CW208
+VLAN 19: MOVED-TO-FORTIGATE, REASSIGNED
+    [VLANs-ATP500 tab] status=Inactive; moved to Fortigate
+    [BS config sheet] CAKE Architecture [PH3.12 > MOVED TO PH3.17/18]: Still connecting to AP in PH3.12/13
+VLAN 22: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; Left - can be reused
+VLAN 23: FREE-REUSABLE
+    [VLANs-ATP500 tab] status=Inactive; can be reused
+VLAN 25: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; Left - can be reused
+VLAN 28: REASSIGNED, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Active; Given to Urban Good CIC in FH2.13
+    [BS config sheet] Sarah Dawes Limited [PH3.18]: left
+    [BS config sheet] Urban Good CIC [FH2.13]: Main D4:1A:D1:5A:35:F6
+VLAN 29: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; Left - can be reused
+    [BS config sheet] Paper House Project [PH 1.7]: left
+VLAN 30: FREE-REUSABLE
+    [VLANs-ATP500 tab] status=Inactive; can be reused
+VLAN 31: HAS-NAT, UNCLEAR
+    [VLANs-ATP500 tab] status=; ?? They have 2 VLANS under their name - NAT CONFIG
+VLAN 33: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; Left - can be reused
+VLAN 34: REASSIGNED
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] Sistah Space [6-8 3rd floor > moved to PH1.3]: Main / 50:E0:39:3B:1D:CD / phone on port 15
+    [BS config sheet] Sistah Space [PHG1 (shop)]: Main / EC:3E:B3:4F:78:F7
+VLAN 36: REASSIGNED, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Active; Given to Oscar Deen in PH2.11
+    [BS config sheet] Atelier Baulier / Neighbourhood studio [CW301]: left
+    [BS config sheet] Oscar Deen Eyewear [Oscar Deen Eyewear Room]: Main F4:4D:5C:F9:DF:E2
+VLAN 38: REASSIGNED
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] PINZUTU FILMS [CW210]: moved to CW201 50:E0:39:3B:1D:C4
+    [BS config sheet] PINZUTU FILMS [CW201]: D4:1A:D1:48:44:32
+VLAN 39: HAS-NAT, REASSIGNED, STATIC-IP
+    [VLANs-ATP500 tab] status=Active; Was Scoff Stiudios - Given to Thames Reach for firewall install - NAT config
+    [BS config sheet] Thames Reach [303, 310 & 311]: Static IP was requested - 157.231.128.136 Invoiced from 1st July 2023 due to delay insetting up static IP
+VLAN 40: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; given to African Community School
+    [BS config sheet] African Community School [PHG2]: Main D4:1A:D1:5A:1D:9F
+    [BS config sheet] African Community School [PHG2]: Main D4:1A:D1:5A:1D:9F
+VLAN 41: FIX-AT-VORBOSS-MOVE, REASSIGNED
+    [VLANs-ATP500 tab] status=Active; EC:3E:B3:4F:78:EE /
+    [BS config sheet] Raze Collective/ Eat Club [CW307M]: Main On CW307 AP. Eat CLub moved to CW307 and sharing Raze VLAN - change when moving to vorboss
+VLAN 42: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; Given to Bona Food
+    [BS config sheet] Bona Food [PHG2]: 
+VLAN 43: FREE-REUSABLE
+    [VLANs-ATP500 tab] status=Inactive; Can be reused
+VLAN 44: REASSIGNED, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] VBQ Limited [C304]: left
+    [BS config sheet] Ryan Oxley [CW304]: Taken over VBQs vlan
+VLAN 45: FREE-REUSABLE, HAS-NAT, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; left office, can be reused. NAT config
+    [BS config sheet] Snafu Pictures [PH2.5 PH2.4]: 157.231.128.137 / left office/ in CoLab. BC:CF:4F:2F:E5:6B &  / BC:CF:4F:2F:F1:50
+VLAN 46: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; EC:3E:B3:4F:78:D6 / BC:CF:4F:2E:DF:7E - connected to TPLink (BC:CF:4F:5A:80:E2 - Bar Switch SW16>SW15)
+    [BS config sheet] Acme by 40ft [PH1.3 > moved to basement 01/02/25]: Main EC:3E:B3:4F:78:D6 / BC:CF:4F:2E:DF:7E - connected to TPLink/SW16
+VLAN 47: UNCLEAR
+    [VLANs-ATP500 tab] status=; Duplicate for LAWA?
+VLAN 48: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; left - can be reused
+    [BS config sheet] Field Vision Bars [FH3]: left but APs active
+    [BS config sheet] Field Vision Bars [Rooftop]: left
+VLAN 50: BILLING
+    [VLANs-ATP500 tab] status=Active; Closer 2021
+    [BS config sheet] Adam Aftanas Studio Ltd [CW305]: REQUESTING MORE
+VLAN 51: REASSIGNED
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] Full circle Psy/ Mark Kinnally [PH1.2]: MOVED TO PH1.2
+VLAN 53: REASSIGNED
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] Bridge the gap ending digital poverty C.I.C [PH3.5 > PH2.4-5]: moved to 2nd flr (Snafu's old offices) provided free of charge
+VLAN 54: FREE-REUSABLE, STATIC-IP
+    [VLANs-ATP500 tab] status=Active; D4:1A:D1:48:44:41 - Thames Reach firewall is being put on VLAN 39 (Scoff studios) This one will be reused for Thames Reach as an empty extra VLAN
+    [BS config sheet] Thames Reach [303, 310 & 311]: Static IP was requested - 157.231.128.136 Invoiced from 1st July 2023 due to delay insetting up static IP
+VLAN 55: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; D4:1A:D1:48:44:38 - Given to Balaam Murphy
+    [BS config sheet] Balaam Murphy [CW301]: D4:1A:D1:48:44:38
+VLAN 56: REASSIGNED
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] openDemocracy [PH2.7, 2.8, 2.9, 2.10 > MOVED TO PH3.12/13]: 
+VLAN 58: BILLING
+    [VLANs-ATP500 tab] status=Active
+    [BS config sheet] Mediorite [PH1.7]: REQUESTING MORE
+VLAN 60: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; Given to Arbor Windows CW206 - Balaam Murphy have vlan 55
+    [BS config sheet] Balaam Murphy [CW208]: moved to CW301, VLAN 55
+    [BS config sheet] Arbor Windows Limited [206.0]: Main 50:E0:39:3B:1D:D0
+VLAN 61: FREE-REUSABLE, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; Left - can be reused (50:E0:39:3B:1D:C7 - taken by Bootstrap)
+VLAN 62: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; Given to Teim Accountants
+    [BS config sheet] Teim Accountants [PH1.13]: Main
+VLAN 63: TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; EC:3E:B3:4F:78:EE - Serves by CW 307/307M
+    [BS config sheet] Joanna Rzepczynska [CW307]: MAIN left office EC:3E:B3:4F:78:EE /  /
+VLAN 65: UNCLEAR
+    [VLANs-ATP500 tab] status=; ??
+VLAN 67: BILLING, REASSIGNED, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Active; / D4:1A:D1:44:5E:E5
+    [BS config sheet] Silverfish Productions Limited [PH1.2]: moved to FHG2 with Full Time Hobby left office to FHG2 /
+    [BS config sheet] Silverfish Productions Limited [FHG2 (Bootstrap old office)]: REQUESTING MORE D4:1A:D1:44:5E:E5
+    [BS config sheet] Silverfish Productions Limited [PH2.1]: 
+VLAN 68: STATIC-IP, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Inactive; left - static IP was provided
+    [BS config sheet] RapidEyeMovers Ltd [PH2.3]: Static IP requested. External Static IP address:      157.231.128.139 / Internal IP Settings: / Router:      192.168.68.254 / Subnet:      255.255.255.0 left
+VLAN 69: HAS-NAT
+    [VLANs-ATP500 tab] status=Active; Possible NAT config. Room port 15 into netgear>APS & printer. Had a Draytek but not in use in PH2.6-10  ( / D4:1A:D1:58:D3:69 /  / D4:1A:D1:48:44:1D /  / D4:1A:D1:48:44:47)
+    [BS config sheet] Latin American Women's Aid [Suite 11, suite 9, suite 1, suite 2, suite 4 third floor.]: Main LAWA is now in PH2.6-10 (Open Dems old space inc kitchen) - Have 2 APS and a printer, using Draytek switch.
+VLAN 70: REASSIGNED
+    [VLANs-ATP500 tab] status=Active; D4:1A:D1:49:3B:A4 - Given to Abisoye Odugbesan in CW202
+    [BS config sheet] Leaders Unlocked [Unit 201]: Main D4:1A:D1:48:44:32 - issue with the wiring or AP
+    [BS config sheet] Abisoye Odugbesan [CW202]: Main D4:1A:D1:49:3B:A4 157.231.154.206
+VLAN 73: REASSIGNED, TENANT-LEFT
+    [VLANs-ATP500 tab] status=Active; Given to Civil Society PH1.17
+    [BS config sheet] MAKE [CW 302]: 192.168.73.1/24 Left - port 11 assigned to Thames Reach VLAN
+    [BS config sheet] Civil Society Consulting CIC [PH1.17]: 192.168.73.254
+VLAN 150: ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=CW207 - Create London
+    [BS config sheet] Create London [CW207]: 192.168.150.10 ON FORTIGATE FIREWALL
+VLAN 151: ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=FH2.1 - ReLine
+    [BS config sheet] Reline London Ltd [FH2.1 & 2.14]: ON FORTIGATE FIREWALL / 193.221.132.138
+VLAN 152: ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=PH2.3 - Curamcare
+    [BS config sheet] Curam [PH2.3]: ON FORTIGATE FIREWALL / 193.221.132.138
+VLAN 153: BILLING, ON-FORTIGATE, REASSIGNED
+    [VLANS-FORTIGATE tab] status=Active; client=PH3.6-8 - Cake Architecture; to bill
+    [BS config sheet] CAKE Architecture [PH3.12 > MOVED TO PH3.17/18]: MOVING TO PH3.6-8 FORTIGATE FIREWALL / 193.221.132.138
+    [BS config sheet] CAKE Architecture [PH3.6-8]: FORTIGATE FIREWALL F4:4D:5C:FE:AC:06
+VLAN 155: ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=FHG1 - Colab
+    [BS config sheet] Bootstrap CoLab space [FHG1]: ON FORTIGATE FIREWALL
+VLAN 156: ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=PH3.17-18A - Harp-E
+    [BS config sheet] Harp-e [PH3.17-18]: ON FORTIGATE FIREWALL
+VLAN 158: BILLING, ON-FORTIGATE
+    [VLANS-FORTIGATE tab] status=Active; client=Fair Finance; to bill
+    [BS config sheet] Fair Finance [FH1.1]: ON FORTIGATE FIREWALL - keeping their old conection while moving over
+VLAN 159: REASSIGNED
+    [VLANS-FORTIGATE tab] status=Active; client=St Paul's Waldorf School; was on 158 without being recorded, so was given to Fair Finance
+    [BS config sheet] St Paul’s Waldorf School [PH2.13]: changed to VLAN159 from 158 as this was given to FF without knowing it was already assigned!
+VLAN 160: BILLING
+    [VLANS-FORTIGATE tab] status=Active; client=Simon Campbell; not charged
+    [BS config sheet] Simon Campbell [PH1.5]: on PH1.4 AP (Julia Brenard) guest account
+
+Other tabs:
+    [NAT tab] 3.0  3.0 VLAN31_Lickerish 1:1 NAT ge1 any Public_IP_128_135 VLAN31_internal any Lickerish Lickerish they are using vlan24 - not sure what this is for?
+    [NAT tab] 4.0  4.0 VLAN33_Haberdashery 1:1 NAT ge1 any Public_IP_128_136 vlan33_internal any Haberdashery Haberdashery delete/ CAN BE REUSED
+    [NAT tab] 5.0  5.0 VLAN33_Haberdashery_NAS Virtual Server ge1 any Public_IP_128_133 Haberdashery_NAS any Haberdashery_NAS Haberdashery_NAS delete/ CAN BE REUSED
+    [NAT tab] 8.0  8.0 SnafuPictures_Router Virtual Server ge1 any Public_IP_128_137 SnafuPictures_Router tcp SnafuPictures_Router SnafuPictures_Router delete/ CAN BE REUSED
+    [NAT tab] 9.0  9.0 SnafuPictures_RouterUDP Virtual Server ge1 any Public_IP_128_137 SnafuPictures_Router udp SnafuPictures_RouterUDP SnafuPictures_RouterUDP delete/ CAN BE REUSED
+    [NAT tab] Move NATS to Fortigate
+    [Routing-Public IP tab] 3.0 any none vlan68 any any any any any ge1 preserve Public_IP_128_139 Rapid Eye left
+    [Routing-Public IP tab] 5.0 any none vlan45 any any any any any ge1 preserve Public_IP_128_137 Snafu Pictures (leaving office) left
+    [Routing-Public IP tab] 7.0 any none vlan33 any any any any any ge1 preserve Public_IP_128_133 Haberdashery (left)
+    [Routing-Public IP tab] 9.0 any none vlan11 any any any any any ge1 preserve Public_IP_128_131 Curamcare moved to fortigate vlan 151

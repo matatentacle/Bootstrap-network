@@ -1,0 +1,13 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId                  PortId  PortDesc                     SystemName  
+  ---------  -----------------  ----------------------  --------  -----------------------------  
+          2  bc:cf:4f:5a:7b:9b                       1     Port1  FITZROY HOUSE FHG2 (SPLITTER)  
+          4  d4:1a:d1:5a:1d:9f                       1       lan                       PHG2WIFI  
+          5  a8:29:48:fb:aa:49  gigabitEthernet 1/0/12    Port12      Main_SW_A8-29-48-FB-AA-49  
+         23  bc:cf:4f:bb:ca:e1                      23    Port23                         GS1920  
+         25  bc:cf:4f:c4:bb:e2                      25    Port25                         GS1920  
+         26  bc:cf:4f:bb:e4:7b                      25    Port25                         GS1920  
+         27  bc:cf:4f:bb:cb:55                      25    Port25                         GS1920  
+         28  bc:cf:4f:bb:e3:76                      25    Port25          CW2 Second Floor SW05  

@@ -1,0 +1,43 @@
+BOOTSTRAP SWITCH MAP - 14 Oct 2026 (read-only discovery, nothing changed)
+
+CORE: SW01 = 192.168.1.39, GS1920-24HP (system name still "GS1920")
+  port 2      <- ATP500 LAN1 (ge4), single 1G trunk carrying all ATP500 tenant VLANs
+  ports 9+10  <- FortiGate port3+port4, LACP, matches the FortiGate LAN-Bond-2 (confirmed both ends)
+  port 23     -> 192.168.1.38 GS1920-24HP (second hub)
+  port 25     -> 192.168.1.33 PH3 Third Floor SW12  -> its port 24 -> 192.168.1.45 PH3 Third Floor SW13
+  port 26     -> 192.168.1.35 PH2 Second Floor SW04
+  port 27     -> 192.168.1.47 PH1 First Floor SW03
+  port 28     -> 192.168.1.37 GS1920-8HP -> its port 1 -> 192.168.46.4 GS1350-6HP
+
+HUB 2: 192.168.1.38 GS1920-24HP
+  port 25 -> 192.168.1.44 GS1920 -> port 23 -> 192.168.1.43 GS1920 ; port 24 -> 192.168.1.42 GS1920
+  port 26 -> 192.168.1.34 GS1920 -> port 23 -> 192.168.1.40 GS1920 -> port 8 -> Cisco switch 192.168.16.14
+  port 27 -> 192.168.1.36 GS1920
+  port 28 -> 192.168.1.41 CW2 Second Floor SW05
+  port 2  -> 192.168.1.46 GS1350-6HP (FITZROY HOUSE FHG2)
+  port 5  -> tenant TP-Link switch, VLAN 64 untagged
+
+FACTS
+- 18 switches: 13 GS1920-24HP, 1 GS1920-8HP, 2 GS1350-6HP, 2 Cisco Small Business.
+- Every link between switches is a single 1G. Only LAG anywhere is SW01 to the FortiGate.
+- Deepest chain is 4 switches (SW01 > .38 > .44 > .42). No redundancy.
+- All GS1920 on firmware V5.00(ABMI.3), 24 Mar 2026. Uptime ~170 days, except SW01 and .38 at 22 days.
+- FortiGate 10G port x1 (192.168.201.x) is on a separate fabric: not seen on any of these switches.
+- Switches learn MACs on VLANs that are not in their VLAN tables (undefined VLANs pass over uplinks). Check in Nebula.
+
+NOT DONE / NEED FROM MAT
+- GS1350 x2: Zyxel admin password refused. Different local creds?
+- Cisco x2: no SSH, web only. Models unknown.
+- "Switch 101 port 10" from the handover: nothing is named 101. VLAN 101 is on SW01 port 11.
+- Nebula names for the nine switches still called "GS1920".
+
+Full detail: /srv/configs/switches/NOTES.md and raw/ on the jump box.
+
+NEBULA CROSS-CHECK (added after Mat pasted the device list)
+- Nebula names: SW01=.39 core, SW02=.38 hub, SW03=.47, SW04=.35, SW05=.41, SW06=.34, SW07=.40,
+  SW08=.36, SW09=.44, SW10=.42, SW11=.43, SW12=.33, SW13=.45, SW15=.37 (8HP), SW16=192.168.46.4 (GS1350).
+- "Switch 101 port 10" = SW101, an XS1935-12F 10G switch at 192.168.201.2 on the FortiGate x1 side.
+  SW102 (XS1935-12F, .201.3) and SW14 (GS1920-24HP, .201.4) are on that island too. Not reachable from the box.
+- Roof Bar SW17 is on a third internet line (185.53.226.147); Roof Bar SW18 is offline in Nebula.
+- 192.168.1.46 GS1350 (FITZROY HOUSE FHG2) is NOT in Nebula at all: that is why the password failed.
+- Total: 24 switches (21 Zyxel in Nebula, 1 Zyxel outside, 2 Cisco). 14 read over SSH.

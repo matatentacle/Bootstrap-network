@@ -1,0 +1,14 @@
+show lldp info local
+LLDP Global Local Device Information: 
+Chassis ID Subtype:          mac-address
+     Chassis ID:    bc:cf:4f:bb:ca:e1
+    System Name:               GS1920
+System Description: V5.00(ABMI.3) | 03/24/2026
+System Capabilities Supported: Bridge
+System Capabilities Enabled: Bridge
+Management Address : 
+	Management Address Subtype: ipv4 / all-802
+	Interface Number Subtype:    unknown
+	Interface Number: 0
+	Object Identifier: 0
+

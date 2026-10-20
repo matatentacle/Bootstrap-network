@@ -1,0 +1,4 @@
+diagnose netlink aggregate name fortilink
+Unknown action 0
+
+FW-120G-01 $ 

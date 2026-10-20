@@ -1,0 +1,31 @@
+show interfaces status
+  Port      Name          Link        State             Type          Up Time 
+  ---- ------------- -------------- ---------- -------------------- ----------
+     1         Port1           1G/F FORWARDING         10/100/1000M  195:22:24
+     2         Port2           Down       STOP         10/100/1000M    0:00:00
+     3         Port3           Down       STOP         10/100/1000M    0:00:00
+     4         Port4           1G/F FORWARDING         10/100/1000M  141:27:13
+     5         Port5           Down       STOP         10/100/1000M    0:00:00
+     6         Port6           Down       STOP         10/100/1000M    0:00:00
+     7         Port7           1G/F FORWARDING         10/100/1000M 4091:11:40
+     8         Port8         100M/F FORWARDING         10/100/1000M 4091:09:20
+     9         Port9           Down       STOP         10/100/1000M    0:00:00
+    10        Port10           Down       STOP         10/100/1000M    0:00:00
+    11        Port11           Down       STOP         10/100/1000M    0:00:00
+    12        Port12           Down       STOP         10/100/1000M    0:00:00
+    13        Port13           Down       STOP         10/100/1000M    0:00:00
+    14        Port14           Down       STOP         10/100/1000M    0:00:00
+    15        Port15           Down       STOP         10/100/1000M    0:00:00
+    16        Port16           Down       STOP         10/100/1000M    0:00:00
+    17        Port17           Down       STOP         10/100/1000M    0:00:00
+    18        Port18           Down       STOP         10/100/1000M    0:00:00
+    19        Port19           Down       STOP         10/100/1000M    0:00:00
+    20        Port20          10M/F FORWARDING         10/100/1000M  983:23:21
+    21        Port21           Down       STOP         10/100/1000M    0:00:00
+    22        Port22           Down       STOP         10/100/1000M    0:00:00
+    23        Port23           1G/F FORWARDING         10/100/1000M 4091:13:21
+    24        Port24           Down       STOP         10/100/1000M    0:00:00
+    25        Port25           Down       STOP         10/100/1000M    0:00:00
+    26        Port26           Down       STOP         10/100/1000M    0:00:00
+    27        Port27           Down       STOP         10/100/1000M    0:00:00
+    28        Port28           Down       STOP         10/100/1000M    0:00:00

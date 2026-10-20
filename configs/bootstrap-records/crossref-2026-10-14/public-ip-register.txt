@@ -1,0 +1,15 @@
+ATP500 public IPs 157.231.128.x (Vodafone/old WAN ge1). Device = running-config 13 Oct 2026; Sheet = "Routing-Public IP" + "NAT" tabs.
+
+IP               Device policy-route SNAT  Device NAT / virtual server                                 Sheet says                              
+157.231.128.130  vlan10                    -                                                           any Bootstrap                           
+157.231.128.131  vlan11                    -                                                           any Curamcare moved to fortigate vlan 151
+157.231.128.132  vlan27                    VLAN27_DUPEVFX->VLAN27_Internal; VLAN27_DUPEVFX2->VLAN27_Internalany DUPE (now DGN Studios)              
+157.231.128.133  vlan33                    VLAN33_Haberdashery_NAS->Haberdashery_NAS                   any Haberdashery (left)                 
+157.231.128.134  vlan14                    Tentacle_Router->Tentacle_Router; Tentacle_Router2->Tentacle_Routerany Tentacle/ Jordan Copeland           
+157.231.128.135  -                         VLAN31_Lickerish->VLAN31_internal                           -                                       
+157.231.128.136  vlan54                    VLAN33_Haberdashery->vlan33_internal DEACTIVATED; VLAN54_THAMES->192.168.54.253any Thames Reach                        
+157.231.128.137  vlan45                    SnafuPictures_Router->SnafuPictures_Router; SnafuPictures_RouterUDP->SnafuPictures_Routerany Snafu Pictures (leaving office) left
+157.231.128.138  vlan58                    MedioriteUDP->Mediorite; MedioriteTCP->Mediorite            any Mediorite                           
+157.231.128.139  vlan68                    -                                                           any Rapid Eye left                      
+157.231.128.140  vlan71                    Vlan71_CafeOTO->CafeOTORouterInternal                       any Café oto                            
+157.231.128.142  -                         -                                                           -                                       

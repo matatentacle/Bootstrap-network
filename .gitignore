@@ -1,0 +1,28 @@
+# ---- never committed: credentials and raw captures ----
+.env
+*.env
+!.env.example
+*.key
+*.pem
+*.ppk
+id_*
+secrets/
+*.secret
+*.secrets
+private/
+
+# ---- scratch ----
+*.tmp
+*.bak
+*.swp
+__pycache__/
+*.pyc
+.venv/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/settings.local.json

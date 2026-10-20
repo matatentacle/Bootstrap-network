@@ -1,0 +1,18 @@
+show system-information
+
+Product Model		: GS1920-24HP
+System Name		: PH1 First Floor SW03
+System Mode		: Standalone
+System Contact		: 
+System Location		: 
+System up Time		:  4091:29:17 (57cb375a ticks)
+Ethernet Address	: bc:cf:4f:bb:ca:16
+Bootbase Version	: V1.00 | 04/12/2018
+ZyNOS F/W Version	: V5.00(ABMI.3) | 03/24/2026
+Hardware Version	: V2.0
+Config Boot Image 	: 2
+Current Boot Image 	: 2
+Current Configuration 	: 1
+RomRasSize		: 5774820 
+Serial Number		: S202L15002392
+Register MAC Address	: bc:cf:4f:bb:ca:16

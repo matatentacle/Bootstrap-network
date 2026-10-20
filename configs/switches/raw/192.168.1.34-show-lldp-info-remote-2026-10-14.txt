@@ -1,0 +1,11 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc           SystemName  
+  ---------  -----------------  ------  --------  -------------------  
+          1  ec:3e:b3:4f:78:fa       1       lan         EC3EB34F78FA  
+          2  ec:3e:b3:4f:78:eb       1       lan  FH2.13NewcomerWines  
+          3  f4:4d:5c:fa:3a:e1       1       lan            FH2.1WIFI  
+          6  d4:1a:d1:5a:35:f6       1       lan      FH2.13UrbanGood  
+         23  bc:cf:4f:bb:e6:2e      23    Port23               GS1920  
+         25  bc:cf:4f:bb:e6:85      26    Port26               GS1920  

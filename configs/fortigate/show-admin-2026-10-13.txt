@@ -1,0 +1,11 @@
+show system admin
+config system admin
+    edit "mat"
+        set accprofile "super_admin_readonly"
+        set comments "Mat - ReadOnly"
+        set vdom "root"
+        set password ENC <REDACTED:73a524ff>
+    next
+end
+
+FW-120G-01 $ 

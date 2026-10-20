@@ -1,0 +1,15 @@
+show lldp info remote
+  LLDP Remote Device Information: 
+
+  LocalPort          ChassisId  PortId  PortDesc     SystemName  
+  ---------  -----------------  ------  --------  -------------  
+          1  f4:4d:5c:fe:ac:06       1       lan    PH3.6-8WIFI  
+          4  ec:3e:b3:4f:78:fd       1       lan    NWA1123ACv3  
+          5  50:e0:39:3b:1d:cd       1       lan     PH1.3-WIFI  
+          6  d4:1a:d1:5a:35:f9       1       lan      PH1.5WIFI  
+         10  bc:cf:4f:2f:bd:8d       1    UPLINK  NWA1123-AC-HD  
+         12  d4:1a:d1:5a:1d:ae       1       lan         PH1.17  
+         14  f4:4d:5c:fa:6a:9c       1       lan     PH1.13WIFI  
+         16  f4:4d:5c:fe:ac:03       1       lan     PH1.14WIFI  
+         17  d4:1a:d1:58:d3:78       1       lan     PH1.15WIFI  
+         25  bc:cf:4f:bb:ca:e1      27    Port27         GS1920  

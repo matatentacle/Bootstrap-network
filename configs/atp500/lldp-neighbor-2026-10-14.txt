@@ -1,0 +1,4 @@
+show lldp neighbor
+% (after 'show'): Parse error
+retval = -1
+ERROR: Parse error/command not found!

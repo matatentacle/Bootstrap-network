@@ -1,0 +1,607 @@
+show system interface
+config system interface
+    edit "mgmt"
+        set vdom "root"
+        set ip 192.168.10.99 255.255.255.0
+        set allowaccess ping https ssh
+        set type physical
+        set dedicated-to management
+        set role lan
+        set snmp-index 1
+    next
+    edit "ha"
+        set vdom "root"
+        set type physical
+        set snmp-index 2
+    next
+    edit "port1"
+        set vdom "root"
+        set type physical
+        set snmp-index 3
+    next
+    edit "port2"
+        set vdom "root"
+        set type physical
+        set snmp-index 4
+              next
+    edit "port3"
+        set vdom "root"
+        set type physical
+        set snmp-index 5
+    next
+    edit "port4"
+        set vdom "root"
+        set type physical
+        set snmp-index 6
+    next
+    edit "port5"
+        set vdom "root"
+        set type physical
+        set snmp-index 7
+    next
+    edit "port6"
+        set vdom "root"
+        set type physical
+        set snmp-index 8
+    next
+    edit "port7"
+        set vdom "root"
+        set type physical
+                  set snmp-index 9
+    next
+    edit "port8"
+        set vdom "root"
+        set type physical
+        set snmp-index 10
+    next
+    edit "port9"
+        set vdom "root"
+        set type physical
+        set snmp-index 11
+    next
+    edit "port10"
+        set vdom "root"
+        set type physical
+        set snmp-index 12
+    next
+    edit "port11"
+        set vdom "root"
+        set type physical
+        set snmp-index 13
+    next
+    edit "port12"
+        set vdom "root"
+                  set type physical
+        set snmp-index 14
+    next
+    edit "port13"
+        set vdom "root"
+        set type physical
+        set snmp-index 15
+    next
+    edit "port14"
+        set vdom "root"
+        set type physical
+        set snmp-index 16
+    next
+    edit "port15"
+        set vdom "root"
+        set type physical
+        set snmp-index 17
+    next
+    edit "port16"
+        set vdom "root"
+        set ip 192.168.1.99 255.255.255.0
+        set allowaccess ping https http
+        set type physical
+        set device-identification enable
+                  set lldp-reception enable
+        set role wan
+        set snmp-index 18
+    next
+    edit "x1"
+        set vdom "root"
+        set ip 192.168.201.1 255.255.255.0
+        set allowaccess ping https
+        set type physical
+        set mediatype sr
+        set alias "LAN"
+        set device-identification enable
+        set lldp-transmission enable
+        set role lan
+        set snmp-index 19
+        set ip-managed-by-fortiipam disable
+        set speed 10000full
+    next
+    edit "x2"
+        set vdom "root"
+        set type physical
+        set mediatype sr
+        set snmp-index 20
+        set speed 10000full
+              next
+    edit "x3"
+        set vdom "root"
+        set type physical
+        set mediatype sr
+        set snmp-index 21
+        set speed 10000full
+    next
+    edit "x4"
+        set vdom "root"
+        set ip 193.221.132.138 255.255.255.248
+        set allowaccess ping https
+        set type physical
+        set mediatype sr
+        set alias "Vorboss"
+        set lldp-reception enable
+        set monitor-bandwidth enable
+        set role wan
+        set snmp-index 22
+        set secondary-IP enable
+        set speed 10000full
+        config secondaryip
+            edit 1
+                set ip 193.221.131.33 255.255.255.224
+                      next
+        end
+    next
+    edit "port17"
+        set vdom "root"
+        set type physical
+        set snmp-index 23
+    next
+    edit "port18"
+        set vdom "root"
+        set type physical
+        set snmp-index 24
+    next
+    edit "port19"
+        set vdom "root"
+        set type physical
+        set snmp-index 25
+    next
+    edit "port20"
+        set vdom "root"
+        set type physical
+        set snmp-index 26
+    next
+    edit "port21"
+                  set vdom "root"
+        set type physical
+        set snmp-index 27
+    next
+    edit "port22"
+        set vdom "root"
+        set type physical
+        set snmp-index 28
+    next
+    edit "port23"
+        set vdom "root"
+        set type physical
+        set snmp-index 29
+    next
+    edit "port24"
+        set vdom "root"
+        set type physical
+        set snmp-index 30
+    next
+    edit "modem"
+        set vdom "root"
+        set mode pppoe
+        set status down
+        set type physical
+                  set snmp-index 31
+    next
+    edit "naf.root"
+        set vdom "root"
+        set type tunnel
+        set src-check disable
+        set snmp-index 32
+    next
+    edit "l2t.root"
+        set vdom "root"
+        set type tunnel
+        set snmp-index 33
+    next
+    edit "ssl.root"
+        set vdom "root"
+        set type tunnel
+        set alias "SSL VPN interface"
+        set snmp-index 34
+    next
+    edit "lan"
+        set vdom "root"
+        set ip 192.168.100.99 255.255.255.0
+        set allowaccess ping https ssh fabric
+        set type hard-switch
+                  set stp enable
+        set role lan
+        set snmp-index 35
+    next
+    edit "fortilink"
+        set vdom "root"
+        set fortilink enable
+        set ip 10.255.1.1 255.255.255.0
+        set allowaccess ping fabric
+        set type aggregate
+        set member "x2" "x3"
+        set lldp-reception enable
+        set lldp-transmission enable
+        set snmp-index 36
+    next
+    edit "vlan70"
+        set vdom "root"
+        set ip 192.168.70.254 255.255.255.0
+        set allowaccess ping
+        set alias "LeadersUnlocked"
+        set device-identification enable
+        set role lan
+        set snmp-index 37
+        set ip-managed-by-fortiipam disable
+                  set interface "x1"
+        set vlanid 70
+    next
+    edit "vlan101"
+        set vdom "root"
+        set ip 192.168.101.254 255.255.255.0
+        set allowaccess ping https http
+        set device-identification enable
+        set role lan
+        set snmp-index 38
+        set ip-managed-by-fortiipam disable
+        set interface "port1"
+        set vlanid 101
+    next
+    edit "102"
+        set vdom "root"
+        set ip 192.168.102.1 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set role lan
+        set snmp-index 39
+        set ip-managed-by-fortiipam disable
+        set interface "port1"
+        set vlanid 102
+              next
+    edit "LAN-Bond-2"
+        set vdom "root"
+        set type aggregate
+        set member "port3" "port4"
+        set device-identification enable
+        set lldp-transmission enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 40
+        set ip-managed-by-fortiipam disable
+    next
+    edit "vlan150"
+        set vdom "root"
+        set ip 192.168.150.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 150000
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 41
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 150
+              next
+    edit "vlan151"
+        set vdom "root"
+        set ip 192.168.151.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 60000
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 42
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 151
+    next
+    edit "vlan152"
+        set vdom "root"
+        set ip 192.168.152.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 100000
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 43
+        set ip-managed-by-fortiipam disable
+                  set interface "LAN-Bond-2"
+        set vlanid 152
+    next
+    edit "vlan153"
+        set vdom "root"
+        set ip 192.168.153.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 44
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 153
+    next
+    edit "vlan155"
+        set vdom "root"
+        set ip 192.168.155.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 100000
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 45
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 155
+    next
+    edit "vlan154"
+        set vdom "root"
+        set ip 192.168.154.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 60000
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 46
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 154
+    next
+    edit "vlan156"
+        set vdom "root"
+        set ip 192.168.156.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+                  set snmp-index 47
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 156
+    next
+    edit "vlan157"
+        set vdom "root"
+        set ip 192.168.157.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 48
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 157
+    next
+    edit "vlan158"
+        set vdom "root"
+        set ip 192.168.158.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 100000
+        set device-identification enable
+        set monitor-bandwidth enable
+                  set role lan
+        set snmp-index 49
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 158
+    next
+    edit "vlan159"
+        set vdom "root"
+        set ip 192.168.159.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set monitor-bandwidth enable
+        set role lan
+        set snmp-index 50
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 159
+    next
+    edit "vlan160"
+        set vdom "root"
+        set ip 192.168.160.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set monitor-bandwidth enable
+                  set role lan
+        set snmp-index 51
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 160
+    next
+    edit "vlan161"
+        set vdom "root"
+        set ip 192.168.161.254 255.255.255.0
+        set allowaccess ping
+        set role dmz
+        set snmp-index 52
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 161
+    next
+    edit "vlan162"
+        set vdom "root"
+        set ip 192.168.162.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 53
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 162
+    next
+    edit "vlan163"
+        set vdom "root"
+        set ip 192.168.163.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 54
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 163
+    next
+    edit "vlan164"
+        set vdom "root"
+        set ip 192.168.164.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 55
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 164
+    next
+    edit "vlan165"
+        set vdom "root"
+        set ip 192.168.165.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 56
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 165
+    next
+    edit "vlan166"
+        set vdom "root"
+        set ip 192.168.166.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 57
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 166
+    next
+    edit "vlan167"
+        set vdom "root"
+        set ip 192.168.167.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 58
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 167
+    next
+    edit "vlan168"
+        set vdom "root"
+        set ip 192.168.168.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 59
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 168
+    next
+    edit "vlan169"
+        set vdom "root"
+        set ip 192.168.169.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 60
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 169
+    next
+    edit "vlan170"
+        set vdom "root"
+        set ip 192.168.170.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 61
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 170
+    next
+    edit "vlan171"
+        set vdom "root"
+        set ip 192.168.171.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 62
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 171
+    next
+    edit "vlan172"
+        set vdom "root"
+        set ip 192.168.172.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 63
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 172
+    next
+    edit "vlan173"
+        set vdom "root"
+        set ip 192.168.173.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 64
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 173
+    next
+    edit "vlan174"
+        set vdom "root"
+        set ip 192.168.174.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 65
+                  set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 174
+    next
+    edit "vlan175"
+        set vdom "root"
+        set ip 192.168.175.254 255.255.255.0
+        set allowaccess ping
+        set outbandwidth 102400
+        set device-identification enable
+        set role lan
+        set snmp-index 66
+        set ip-managed-by-fortiipam disable
+        set interface "LAN-Bond-2"
+        set vlanid 175
+    next
+    edit "vlan200-TEST"
+        set vdom "root"
+        set ip 192.168.200.254 255.255.255.0
+        set allowaccess ping
+        set device-identification enable
+        set role lan
+        set snmp-index 67
+        set ip-managed-by-fortiipam disable
+                  set interface "x1"
+        set vlanid 200
+    next
+end
+
+FW-120G-01 $ 

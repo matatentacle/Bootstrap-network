@@ -1,0 +1,31 @@
+show interfaces status
+  Port      Name          Link        State             Type          Up Time 
+  ---- ------------- -------------- ---------- -------------------- ----------
+     1         Port1           1G/F FORWARDING         10/100/1000M  722:09:47
+     2         Port2           Down       STOP         10/100/1000M    0:00:00
+     3         Port3         100M/F FORWARDING         10/100/1000M 4078:22:56
+     4         Port4           Down       STOP         10/100/1000M    0:00:00
+     5         Port5         100M/F FORWARDING         10/100/1000M 2470:03:40
+     6         Port6           Down       STOP         10/100/1000M    0:00:00
+     7         Port7           1G/F FORWARDING         10/100/1000M  801:54:43
+     8         Port8           Down       STOP         10/100/1000M    0:00:00
+     9         Port9           Down       STOP         10/100/1000M    0:00:00
+    10        Port10           1G/F FORWARDING         10/100/1000M 4006:46:07
+    11        Port11           Down       STOP         10/100/1000M    0:00:00
+    12        Port12           Down       STOP         10/100/1000M    0:00:00
+    13        Port13         100M/F FORWARDING         10/100/1000M 3476:56:38
+    14        Port14           Down       STOP         10/100/1000M    0:00:00
+    15        Port15           1G/F FORWARDING         10/100/1000M 4090:44:35
+    16        Port16           Down       STOP         10/100/1000M    0:00:00
+    17        Port17           1G/F FORWARDING         10/100/1000M 4090:42:55
+    18        Port18           Down       STOP         10/100/1000M    0:00:00
+    19        Port19           Down       STOP         10/100/1000M    0:00:00
+    20        Port20           1G/F FORWARDING         10/100/1000M 1347:51:49
+    21        Port21           1G/F FORWARDING         10/100/1000M  169:41:03
+    22        Port22           1G/F FORWARDING         10/100/1000M 1347:40:24
+    23        Port23           1G/F FORWARDING         10/100/1000M 4090:44:35
+    24        Port24           Down       STOP         10/100/1000M    0:00:00
+    25        Port25    1G/F    SFP FORWARDING         10/100/1000M  525:33:31
+    26        Port26           Down       STOP         10/100/1000M    0:00:00
+    27        Port27           Down       STOP         10/100/1000M    0:00:00
+    28        Port28           Down       STOP         10/100/1000M    0:00:00

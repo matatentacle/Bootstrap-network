@@ -1,0 +1,2 @@
+show lldp neighbor
+  %Invalid command "neighbor"

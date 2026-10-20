@@ -1,0 +1,4 @@
+diagnose netlink interface list
+Unknown action 0
+
+FW-120G-01 $ 

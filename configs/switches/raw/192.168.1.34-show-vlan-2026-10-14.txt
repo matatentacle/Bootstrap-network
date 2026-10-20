@@ -1,0 +1,25 @@
+show vlan
+  The Number of VLAN :     7
+  Idx.  VID   Status     Elap-Time    TagCtl                                 
+  ----  ----  ---------  -----------  ---------------------------------------
+  
+     1	   1     Static   4090:45:28  Untagged :5,7-9,11,13-28
+                                      Tagged   :2,4,6,10,12
+  
+     2	  28     Static   4090:45:28  Untagged :6
+                                      Tagged   :5,7-9,11,13-28
+  
+     3	  35     Static   4090:45:28  Untagged :2
+                                      Tagged   :5,7-9,11,13-28
+  
+     4	  64     Static   4090:45:28  Untagged :4
+                                      Tagged   :5,7-9,11,13-28
+  
+     5	 151     Static   4090:45:28  Untagged :3
+                                      Tagged   :5,7-9,11,13-28
+  
+     6	 154     Static   4090:45:28  Untagged :1
+                                      Tagged   :5,7-9,11,13-28
+  
+     7	 158     Static   4090:45:28  Untagged :10,12
+                                      Tagged   :5,7-9,11,13-28

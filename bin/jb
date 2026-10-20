@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+# jb: talk to the Bootstrap jump box (MINI-PC-6) from this machine.
+#
+# Golden rule: read-only until it is not. Gateway and switch commands go through an
+# allowlist of read-only verbs; anything else is refused unless JB_WRITE=1 is set, and
+# that is for a change Mat has authorised, not for convenience.
+#
+#   jb status                       box health: links, routes, Tailscale, disk, gateways answering
+#   jb shell [ssh args]             interactive shell on the box
+#   jb atp  [--admin] "<cmd>"       one ZLD command on the ATP500   (--admin needs ATP_OTP=123456 in env)
+#   jb fgt  "<cmd>"                 one FortiOS command on the FortiGate (FGT_OTP=123456 in env if the account has 2FA)
+#   jb sw   <ip> "<cmd>"            one ZyNOS command on a Zyxel GS1920
+#   jb run  "<shell>"               arbitrary shell on the box (no gateway gate; the box is yours)
+#   jb pull                         fetch /srv/configs + ~/captures from the box, sanitise into configs/
+#   jb push-scripts                 copy jumpbox-setup/*.sh up to ~/jumpbox-setup on the box
+#
+# Output of atp/fgt/sw is saved on the box under ~/captures/<device>/ and mirrored to
+# private/captures/<device>/ here (ignored by git). The laptop never holds gateway credentials;
+# they live only in ~/jumpbox-setup/.env on the box.
+#
+# Override the host with private/jb.env (ignored), e.g.  JB_HOST=mainipc-6
+set -euo pipefail
+HERE=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+[[ -f "$HERE/private/jb.env" ]] && . "$HERE/private/jb.env"
+JB_HOST="${JB_HOST:-tentacle@100.83.139.20}"
+JB_SSH_OPTS="${JB_SSH_OPTS:--o ConnectTimeout=10 -o ServerAliveInterval=30}"
+LOCAL_CAP="$HERE/private/captures"
+RAW="$HERE/private/configs-raw"
+
+usage() { sed -n '2,22p' "$0"; exit 1; }
+die() { echo "jb: $*" >&2; exit 1; }
+sshq() { ssh $JB_SSH_OPTS "$JB_HOST" "$@"; }
+
+# ---- the gate -------------------------------------------------------------------------
+DENY='(^|[[:space:]])(clear|delete|kill|restart|reboot|shutdown|reset|flush|erase|write|copy|configure|config|set|unset|no|execute[[:space:]]+(reboot|shutdown|factoryreset|restore|backup|formatlogdisk|update)|conf[[:space:]]+t)([[:space:]]|$)'
+ALLOW='^(show|get|display|dir|ping|traceroute|tracert|execute[[:space:]]+(ping|traceroute|tracert)|diagnose[[:space:]]+(sys|hardware|netlink|ip|ipv6|switch-controller|firewall|snmp|wireless-controller|autoupdate|test|vpn)|diag[[:space:]]+(sys|hardware|netlink|ip|ipv6|switch-controller|firewall|snmp|wireless-controller|autoupdate|test|vpn))([[:space:]]|$)'
+gate() {
+  local c="$1"
+  if [[ "${JB_WRITE:-0}" == "1" ]]; then
+    echo "jb: JB_WRITE=1, gate bypassed for: $c" >&2
+    return 0
+  fi
+  if [[ "$c" =~ $DENY ]] || ! [[ "$c" =~ $ALLOW ]]; then
+    die "refused, not on the read-only allowlist: \"$c\"  (set JB_WRITE=1 only for a change Mat has authorised)"
+  fi
+}
+
+slug() { printf '%s' "$1" | tr -c 'A-Za-z0-9' '-' | sed -e 's/^-*//' -e 's/-*$//' | cut -c1-60; }
+
+# run_capture <device> <script> <remote-args...>
+# Runs one of the capture scripts on the box, saves on the box, streams the output back and mirrors it locally.
+run_capture() {
+  local dev="$1" script="$2"; shift 2
+  local cmd="${!#}"                      # last arg is the command
+  local name; name="$(slug "$cmd")-$(date +%Y%m%d-%H%M%S).txt"
+  local remote="\$HOME/captures/$dev/$name"
+  local q=""; for a in "$@"; do q+=" $(printf '%q' "$a")"; done
+  mkdir -p "$LOCAL_CAP/$dev"
+  local rc=0
+  sshq "mkdir -p \$HOME/captures/$dev && ATP_OTP=$(printf '%q' "${ATP_OTP:-}") FGT_OTP=$(printf '%q' "${FGT_OTP:-}") ~/jumpbox-setup/$script$q \"$remote\" >&2 || { rm -f \"$remote\"; exit 1; }; cat \"$remote\"" \
+    | tee "$LOCAL_CAP/$dev/$name" || rc=$?
+  if [[ $rc -ne 0 || ! -s "$LOCAL_CAP/$dev/$name" ]]; then
+    rm -f "$LOCAL_CAP/$dev/$name"
+    die "no output from $dev (see the script's message above); nothing saved"
+  fi
+  echo "jb: saved private/captures/$dev/$name (and ~/captures/$dev/$name on the box)" >&2
+}
+
+cmd="${1:-}"; shift || true
+case "$cmd" in
+  status)
+    sshq 'echo "== $(hostname)  $(uptime -p)  load $(cut -d" " -f1-3 /proc/loadavg)";
+          echo "== disk: $(df -h / | awk "NR==2{print \$4\" free of \"\$2}")   mem free: $(free -m | awk "NR==2{print \$7}")MB";
+          echo "== links"; ip -br link | grep -vE "^lo"; echo "== addresses"; ip -br addr | grep -vE "^lo";
+          echo "== routes"; ip route; echo "== tailscale"; tailscale status --peers=false 2>&1 | head -2;
+          echo "== gateways"; for h in 192.168.254.1 192.168.10.99 192.168.1.39; do printf "%-15s " $h; ping -c1 -W2 $h >/dev/null 2>&1 && echo up || echo NO ANSWER; done;
+          echo "== ufw"; (sudo -n ufw status 2>/dev/null || echo "(ufw status needs sudo; run jb shell)") | head -1;
+          echo "== /srv/configs"; git -C /srv/configs log --oneline -1; git -C /srv/configs status --short | wc -l | xargs echo "uncommitted files:"' ;;
+  shell) exec ssh $JB_SSH_OPTS "$JB_HOST" "$@" ;;
+  run)   [[ $# -ge 1 ]] || usage; sshq "$@" ;;
+  atp)
+    admin=""; if [[ "${1:-}" == "--admin" ]]; then admin="--admin"; shift; fi
+    [[ $# -eq 1 ]] || usage; gate "$1"
+    [[ -n "$admin" && -z "${ATP_OTP:-}" ]] && echo "jb: --admin without ATP_OTP set; the script will stop at the 2FA prompt" >&2
+    run_capture atp500 atp500-cmd.sh ${admin:+$admin} "$1" ;;
+  fgt)   [[ $# -eq 1 ]] || usage; gate "$1"; run_capture fortigate fortigate-cmd.sh "$1" ;;
+  sw)    [[ $# -eq 2 ]] || usage; gate "$2"; run_capture "switch-$1" zyxel-sw-cmd.sh "$1" "$2" ;;
+  pull)
+    mkdir -p "$LOCAL_CAP"
+    if [[ -d "$RAW/.git" ]]; then
+      echo "jb: pulling /srv/configs history into private/configs-raw" >&2
+      git -C "$RAW" pull --ff-only "$JB_HOST:/srv/configs" master
+    else
+      echo "jb: cloning /srv/configs into private/configs-raw" >&2
+      git clone "$JB_HOST:/srv/configs" "$RAW"
+    fi
+    echo "jb: fetching ~/captures" >&2
+    sshq 'cd ~ && [ -d captures ] && tar cz captures || tar cz --files-from /dev/null' | tar xz -C "$HERE/private"
+    echo "jb: sanitising into configs/ (existing files left alone; use bin/sanitize.py import ... --force to refresh)" >&2
+    python -I "$HERE/bin/sanitize.py" import "$RAW" "$HERE/configs" ;;
+  push-scripts)
+    tar c -C "$HERE/jumpbox-setup" --exclude='.env*' --exclude='archive' --exclude='*.jpg' --exclude='*.txt' . \
+      | sshq 'mkdir -p ~/jumpbox-setup && tar x -C ~/jumpbox-setup && chmod +x ~/jumpbox-setup/*.sh && ls -la ~/jumpbox-setup/*.sh' ;;
+  *) usage ;;
+esac

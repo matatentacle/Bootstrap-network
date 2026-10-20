@@ -1,0 +1,11 @@
+- [Bootstrap jump box](bootstrap-jumpbox.md) — MINI-PC-6 terminal-only jump box into ATP500 + FortiGate; state as of 13 Oct 2026, open items
+- [Gateway working rules](gateway-working-rules.md) — read-only on both gateways, no reboots; read-only creds for both plus ATP500 admin (2FA) in ~/jumpbox-setup/.env; atp500-cmd.sh --admin + ATP_OTP
+- [Mat, operator](mat-operator.md) — prefers plain SSH; old phone can't open artifacts, wants plain-text reports
+- [Read-only without asking](read-only-no-permission.md) — Mat's standing OK (14 Oct 2026) to run any read-only command on the jump box and gateways without asking
+- [Switch layer](switch-layer.md) — fabric mapped 14 Oct 2026: SW01 core at 192.168.1.39, 24 switches, Nebula names known, SW101/SW102 are the 10G island on FortiGate x1
+- [Bootstrap Miro board](bootstrap-miro-board.md) — board uXjVJ1aoEDY=; "10G migration plan" frame is current, cabinet frames are history; shopping list 14 Oct 2026 in ~/jumpbox-setup
+- [Reputable suppliers only](reputable-suppliers-only.md) — Mat buys from Cable Monkey, Broadband Buyer, FS, Canford (Ebuyer accepted); never marketplace or small reseller listings
+- [External IP fact-finding](external-ip-fact-finding.md) — 14 Oct 2026 letters per tenant with a public IP; who has what on each gateway, who has left; replies due Fri 17 Oct 2026; Tentacle .134 no longer needed
+- [Bootstrap shared drive](bootstrap-shared-drive.md) — Google shared drive 0AO-R8iXcHrdqUk9PVA; "2. VLANs and Configurations" is the tenant/VLAN register incl. FortiGate VLAN names
+- [Tenant comms tone](tenant-comms-tone.md) — tenant letters: broad strokes, three short paragraphs, one concrete detail, one question; no tables
+- [Bootstrap records](bootstrap-records.md) — their VLAN workbook ingested 14 Oct 2026 into /srv/configs/bootstrap-records with crossref; their record, not our target; headline gaps (VLAN 70 on both gateways, 48 live, dead NATs)

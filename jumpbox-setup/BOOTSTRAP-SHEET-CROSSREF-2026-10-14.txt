@@ -1,0 +1,98 @@
+BOOTSTRAP'S VLAN WORKBOOK vs REALITY - 14 Oct 2026
+===================================================
+Their workbook "2. VLANs and Configurations" (shared drive, last edited
+7 Oct 2026) and the Dec 2025 copy from your A254_BStrap folder are now in
+/srv/configs/bootstrap-records/ with a CSV per tab, a NOTES.md, and the
+cross-reference outputs in crossref-2026-10-14/. Committed to git.
+
+How I treated it: as THEIR record, not our plan. Every claim was checked
+against the 13/14 Oct captures (ATP500 config + DHCP/ARP, FortiGate
+config + ARP, the 14 switch running-configs). Their margin notes are
+pulled out separately as intent signals (intent-notes.txt).
+
+SCORECARD
+  Config-sheet port claims: 103 rows
+    58 match the switch, 4 partly, 18 contradict it, 23 unverifiable
+    (no switch/port given, or on a switch we can't read: SW16, FHG2
+    GS1350, SW14 on the FortiGate x1 island).
+    Nearly every contradiction is an old row never deleted; a newer row
+    for the same port is right.
+  25 access ports carry a tenant VLAN with no sheet row at all
+    (undocumented-ports.txt).
+  Bandwidth column: 39 VLANs differ from the device rule.
+  Public IPs .130-.140: device and sheet agree.
+
+THINGS THAT MATTER FOR THE MIGRATION
+ 1. VLAN 70 is on BOTH gateways, same subnet 192.168.70.254: ATP500
+    (6 leases, SW05 p12) and FortiGate x1 alias LeadersUnlocked (1 ARP).
+    Sheet only knows the ATP500 one. Sort this before anything moves.
+ 2. VLAN 48 Field Vision: sheet says Inactive / left / can be reused.
+    Reality: 21 DHCP leases, ports SW09 p3/4/6 + SW12 p20. Not free.
+ 3. Dead public-IP plumbing still on the ATP500, all "left" on the sheet:
+    VLAN 11 Curam SNAT .131 (+ SW01 p20 still untagged 11),
+    VLAN 45 Snafu SNAT .137 + 2 virtual servers (+ SW09 p2),
+    VLAN 33 Haberdashery SNAT .133 + NAS virtual server,
+    VLAN 68 RapidEye SNAT .139. Drop, don't carry over.
+ 4. VLAN 15 (sheet Active, Felicity Kay CW208): no port, no hosts. Dead.
+    VLAN 53 Bridge the Gap: port SW12 p13 assigned, zero hosts.
+ 5. VLAN 72 Ashford has NO bandwidth cap: bwm rule 4 is named
+    Vlan72_AshfordSons but is applied to vlan73. So vlan73 Civil Society
+    has two rules (30M + 100M) and vlan72 none.
+ 6. Bandwidth examples: VLAN 27 DGN sheet 30M / device 500M.
+    VLAN 20 Julia Brenard 100 / 250. VLAN 39 Thames firewall 100 / 30.
+    VLAN 17 Taproom 100 / 50. FortiGate 153, 156, 157, 159, 161: no cap.
+ 7. FortiGate VLANs 162-175 are built (IP, DHCP, 100M policy each) and
+    not in the sheet: a spare pool of 14. Also vlan101/102, vlan200-TEST.
+ 8. VLAN 161 Mediorite: sheet says Active 500M AND "set up by Asim for
+    FF on NAT - not needed". Device: VIP 193.221.131.34 -> .161.250,
+    inbound policy, 161 tagged on Mediorite's SW03 p7, no ARP on the day.
+    Ask Bootstrap which it is.
+ 9. VLAN 59 Full Time Hobby (11 leases) and 67 Silverfish at FHG2 come
+    in via SW02 p2, which does NOT have 59 or 67 in its VLAN table. They
+    work only because the GS1920s forward tags for undefined VLANs.
+    VLAN 40 ACS is the same (tagged on SW02 p4 only).
+10. Unexplained by them: VLAN 31 Lickerish (1:1 NAT to .135, no route,
+    no hosts, sheet "??"), VLAN 47 "Duplicate for LAWA?", VLAN 65 Dusty
+    Knuckle R2 (SW02 p6, 200M rule, no hosts).
+11. .142 is an unused address object; .141 doesn't exist anywhere.
+    Their note under the NAT tab: "Move NATS to Fortigate".
+
+WHAT THEIR MARGIN NOTES SAY THEY WANT (intent-notes.txt)
+  - VLAN 13 to become the shared VLAN; move "those on VLAN 1" to it.
+  - VLAN 10 is shared by several tenants and "needs to be separated".
+  - VLAN 41 Raze / Eat Club share; "change when moving to vorboss".
+  - VLAN 54 kept as a spare for Thames Reach (firewall on VLAN 39).
+  - NATs to move to the FortiGate.
+  - Reusable per them: 22 23 25 29 30 33 43 45 48 61 (48 is not).
+  - Already on the FortiGate per them: 11 -> 151, 19 -> 153, plus
+    150-160 as listed. 158 Fair Finance "keeping old connection (VLAN
+    16, SW07 p2-9) while moving over".
+
+STALE ROWS WORTH DELETING ON THEIR SIDE (port now belongs to someone else)
+  SW04 p13 Bootstrap Quiet Room -> LAWA 69      SW04 p3 Snafu 45 -> LAWA 69
+  SW06 p1 Curam 11 -> 01-Profiles 154     SW05 p6 Balaam 60 -> Bootstrap 10
+  SW05 p14 Arbor Windows 60 -> Pinzutu 38 (Arbor really on SW05 p11)
+  SW05 p9/10 Leaders Unlocked 70 -> 38 / none (70 is on SW05 p12)
+  SW08 p10 Joanna 63 -> Raze 41                 SW08 p11 MAKE 73 -> Thames 54
+  SW08 p17 Felicity Kay 15 -> Balaam 55         SW13 p4 Cake 153 -> Harp-e 156
+  SW01 p16 ACS 40 -> Bona Food 42     SW05 p8 Vol Centre 1 -> Create Ldn 150
+  SW12 p9 Cake 19 -> openDemocracy 56 (19 still tagged there for Cake's AP)
+
+NOT RETRIEVABLE FROM THE DRIVE (check in a browser)
+  "1. ORDERS TO ACTION: Broadband Tenant Orders (Form Responses)" and
+  Archive > "2. INSTALL & RECORD: Configuration Record" are shortcuts
+  whose targets I can't open. "Network Diagrams" and "Troubleshooting
+  References" folders came back empty. "Policy control" tab is page 1 of
+  2 only (50 of 90 rules) - the running-config has all 90 anyway.
+
+FILES
+  /srv/configs/bootstrap-records/NOTES.md            full write-up
+  .../crossref-2026-10-14/vlan-register.txt          one block per VLAN
+  .../crossref-2026-10-14/port-check.txt             every sheet row
+  .../crossref-2026-10-14/undocumented-ports.txt
+  .../crossref-2026-10-14/bandwidth-check.txt
+  .../crossref-2026-10-14/public-ip-register.txt
+  .../crossref-2026-10-14/intent-notes.txt
+  Re-run after a new capture:
+    python3 -I tools/crossref.py workbook-2026-10-07 /srv/configs \
+        crossref-<date>

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Blocks a commit that contains anything sanitize.py recognises as a secret.
+# Enabled per clone with:  git config core.hooksPath .githooks
+set -uo pipefail
+root=$(git rev-parse --show-toplevel)
+mapfile -t files < <(git diff --cached --name-only --diff-filter=ACMR)
+[[ ${#files[@]} -eq 0 ]] && exit 0
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+for f in "${files[@]}"; do
+  mkdir -p "$tmp/$(dirname "$f")"
+  git show ":$f" > "$tmp/$f"
+done
+if ! python -I "$root/bin/sanitize.py" check "$tmp"; then
+  echo
+  echo "pre-commit: refusing to commit. Raw captures belong in private/; run bin/sanitize.py import to bring them in." >&2
+  exit 1
+fi

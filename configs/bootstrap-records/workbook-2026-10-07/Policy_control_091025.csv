@@ -1,0 +1,68 @@
+
+
+,IPv4 Configuration
+
+
+
+
+
+
+
+,Allow Asymmetrical Route
+,1.0,,_autofix,WAN,any (Excluding ZyWALL),_autofix,any,any,any,any,none,deny,no
+,2.0,,IndonesiaBlock,WAN,any (Excluding ZyWALL),IndonesiaBlock,any,any,any,any,none,deny,no
+,3.0,,Webaccess,any,any (Excluding ZyWALL),any,any,any,any,any,none,allow,no
+,4.0,,VLAN68_Zywall,any,ZyWALL,VLAN68,any,any,any,any,none,deny,no
+,5.0,,MedioriteInternalTCP,LAN,any (Excluding ZyWALL),any,Mediorite,MedioriteTCP,any,any,none,allow,no
+,6.0,,MedioriteInternalUDP,LAN,any (Excluding ZyWALL),any,Mediorite,MedioriteUDP,any,any,none,allow,no
+,7.0,,MedioriteRouterUDP,WAN,any (Excluding ZyWALL),any,Mediorite,MedioriteUDP,any,any,none,allow,no
+,8.0,,MedioriteRouterTCP,WAN,any (Excluding ZyWALL),any,Mediorite,MedioriteTCP,any,any,none,allow,no
+,9.0,,VLAN45_ExternalTCP,WAN,any (Excluding ZyWALL),any,SnafuPictures_Router,SnafuPictures_Router,any,any,none,allow,no
+,10.0,,VLAN45_ExternalUDP,WAN,any (Excluding ZyWALL),any,SnafuPictures_Router,SnafuPictures_RouterUDP,any,any,none,allow,no
+,11.0,,VLAN45_InternalTCP,LAN,any (Excluding ZyWALL),any,SnafuPictures_Router,SnafuPictures_Router,any,any,none,allow,no
+,12.0,,VLAN45_InternalUDP,LAN,any (Excluding ZyWALL),any,SnafuPictures_Router,SnafuPictures_RouterUDP,any,any,none,allow,no
+,13.0,,TentacleRouterUDP,WAN,any (Excluding ZyWALL),any,Tentacle_Router,Tentacle_Router2,any,any,none,allow,no
+,14.0,,Tentacle_Router3,LAN,any (Excluding ZyWALL),any,Tentacle_Router,Tentacle_Router2,any,any,none,allow,no
+,15.0,,Tentacle_Router2,LAN,any (Excluding ZyWALL),any,Tentacle_Router,Tentacle_Router,any,any,none,allow,no
+,16.0,,VLAN41_Block,any,any (Excluding ZyWALL),any,VLAN41,any,any,any,none,deny,no
+,17.0,,VLAN41_Zywall,any,ZyWALL,VLAN41,any,any,any,any,none,deny,no
+,18.0,,Tentacle_Router,WAN,any (Excluding ZyWALL),any,Tentacle_Router,Tentacle_Router,any,any,none,allow,log
+,19.0,,VLAN33-NAS,WAN,any (Excluding ZyWALL),any,Haberdashery_NAS,Haberdashery_NAS,any,any,none,allow,log
+,20.0,,VLAN37_Block,any,any (Excluding ZyWALL),any,VLAN37,any,any,any,none,deny,no
+,21.0,,VLAN37_Zywall,any,ZyWALL,VLAN37,any,any,any,any,none,deny,no
+,22.0,,VLAN36_Block,any,any (Excluding ZyWALL),any,VLAN36,any,any,any,none,deny,no
+,23.0,,VLAN35_Zywall,any,ZyWALL,Vlan35,any,any,any,any,none,deny,no
+,24.0,,VLAN35_Block,any,any (Excluding ZyWALL),any,Vlan35,any,any,any,none,deny,no
+,25.0,,VLAN36_Zywall,any,ZyWALL,VLAN36,any,any,any,any,none,deny,no
+,26.0,,VLAN34_Zywall,any,ZyWALL,VLAN34,any,any,any,any,none,deny,no
+,27.0,,VLAN34_Block,any,any (Excluding ZyWALL),any,VLAN34,any,any,any,none,deny,no
+,28.0,,VLAN33-RemoteAccess,WAN,any (Excluding ZyWALL),Public_IP_128_133,vlan33_internal,Haberdashery,any,any,none,allow,no
+,29.0,,VLAN33_Zywall,any,ZyWALL,VLAN33,any,any,any,any,none,deny,no
+,30.0,,VLAN33_Block,any,any (Excluding ZyWALL),any,VLAN33,any,any,any,none,deny,no
+,31.0,,VLAN32_Block,any,any (Excluding ZyWALL),any,VLAN32,any,any,any,none,deny,no
+,32.0,,VLAN32_Zywall,any,ZyWALL,VLAN32,any,any,any,any,none,deny,no
+,33.0,,VLAN27_DUPEVFX,WAN,any (Excluding ZyWALL),any,VLAN27_Internal,DUPEVFX,any,any,none,allow,no
+,34.0,,VLAN27-RemoteAccess,WAN,any (Excluding ZyWALL),any,Public_IP_128_132,any,any,any,none,allow,no
+,35.0,,LAN1_Block,any,any (Excluding ZyWALL),any,LAN1,any,any,any,none,deny,no
+,36.0,,Zywall_Block,LAN,ZyWALL,VLAN10,any,PING,any,any,none,deny,no
+,37.0,,VLAN30_Zywall,any,ZyWALL,VLAN30,any,any,any,any,none,deny,no
+,38.0,,VLAN30_Block,any,any (Excluding ZyWALL),any,VLAN30,any,any,any,none,deny,no
+,39.0,,VLAN29_Zywall,any,ZyWALL,VLAN29,any,any,any,any,none,deny,no
+,40.0,,VLAN29_Block,any,any (Excluding ZyWALL),any,VLAN29,any,any,any,none,deny,no
+,41.0,,VLAN28_Zywall,any,ZyWALL,VLAN28,any,any,any,any,none,deny,no
+,42.0,,VLAN28_Block,any,any (Excluding ZyWALL),any,VLAN28,any,any,any,none,deny,no
+,43.0,,VLAN27_Zywall,any,ZyWALL,VLAN27,any,any,any,any,none,deny,no
+,44.0,,VLAN27_Block,any,any (Excluding ZyWALL),any,VLAN27,any,any,any,none,deny,no
+,45.0,,VLAN26_Zywall,any,ZyWALL,VLAN26,any,any,any,any,none,deny,no
+,46.0,,VLAN26_Block,any,any (Excluding ZyWALL),any,VLAN26,any,any,any,none,deny,no
+,47.0,,VLAN25_Zywall,any,ZyWALL,VLAN25,any,any,any,any,none,deny,no
+,48.0,,VLAN25_Block,any,any (Excluding ZyWALL),any,VLAN25,any,any,any,none,deny,no
+,49.0,,VLAN24_Zywall,any,ZyWALL,VLAN24,any,any,any,any,none,deny,no
+,50.0,,VLAN24_Block,any,any (Excluding ZyWALL),any,VLAN24,any,any,any,none,deny,no
+,Page
+
+,of 2
+,Show
+
+,items
+,Displaying 1 - 50 of 90

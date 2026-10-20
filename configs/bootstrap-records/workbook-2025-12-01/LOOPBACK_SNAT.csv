@@ -1,0 +1,22 @@
+#,NAT RULE,SOURCE,DESTINATION,SNAT
+1.0,VLAN27_DUPEVFX,any,192.168.27.253,Outgoing Interface IP
+2.0,VLAN27_DUPEVFX2,any,192.168.27.253,Outgoing Interface IP
+3.0,VLAN31_Lickerish,any,192.168.31.253,Outgoing Interface IP
+4.0,VLAN33_Haberdashery_NAS,any,192.168.33.3,Outgoing Interface IP
+5.0,Tentacle_Router,any,192.168.14.30,Outgoing Interface IP
+6.0,Tentacle_Router2,any,192.168.14.30,Outgoing Interface IP
+7.0,SnafuPictures_Router,any,192.168.45.2,Outgoing Interface IP
+8.0,SnafuPictures_RouterUDP,any,192.168.45.2,Outgoing Interface IP
+9.0,MedioriteUDP,any,192.168.58.3,Outgoing Interface IP
+10.0,MedioriteTCP,any,192.168.58.3,Outgoing Interface IP
+11.0,Vlan71_CafeOTO,any,192.168.71.254,Outgoing Interface IP
+12.0,VLAN54_THAMES,any,192.168.54.253,Outgoing Interface IP
+
+Page
+
+of 1
+
+Show,,,192.168.50.1
+
+items
+Displaying 1 - 12 of 12

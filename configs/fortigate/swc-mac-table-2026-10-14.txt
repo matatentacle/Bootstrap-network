@@ -1,0 +1,4 @@
+diagnose switch-controller switch-info mac-table
+Unknown action 0
+
+FW-120G-01 $ 
