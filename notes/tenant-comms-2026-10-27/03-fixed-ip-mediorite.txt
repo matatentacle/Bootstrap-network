@@ -1,0 +1,12 @@
+To: Anthony, Mediorite
+Subject: Your new fixed internet address goes live on Tuesday 27 October
+
+Dear Anthony,
+
+Thank you for confirming that Mediorite relies on its fixed internet address for your editors' remote access. As we mentioned, your new address is 193.221.131.34, replacing 157.231.128.138. Inbound connections will reach the same machine as they do today, your internal network addresses do not change, and there is no new cabling. You mentioned some router settings you were given earlier that do not work: please ignore those, nothing needs changing on your equipment for this switch.
+
+We plan to make the change on Tuesday 27 October, during the working day, with a short interruption of a few minutes for your office as the new router takes over. From then on NinjaOne, and anything else configured with the old address, needs 193.221.131.34.
+
+Does Tuesday 27 October work for you? Please let us know by Monday 26 October. If you would like to test the new address with us on the day, tell us a time and we will call you when it is live.
+
+The Bootstrap team

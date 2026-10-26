@@ -7,7 +7,7 @@
 set -uo pipefail
 HOST=192.168.10.99
 USER_=$(awk '/^Fortinet/{f=1} f&&/^Username/{print $3; exit}' ~/jumpbox-setup/.env)
-PASS_=$(awk '/^Fortinet/{f=1} f&&/^Pass/{sub(/^Pass - /,""); print; exit}' ~/jumpbox-setup/.env)
+PASS_=$(awk '/^Fortinet/{f=1} f&&/^Pass/{sub(/^Pass(word)? - /,""); print; exit}' ~/jumpbox-setup/.env)
 [[ -n "$USER_" && -n "$PASS_" ]] || { echo "no Fortinet credentials in ~/jumpbox-setup/.env" >&2; exit 1; }
 CMD="$1"; file="$2"
 export USER_ PASS_ HOST CMD FGT_OTP="${FGT_OTP:-}"

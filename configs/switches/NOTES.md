@@ -94,7 +94,7 @@ Nebula lists 21 Zyxel switches. Mapping Nebula name -> what I found:
 | 5.11 Third Floor SW11 | bc:cf:4f:c4:bf:48 | 192.168.1.43 | ATP500 | GS1920-24HP | yes |
 | PH3 Third Floor SW12 | bc:cf:4f:bb:d8:b3 | 192.168.1.33 | ATP500 | GS1920-24HP | yes |
 | PH3 Third Floor SW13 | bc:cf:4f:bb:c4:a6 | 192.168.1.45 | ATP500 | GS1920-24HP | yes |
-| 5.16 Third Floor SW14 | bc:cf:4f:bb:c4:6c | 192.168.201.4 | FortiGate | GS1920-24HP | no: on the FortiGate x1 island |
+| FHG Ground Floor SW14 (was listed "5.16 Third Floor SW14" on 14 Oct) | bc:cf:4f:bb:c4:6c | 192.168.201.4 | FortiGate | GS1920-24HP, serial S202L15002410 | no: on the FortiGate x1 island |
 | 1.24 Basement SW15 | bc:cf:4f:ce:00:92 | 192.168.1.37 | ATP500 | GS1920-8HP | yes |
 | Bar Switch SW16 | bc:cf:4f:5a:80:e2 | (192.168.46.4) | ATP500 | GS1350-6HP | seen; login refused; Nebula says not up to date |
 | Roof Bar SW/01 SW17 | bc:cf:4f:5a:75:90 | - | 185.53.226.147 (third WAN) | GS1350-6HP | no: not on this fabric, separate internet |
@@ -103,19 +103,34 @@ Nebula lists 21 Zyxel switches. Mapping Nebula name -> what I found:
 | SW102 | 80:ea:0b:25:b1:66 | 192.168.201.3 | FortiGate | XS1935-12F (10G SFP+) | no: FortiGate x1 island |
 
 Resolved: "Zyxel switch 101 port 10" in the handover is SW101, an XS1935-12F on the FortiGate x1
-side (192.168.201.2). The FortiGate's 10G x1 most likely lands on SW101 port 10. That island
-(SW101, SW102, SW14) is the new 10G fabric; it reaches Nebula through the FortiGate WAN
+side (192.168.201.2). The FortiGate's 10G x1 lands on SW101 port 10 (confirmed by Mat, 23 Oct 2026).
+That island (SW101, SW102, SW14) is the new 10G fabric; it reaches Nebula through the FortiGate WAN
 (193.221.132.138), everything else goes out via the ATP500 WAN (157.231.154.206).
+
+SW14 detail from Nebula (pasted by Mat, 23 Oct 2026): "FHG Ground Floor SW14", GS1920-24HP,
+non-stacking, LAN IP 192.168.201.4 by DHCP from 192.168.201.1 (the FortiGate x1 DHCP server),
+management VLAN 1, gateway 192.168.201.1, DNS 8.8.8.8, public IP 193.221.132.138. It hangs off
+SW101 port 1 over the singlemode run to FHG. Its tenant PlanetB sits on FortiGate vlan70 (the
+alias "LeadersUnlocked" is stale); they move to VLAN 87 under the migration plan v2
+(notes/migration-plan-v2-2026-10-23.md), and the 192.168.201.0/24 DHCP scope must follow x1 onto
+the new aggregate or SW14 loses its address.
 
 Seen by me but NOT in Nebula: 192.168.1.46 GS1350-6HP bc:cf:4f:5a:7b:9b "FITZROY HOUSE FHG2 (SPLITT...)",
 on SW02 port 2. Different org/site or standalone; explains the refused password. Bar Switch SW16 is in
 Nebula but also refused the password; it is flagged "not up to date", so Nebula may not have pushed the
 current local credentials to it.
 
+Nebula device list re-pasted by Mat 23 Oct 2026: same 21 switches, same MACs, IPs and cloud exits
+as on 14 Oct. Only change: SW14 is now named "FHG Ground Floor SW14". Bar Switch SW16 shows no LAN
+IP in Nebula (cloud exit 157.231.154.206); SW16, SW17 and SW18 are still "Not up to date"; SW18
+still 0.0.0.0. Mat is negotiating Nebula API access, which would give a read-only view of the x1
+island (SW101, SW102, SW14) that the jump box cannot reach.
+
 Totals now: 21 Zyxel in Nebula + 1 Zyxel outside Nebula + 2 Cisco = 24 switches. 14 read over SSH.
 Nebula name = system name only for SW03/04/05/12/13; the rest still answer as "GS1920".
 
 ## Still open
-- SW101 port 10: confirm the FortiGate x1 cable lands there (needs access to the x1 island or a look at SW101 in Nebula).
+- (resolved 23 Oct 2026: FortiGate x1 is on SW101 port 10; SW101 port 1 is the singlemode run to SW14.)
+- PlanetB's ports on SW14 and their PVID (Nebula only).
 - Local credentials for 192.168.1.46 (not in Nebula) and Bar Switch SW16; Cisco pair models (web login only).
 - FortiGate x1 island (SW101, SW102, SW14 on 192.168.201.x): no path from the jump box; Nebula topology view covers it.

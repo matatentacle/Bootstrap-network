@@ -8,6 +8,20 @@ MINI-PC-6 jump box. Packaged from the box on 20 Oct 2026.
 fine; anything that changes state needs Mat's go-ahead for that specific change. See
 `notes/gateway-working-rules.md`.
 
+## Key addresses
+
+| What | Address | Notes |
+|---|---|---|
+| Jump box (MINI-PC-6) | `mini-pc-6` / 100.83.139.20 on Tailscale, user `tentacle` | SSH key auth; `bin/jb status` |
+| Jump box leg to ATP500 | 192.168.254.100 (USB NIC, DHCP) | only leg with internet, carries Tailscale |
+| Jump box leg to FortiGate | 192.168.10.98 (onboard NIC, static) | dead end |
+| ATP500 management | 192.168.254.1 on ge7 | HTTPS 50483, SSH 22, 2FA on full admins |
+| FortiGate-120G management | 192.168.10.99 on mgmt | HTTPS 443, SSH 22; moving to 192.168.5.0/24 (decided 23 Oct 2026, not yet done) |
+| Core switch SW01 | 192.168.1.39 | GS1920-24HP; second hub SW02 is 192.168.1.38 |
+| Tenant gateways | 192.168.N.254 | ATP500 VLANs 10 to 74, FortiGate VLANs 150 to 175 |
+
+Full fact sheet and index: `FACTS.md`.
+
 ## Get working on a new machine
 
 1. Clone the repo and turn on the secrets guard:

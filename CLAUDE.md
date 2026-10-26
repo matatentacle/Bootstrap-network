@@ -20,8 +20,8 @@ set `JB_WRITE=1` to get around it. Full rules: `notes/gateway-working-rules.md`.
 | `bin/` | `jb` (jump box wrapper), `sanitize.py`, `check-secrets.sh` | yes |
 | `jumpbox-setup/` | Mirror of `~/jumpbox-setup` on the box: the expect scripts, setup, reports | yes, minus `.env` |
 | `configs/` | Sanitised device captures + NOTES.md per device + Bootstrap's workbook and the crossref | yes |
-| `notes/` | Shared knowledge pool for both Claudes: one file per fact, index in `notes/MEMORY.md`, request log in `notes/handoff.md` | yes |
-| `reports/` | Deliverables from either Claude: letters, research, plans, shopping lists; plain text, dated | yes |
+| `FACTS.md` | Fact sheet + index for quick answers; Claude Desktop reads this first. Claude Code keeps it current | yes |
+| `notes/` | Working notes and memory files from the jump box sessions (start with `notes/MEMORY.md`) | yes |
 | `private/` | Raw captures with their git history (`configs-raw/`), ad-hoc outputs (`captures/`), `jb.env` | **never** |
 | `jumpbox-setup/.env` | Gateway credentials. Belongs on the box only; a local copy is ignored | **never** |
 
@@ -30,15 +30,14 @@ encryption is off), the ATP500 config carries a reversible PSK, the switches car
 lines. `bin/sanitize.py import` replaces each with `<REDACTED:fingerprint>`; the pre-commit hook
 (`.githooks/pre-commit`) refuses anything that still looks like a secret.
 
-## Two Claudes, one pool of knowledge
+## Claude Desktop reads, Claude Code writes
 
-Claude Desktop is linked to this same folder and follows `CLAUDE-DESKTOP.md`: research, tenant
-and client management, Drive/Miro/Gmail lookups, writing. Claude Code does everything that
-touches the box, the gateways, the captures and git. Both read `notes/` and both write durable
-facts back there (one file per fact, indexed in `notes/MEMORY.md`), so neither harness's own
-memory is the record. Requests between the two go in `notes/handoff.md`; deliverables go in
-`reports/`. Claude Code: check `git status` at the start of a session, Desktop's edits are
-uncommitted until you commit them.
+Claude Desktop is linked to this folder for exploratory questions, emails and documents; it
+follows `CLAUDE-DESKTOP.md`. It reads `FACTS.md` (fact sheet plus index) and only opens the files
+the index names. Claude Code owns the work and keeps `FACTS.md` current: after any new capture,
+crossref run or finding that changes a fact, update the sheet and its "Updated" line. Desktop may
+correct a stale line with Mat's OK and marks it "(updated <date> by Claude Desktop)"; check
+`git status` at the start of a session and fold such edits in.
 
 ## How to do things
 

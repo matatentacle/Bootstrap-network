@@ -1,0 +1,32 @@
+To: [tenant], one letter per office in the list below
+Subject: A small change to your network addresses on Tuesday 27 October
+
+Dear [name],
+
+On Tuesday 27 October we are replacing the building's main internet router. Your office is one of the few already connected to the new one, so for you the change is a tidy-up: the private addresses your devices use inside the building move from 192.168.[OLD].x to 192.168.[NEW].x. This should not interrupt your internet for more than a few minutes.
+
+Almost everything, laptops, phones, tablets and most printers, picks up its address automatically and will simply receive a new one. The exception is a device that someone has set a fixed address on by hand: occasionally an older printer, a desk phone system, a NAS drive or a camera recorder. If you do not know whether you have one, you almost certainly do not, and nothing needs doing.
+
+If you do know of a device with a fixed address, tell us by Monday 26 October and we will give you the new address to set, or set it for you on the day.
+
+The Bootstrap team
+
+
+----------------------------------------------------------------------
+For the office: OLD and NEW per tenant (not for the letter itself)
+----------------------------------------------------------------------
+Create London, CW207                  150  ->  75
+ReLine London, FH2.1 and 2.14         151  ->  76
+Curam / Curamcare, PH2.3              152  ->  77   (they asked for notice of works)
+Cake Architecture, PH3.6-8            153  ->  78
+01-Profiles / Gunga, FH2.11-12        154  ->  79
+Harp-E, PH3.17-18A                    156  ->  81
+Henry Playfoot, PH1.14                157  ->  82
+Fair Finance, FH1.1 (new-router side) 158  ->  83   (their other network on the old router is unchanged)
+St Paul's Waldorf School, PH2.13      159  ->  84
+Simon Campbell, PH1.5                 160  ->  85
+PlanetB, FHG                           70  ->  87   add to paragraph one: "Yours also has a short
+                                                   interruption of around half an hour first thing
+                                                   in the morning while the new link is connected;
+                                                   we will tell you the time."
+Not written to: CoLab (FHG1, space no longer exists), Mediorite (own letter, 03).

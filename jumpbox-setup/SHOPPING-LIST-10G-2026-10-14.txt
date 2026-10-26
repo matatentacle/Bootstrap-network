@@ -57,3 +57,18 @@ C1  StarTech ICUSBROLLOVR USB-A to RJ45 console, 1.8m, FTDI          1   24.99
     The old FortiGate lead never enumerated on the jump box USB bus; this replaces it.
 No console lead for the ATP500: it is being retired and is reachable over the network.
 Supplier rule from Mat: reputable retailers only (Cable Monkey, Ebuyer and the like), no marketplace sellers.
+
+AMENDMENT 23 Oct 2026 (Claude Code, from Mat's plan v2; see notes/migration-plan-v2-2026-10-23.md)
+Status: everything above has been ordered and delivered (Mat, 23 Oct 2026). This list is now the record of
+what is on site; the notes below say how the plan v2 uses it. Nothing further to buy.
+- SW01 link: quantities unchanged. During the migration the link is SW102 copper port 12 to SW01 copper port 24
+  over a Cat6 lead from stock (SW01 port 25 is still PH3's uplink then). Once PH3 has moved to SW101 SFP 4 the
+  permanent link is SW102 SFP 6 to SW01 port 25 by fibre exactly as line 49 says, the copper comes out and
+  SW102 port 12 rejoins the SW101 LAG. So the SX module and violet lead for SFP 6 are still needed.
+- Line 2 note and NOTES line 36-37: the whole "fortilink" aggregate (x2+x3) is being deleted, not just one member,
+  so x2 is free for the LAG and x3 is spare. No purchase change.
+- Panel port numbers in the "WHERE EACH NEW PART GOES" table are the 14 Oct assumption. Mat's 23 Oct plan puts the
+  new runs in the port next to the existing one: FHG P1-2, PH3 P2-2, PH2 P2-10, PH1 P2-18, Basement P3-2,
+  FH3 P3-10, FH2 P3-18, CW3 P4-2, CW2 P4-10. No purchase change; the plan note has the current table.
+- FHG: the existing singlemode run to SW14 moves from SW101 port 1 to SW101 SFP 3 so that ports 1+2 take the
+  FortiGate x1+x2 LAG. Same optics, nothing to buy (Mat, 23 Oct).

@@ -1,0 +1,12 @@
+To: Akos Kovacs, Thames Reach
+Subject: Your fixed internet address changes on Tuesday 27 October
+
+Dear Akos,
+
+Thank you for confirming that Thames Reach still relies on its fixed internet address. We are replacing the building's main internet router, and as part of that your address moves from 157.231.128.136 to a new one, 193.221.131.35. Everything behind it stays as it is: the same forwarding through to your firewall, the same internal network addresses, and no cabling changes on your side.
+
+We would like to make the change on Tuesday 27 October, during the working day. From that point anything outside the building that refers to your old address, such as your IT provider's allow-lists or remote access settings, needs to use 193.221.131.35 instead. You mentioned your IT provider needs a few days' notice, so we are writing now rather than on the day.
+
+Does Tuesday 27 October work for you? Please let us know by Monday 26 October. If it does not, tell us which day the following week suits and we will hold your part back until then; the rest of the building can go ahead without affecting you.
+
+The Bootstrap team

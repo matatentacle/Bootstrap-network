@@ -1,0 +1,12 @@
+To: all tenants
+Subject: Internet works on Tuesday 27 October: short interruptions during the day
+
+Dear all,
+
+On Tuesday 27 October we are replacing the building's main internet router with a new, faster one. Each floor is moved across in turn during the working day, and as your floor moves you may notice the internet drop for a few minutes, once or twice. Most devices reconnect on their own.
+
+If something has not come back after ten minutes, turn its WiFi off and on again, or unplug the network cable and plug it back in. Printers and other devices that are left on all the time may need the same. If it is still not working after that, let the office know which room and which device, and we will come and look.
+
+If Tuesday is a particularly bad day for you, for example a live event or an important call you cannot move, tell us by Monday 26 October and we will try to do your floor at a quieter moment.
+
+The Bootstrap team

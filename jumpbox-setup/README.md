@@ -26,7 +26,7 @@ Sudo password: ~/.claude/.env, format `label - password`. Gateway credentials: ~
 
 ## Reaching things
 - Box: `ssh tentacle@100.83.139.20` (Tailscale SSH or plain SSH; Mat normally uses plain SSH).
-- FortiGate: `ssh mat@192.168.10.99` from the box. HTTPS 443 on the same address. **20 Oct 2026:** Mat raised `mat` to super_admin with 2FA, so scripted logins with it stop at the token prompt (`fortigate-cmd.sh` now exits 6 there; pass `FGT_OTP=<code>` for a one-off). A separate read-only account for the scripts is being created; when it exists, put it in the `Fortinet` section of .env.
+- FortiGate: `ssh ro-jumpbox@192.168.10.99` from the box, password in the `Fortinet` section of .env. HTTPS 443 on the same address. **23 Oct 2026:** `ro-jumpbox` is a `super_admin_readonly` account with trusted hosts limited to the jump box (192.168.10.98 now, 192.168.5.98 after the management move) and no 2FA; the scripts use it. Mat's own `mat` account is super_admin with 2FA since 20 Oct 2026 and sits at the bottom of .env for reference; scripted logins with it stop at the token prompt (exit 6; `FGT_OTP=<code>` for a one-off). The scripts take the first `Username` under `Fortinet`, so keep `ro-jumpbox` first. `Pass - ` and `Password - ` are both accepted since 23 Oct.
 - ATP500: `ssh read-only@192.168.254.1` from the box with the password in .env (account `read-only`), no 2FA code needed any more (changed by Mat 14 Oct 2026). Lands on the `Router>` limited-admin prompt. Use atp500-cmd.sh for scripted commands. Gotchas for anyone scripting it by hand: set TERM=vt100, and the prompt arrives as `\r\n\rRouter> ` (bare CR before the prompt), so anchor on `\r?\n\r?Router> `. Full admin: `atp500-cmd.sh --admin` uses MKennedyAdmin (prompt `Router#`); the gateway asks for a Verification code after the password, so Mat supplies a fresh code as `ATP_OTP=123456`. HTTPS on port 50483.
 - Gateway web UIs from a laptop: `ssh -L 8443:<gateway-ip>:443 tentacle@100.83.139.20`, or `ssh -D 1080 ...` for a SOCKS proxy.
 
@@ -37,14 +37,14 @@ Sudo password: ~/.claude/.env, format `label - password`. Gateway credentials: ~
 | fortigate-discover.sh | Read-only FortiGate command set over SSH, outputs to /srv/configs/fortigate/. |
 | atp500-cmd.sh | `[--admin] "<command>" <outfile>`: logs in to the ATP500, runs one ZLD command, pages through --More--, saves clean output. Same shape as fortigate-cmd.sh. Default account is `read-only` (no 2FA, cannot `show running-config`). `--admin` uses MKennedyAdmin and needs `ATP_OTP=<code>` in the environment; without it the script stops at the code prompt with exit 6. Rewritten 14 Oct 2026; the tmux-session version is in archive/. |
 | zyxel-sw-cmd.sh | `<ip> "<command>" <outfile>`: one read-only ZyNOS command on a Zyxel switch, Zyxel section of .env. |
-| fortigate-cmd.sh | `"<command>" <outfile>`: one read-only FortiOS command, mat account. |
+| fortigate-cmd.sh | `"<command>" <outfile>`: one read-only FortiOS command, `ro-jumpbox` account (first `Fortinet` entry in .env). |
 | subnet-router.sh | `on <cidr>[,<cidr>]` / `off`: Tailscale subnet routing for the gateway management networks. On since 14 Oct 2026 for 192.168.254.0/24,192.168.10.0/24. |
 
 ## Config repo
 /srv/configs is a git repo. atp500/ and fortigate/ each hold NOTES.md plus dated raw outputs and the full configs captured 13 Oct. Credentials never go in it.
 
 ## Open items
-1. FortiGate console lead is not on the box's USB bus (only the UE300 and an empty 4-port NEC hub enumerate). Check plug and seating. Needed for a full admin on the FortiGate.
+1. FortiGate console lead: done 26 Oct 2026. Prolific PL2303 adapter (067b:23a3) on the NEC hub, /dev/ttyUSB0, 9600 8N1; tentacle added to dialout the same day. Proven from the box: one Enter returns `FW-120G-01 login:`. Use `picocom -b 9600 /dev/ttyUSB0` (quit Ctrl-A Ctrl-X). Warning: a lead on this port held the FortiGate at its BIOS boot menu for 46 h on 24 to 26 Oct (any console input at boot does that). Either test a reboot with this lead in during a quiet window, or enable BIOS restricted mode (Ctrl-B only) first; Mat prefers the reboot test (26 Oct). Full admin on the FortiGate is now possible from here.
 2. ATP500 console lead not cabled (115200 8N1). Then ser2net (udev by FTDI serial, ports 2001/2002 bound to the Tailscale IP).
 3. Jump box address on the ATP500 side: DHCP reservation for .10 in a change window, or pin .100 statically on the box.
 4. Confirm which cable is on Zyxel switch 101 port 10; tenants are on the FortiGate's port3+port4 bond, not x1. Needs switch credentials (none held); see Switch layer below.

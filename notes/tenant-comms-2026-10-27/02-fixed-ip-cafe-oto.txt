@@ -1,0 +1,12 @@
+To: James Dunn, for Cafe OTO
+Subject: Cafe OTO's fixed internet address changes on Tuesday 27 October
+
+Dear James,
+
+Thank you for confirming that Cafe OTO needs its fixed internet address. We are replacing the building's main internet router, and your address moves from 157.231.128.140 to 193.221.131.36. The port forwarding you described, ports 1000 to 2000 through to your router, will be set up the same way on the new address, and nothing changes inside your network.
+
+We plan to do this on Tuesday 27 October. Because of where the cafe's connection sits in the building, yours will be one of the last to move, late in the afternoon. From then on anything outside that points at the old address needs the new one. One check before we build it: is the router we forward to still the one on 192.168.71.1, and is TCP and UDP 1000 to 2000 the complete list of ports you need?
+
+Does Tuesday 27 October work for you? Please let us know by Monday 26 October, along with the answer to the check above.
+
+The Bootstrap team

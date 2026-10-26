@@ -4,7 +4,7 @@
 set -uo pipefail
 HOST=192.168.10.99
 USER_=$(awk '/^Fortinet/{f=1} f&&/^Username/{print $3; exit}' ~/jumpbox-setup/.env)
-PASS_=$(awk '/^Fortinet/{f=1} f&&/^Pass/{sub(/^Pass - /,""); print; exit}' ~/jumpbox-setup/.env)
+PASS_=$(awk '/^Fortinet/{f=1} f&&/^Pass/{sub(/^Pass(word)? - /,""); print; exit}' ~/jumpbox-setup/.env)
 OUT=/srv/configs/fortigate; D=$(date +%F); mkdir -p "$OUT"
 # Each command is a separate login. If the account has 2FA, one FGT_OTP code only covers the
 # first login; use a non-2FA read-only account for this script, or run fortigate-cmd.sh per command.
